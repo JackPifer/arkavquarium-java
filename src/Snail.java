@@ -13,7 +13,7 @@ public class Snail implements Pet {
     
     //Constructor
     public Snail() {
-        this.currentPosition = new Position(0.0, 450.0);
+        this.currentPosition = new Position((double) r % 640 + 1, 450.0);
         this.destination = new Position(0.0, 450.0);
         this.moveTime = 0;
         this.faceDirection = true;

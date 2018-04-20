@@ -3,6 +3,7 @@ public class Guppy extends Fish {
     private double coinTime;
     private int coinValue;
     private int numberOfFoodEaten;
+    public static final int price = 50;
     private final double baseCoinTime = 15.0;
 
     //Constructor
@@ -15,6 +16,7 @@ public class Guppy extends Fish {
     }
 
     // Getter
+
     public double getCoinTime() {
         return this.coinTime;
     }

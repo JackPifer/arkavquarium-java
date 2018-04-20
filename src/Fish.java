@@ -1,8 +1,12 @@
 import java.util.*;
 
 public abstract class Fish {
+    public enum FishMovingStatus {
+        RANDOM, HUNTING;
+    }
     protected Position currentPosition;
     protected Position destination;
+    protected FishMovingStatus movingStatus;
     protected double moveTime;
     protected boolean faceDirection;
     protected int hungerLevel; 
@@ -18,11 +22,12 @@ public abstract class Fish {
     //Constructor
     public Fish(){
         // Get Random initial position
-        double initial_x = 1 + (640 - 1) * r.nextDouble();
-        double initial_y = 1 + (480 - 1) * r.nextDouble();
+        double initial_x = 1 + (Aquarium.DEFAULT_WIDTH - 1) * r.nextDouble();
+        double initial_y = 1 + (Aquarium.DEFAULT_HEIGHT - 1) * r.nextDouble();
         this.currentPosition = new Position(initial_x, initial_y);
         this.destination = new Position(DEFAULT_X_POS, DEFAULT_Y_POS);
         this.moveTime = 0;
+        this.movingStatus = FishMovingStatus.RANDOM;
         this.faceDirection = true;
         this.hungerLevel = DEFAULT_HUNGER_LEVEL;
     }
@@ -55,6 +60,10 @@ public abstract class Fish {
     public int getHungryLevelLimit() {
         return this.hungryLevelLimit;
     }
+
+    public FishMovingStatus getMovingStatus() {
+        return this.movingStatus;
+    }
     
     // Setter
     public void setCurrentPosition(Position currentPosition) {
@@ -71,6 +80,10 @@ public abstract class Fish {
 
     public void setMoveTime(int moveTime) {
         this.moveTime = moveTime;
+    }
+
+    public void setMovingStatus(FishMovingStatus movingStatus) {
+        this.movingStatus = movingStatus;
     }
 
     public void changeFaceDirection() {
