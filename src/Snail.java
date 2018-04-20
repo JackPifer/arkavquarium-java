@@ -3,11 +3,12 @@
 
 import java.util.*;
 
-public class Snail implements Pet {
-    private Position currentPosition;
+public class Snail implements MovingObject {
+    protected Position currentPosition;
     private Position destination;
     private double moveTime;
     private boolean faceDirection;
+    private MovingStatus movingStatus;
 
     static Random r = new Random();
     
@@ -17,6 +18,7 @@ public class Snail implements Pet {
         this.destination = new Position(0.0, 450.0);
         this.moveTime = 0;
         this.faceDirection = true;
+        this.movingStatus = MovingStatus.STATIC;
     }
 
     public Snail(Position initialPosition) {
@@ -24,6 +26,7 @@ public class Snail implements Pet {
         this.destination = new Position(0.0, 450.0);
         this.moveTime = 0;
         this.faceDirection = true;
+        this.movingStatus = MovingStatus.STATIC;
     }
 
     //Getter
@@ -43,7 +46,31 @@ public class Snail implements Pet {
         return this.moveTime;
     }
 
-    
+    public MovingStatus getMovingStatus() {
+        return this.movingStatus;
+    }
+
+    // Setter
+    public void setCurrentPosition(Position currentPosition) {
+        this.currentPosition = currentPosition;
+    }
+
+    public void setDestination(Position destination) {
+        this.destination = destination;
+    }
+
+    public void setMoveTime(double moveTime) {
+        this.moveTime = moveTime;
+    }
+
+    public void changeMovingStatus(LinkedList<Coin> coins) {
+        if (!coins.isEmpty()) {
+            this.movingStatus = MovingStatus.HUNTING;
+        } else {
+            this.movingStatus = MovingStatus.STATIC;
+        }
+    }
+
     // public void move(double x, double t, boolean huntCoin) {
     //     if(huntCoin){
     //         this.moveTime = 0.1 * (5 + (45 - 5) * r.nextDouble());
@@ -63,4 +90,21 @@ public class Snail implements Pet {
     //         this.xPos += 20*Math.sin(a)*t;
     //     }
     // }
+
+    public void move(Position destination, double time, MovingStatus movingStatus){
+
+    }
+
+    public Coin findNearestCoin(LinkedList<Coin> coins){
+        Coin nearestCoin = coins.get(0);
+        double minDistance = this.currentPosition.calculateDistance(nearestCoin.getCurrentPosition());
+        for(int i = 1; i < coins.getSize(); i++){
+            double tempDistance = this.currentPosition.calculateDistance(coins.get(i).getCurrentPosition());
+            if (tempDistance < minDistance) {
+                minDistance = tempDistance;
+                nearestCoin = coins.get(i);
+            }
+        }
+        return nearestCoin;
+    }
 }

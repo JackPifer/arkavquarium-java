@@ -70,5 +70,18 @@ public class Guppy extends Fish {
         this.coinTime = baseCoinTime;
         return new Coin(this.coinValue,this.getCurrentPosition());
     }
+
+    public FishFood findNearestFood(LinkedList<FishFood> foods){
+        FishFood nearestFood = foods.get(0);
+        double minDistance = this.currentPosition.calculateDistance(nearestFood.getCurrentPosition());
+        for(int i = 1; i < foods.getSize(); i++){
+            double tempDistance = this.currentPosition.calculateDistance(foods.get(i).getCurrentPosition());
+            if (tempDistance < minDistance) {
+                minDistance = tempDistance;
+                nearestFood = foods.get(i);
+            }
+        }
+        return nearestFood;
+    }
 }
 

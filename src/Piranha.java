@@ -16,4 +16,16 @@ public class Piranha extends Fish {
         this.setHungerLevel(60);
     }
 
+    public Guppy findNearestFood(LinkedList<Guppy> foods){
+        Guppy nearestFood = foods.get(0);
+        double minDistance = this.currentPosition.calculateDistance(nearestFood.getCurrentPosition());
+        for(int i = 1; i < foods.getSize(); i++){
+            double tempDistance = this.currentPosition.calculateDistance(foods.get(i).getCurrentPosition());
+            if (tempDistance < minDistance) {
+                minDistance = tempDistance;
+                nearestFood = foods.get(i);
+            }
+        }
+        return nearestFood;
+    }
 }

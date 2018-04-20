@@ -61,7 +61,7 @@ public class Player {
         }
     }
     
-    public boolean buyEgg() {
+    public boolean payEgg() {
         if(isMoneyEnough(this.getEggPrice())) {
             this.egg++;
             this.decreaseMoney(this.getEggPrice());
@@ -70,7 +70,7 @@ public class Player {
         return false;
     }
 
-    public boolean buyFood() {
+    public boolean payFood() {
         if(isMoneyEnough(FishFood.price)){
             this.decreaseMoney(FishFood.price);
             return true;
@@ -78,7 +78,7 @@ public class Player {
         return false;
     }
 
-    public boolean buyPiranha() {
+    public boolean payPiranha() {
         if(isMoneyEnough(Piranha.price)){
             this.decreaseMoney(Piranha.price);
             return true;
@@ -86,7 +86,7 @@ public class Player {
         return false;
     }
 
-    public boolean buyGuppy() {
+    public boolean payGuppy() {
         if(isMoneyEnough(Guppy.price)){
             this.decreaseMoney(Guppy.price);
             return true;

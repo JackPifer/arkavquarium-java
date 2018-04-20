@@ -1,12 +1,9 @@
 import java.util.*;
 
-public abstract class Fish {
-    public enum FishMovingStatus {
-        RANDOM, HUNTING;
-    }
+public abstract class Fish implements MovingObject {
     protected Position currentPosition;
     protected Position destination;
-    protected FishMovingStatus movingStatus;
+    protected MovingStatus movingStatus;
     protected double moveTime;
     protected boolean faceDirection;
     protected int hungerLevel; 
@@ -27,7 +24,7 @@ public abstract class Fish {
         this.currentPosition = new Position(initial_x, initial_y);
         this.destination = new Position(DEFAULT_X_POS, DEFAULT_Y_POS);
         this.moveTime = 0;
-        this.movingStatus = FishMovingStatus.RANDOM;
+        this.movingStatus = MovingStatus.RANDOM;
         this.faceDirection = true;
         this.hungerLevel = DEFAULT_HUNGER_LEVEL;
     }
@@ -61,7 +58,7 @@ public abstract class Fish {
         return this.hungryLevelLimit;
     }
 
-    public FishMovingStatus getMovingStatus() {
+    public MovingStatus getMovingStatus() {
         return this.movingStatus;
     }
     
@@ -82,7 +79,7 @@ public abstract class Fish {
         this.moveTime = moveTime;
     }
 
-    public void setMovingStatus(FishMovingStatus movingStatus) {
+    public void setMovingStatus(MovingStatus movingStatus) {
         this.movingStatus = movingStatus;
     }
 
@@ -130,6 +127,15 @@ public abstract class Fish {
     //     this.yPos += mult * this.speed*Math.cos(a)*t;
     // }
 
+    public void move(Position destination,double time, MovingStatus movingStatus){
+
+    }
     public abstract void eatFood();
-    // public abstract void findNearestFood();
+    public void changeMovingStatus(LinkedList<Objects> foods) {
+        if (!foods.isEmpty() && this.isHungry()) {
+            this.movingStatus = MovingStatus.HUNTING;
+        } else {
+            this.movingStatus = MovingStatus.RANDOM;
+        }
+    }
 }
