@@ -1,34 +1,33 @@
 public class Position {
-    protected double xPos;
-    protected double yPos;
+    protected double x;
+    protected double y;
 
-    //constructor
+    //Constructor
     public Position(){
-        this.xPos = 0.0;
-        this.yPos = 0.0;
+        this.x = 0.0;
+        this.y = 0.0;
     }
 
     public Position(double x, double y){
-        this.xPos = x;
-        this.yPos = y;
+        this.x = x;
+        this.y = y;
     }
 
-    //getter
-    public double getxPos() {
-        return xPos;
+    //Getter for each attribute
+    public double getX() {
+        return this.x;
     }
 
-    public double getyPos() {
-        return yPos;
+    public double getY() {
+        return this.y;
     }
 
-    //setter
-
-    public void setxPos(double xPos) {
-        this.xPos = xPos;
+    //Setter for each attribute
+    public void setX(double x) {
+        this.x = x;
     }
 
-    public void setyPos(double yPos) {
-        this.yPos = yPos;
+    public void setY(double y) {
+        this.y = y;
     }
 }

@@ -2,34 +2,55 @@ public class Guppy extends Fish {
     private int size;
     private double coinTime;
     private int coinValue;
-    private int foodEaten;
-    final private double baseCoinTime = 15.0;
+    private int numberOfFoodEaten;
+    private final double baseCoinTime = 15.0;
 
-    //constructor
+    //Constructor
     public Guppy(){
         super();
         this.size = 1;
         this.coinTime = baseCoinTime;
         this.coinValue = 0;
-        this.foodEaten = 0;
+        this.numberOfFoodEaten = 0;
     }
 
+    // Getter
     public double getCoinTime() {
-        return coinTime;
+        return this.coinTime;
     }
 
     public int getSize() {
-        return size;
+        return this.size;
+    }
+    
+    public int getCoinValue() {
+        return this.coinValue;
+    }
+
+    public int getNumberOfFoodEaten() {
+        return this.numberOfFoodEaten;
+    }
+
+    public void setNumberOfFoodEaten(int numberOfFoodEaten) {
+        this.numberOfFoodEaten = numberOfFoodEaten;
+    }
+
+    public void setCoinValue(int coinValue) {
+        this.coinValue = coinValue;
     }
 
     public void setCoinTime(double coinTime) {
         this.coinTime = coinTime;
     }
 
+    public void setSize(int size) {
+        this.size = size;
+    }
+
     public void eatFood(){
-        this.foodEaten++;
-        this.hungerTime = 60;
-        if((this.foodEaten == 2) || (this.foodEaten == 5)){
+        this.numberOfFoodEaten++;
+        this.hungerLevel = 60;
+        if((this.numberOfFoodEaten == 2) || (this.numberOfFoodEaten == 5)) {
             grow();
         }
     }
@@ -44,8 +65,8 @@ public class Guppy extends Fish {
     }
 
     public Coin extractCoin(){
-        coinTime = baseCoinTime;
-        return new Coin(this.coinValue, this.getxPos(), this.getyPos());
+        this.coinTime = baseCoinTime;
+        return new Coin(this.coinValue,this.getCurrentPosition());
     }
 }
 

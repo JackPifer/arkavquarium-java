@@ -1,23 +1,22 @@
-public class Coin extends Position{
+// File: Coin.java
+// Responsibility : Act as Coin for player to get to increase money
+
+public class Coin extends DroppableItem {
     private double value;
 
-    //constructor
-    public Coin(){
-        super();
-        this.value = 0.0;
-    }
-
-    public Coin(double value, double x, double y){
-        super(x,y);
+    // User-defined Constructor
+    public Coin(double value, Position fishPosition){
+        super(fishPosition);
         this.value = value;
     }
 
-    //getter
+    //Getter
     public double getValue() {
-        return value;
+        return this.value;
     }
 
-    public void move(double t){
-        this.yPos += 20*t;
+    //Setter
+    public void setValue(double value) {
+        this.value = value;
     }
 }

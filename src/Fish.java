@@ -1,76 +1,122 @@
 import java.util.*;
-public abstract class Fish extends Position {
-    protected double xDest;
-    protected double yDest;
+
+public abstract class Fish {
+    protected Position currentPosition;
+    protected Position destination;
     protected double moveTime;
-    protected int foodEaten;
-    protected boolean direction;
-    protected int hungerTime;
-    final protected  int fullTimeLimit = 40;
-    final protected int speed = 40;
+    protected boolean faceDirection;
+    protected int hungerLevel; 
+    protected final  int hungryLevelLimit = 40;
+    protected final int movingSpeed = 40;
 
+    protected final int DEFAULT_HUNGER_LEVEL = 60;
+    protected final double DEFAULT_X_POS = 0.0;
+    protected final double DEFAULT_Y_POS = 0.0;
+    
     static Random r = new Random();
-    //constructor
+    
+    //Constructor
     public Fish(){
-        super(1 + (640 - 1) * r.nextDouble(),1 + (480 - 1) * r.nextDouble());
-        this.xDest = 0.0;
-        this.yDest = 0.0;
+        // Get Random initial position
+        double initial_x = 1 + (640 - 1) * r.nextDouble();
+        double initial_y = 1 + (480 - 1) * r.nextDouble();
+        this.currentPosition = new Position(initial_x, initial_y);
+        this.destination = new Position(DEFAULT_X_POS, DEFAULT_Y_POS);
         this.moveTime = 0;
-        this.foodEaten = 0;
-        this.direction = true;
-        this.hungerTime = 60;
+        this.faceDirection = true;
+        this.hungerLevel = DEFAULT_HUNGER_LEVEL;
     }
 
-    //getter
-
-    public boolean getDirection() {
-        return direction;
+    //Getter
+    public Position getCurrentPosition() {
+        return this.currentPosition;
     }
 
-    public int getHungerTime() {
-        return hungerTime;
+    public Position getDestination() {
+        return this.destination;
     }
 
-    public int getSpeed() {
-        return speed;
+    public boolean getFaceDirection() {
+        return this.faceDirection;
     }
 
+    public double getMoveTime() {
+        return this.moveTime;
+    }
+
+    public int getHungerLevel() {
+        return this.hungerLevel;
+    }
+
+    public int getMovingSpeed() {
+        return this.movingSpeed;
+    }
+
+    public int getHungryLevelLimit() {
+        return this.hungryLevelLimit;
+    }
+    
+    // Setter
+    public void setCurrentPosition(Position currentPosition) {
+        this.currentPosition = currentPosition;
+    }
+    
+    public void setDestination(Position destination) {
+        this.destination = destination;
+    }
+
+    public void setHungerLevel(int hungerLevel) {
+        this.hungerLevel = hungerLevel;
+    }
+
+    public void setMoveTime(int moveTime) {
+        this.moveTime = moveTime;
+    }
+
+    public void changeFaceDirection() {
+        if(this.faceDirection) {
+            this.faceDirection = false;
+        } else {
+            this.faceDirection = true;
+        }
+    }
+    
     public boolean isHungry() {
-        return this.hungerTime < this.fullTimeLimit;
+        return this.hungerLevel < this.hungryLevelLimit;
     }
 
-    public void move(double x, double y, double t, boolean huntFood){
-        double mult;
-        if(huntFood){
-            this.moveTime = 0.1 * (5 + (45 - 5) * r.nextDouble());
-            this.xDest = x;
-            this.yDest = y;
-            if(this.xPos - this.xDest > 0){
-                this.direction = true;
-            }else {
-                this.direction = false;
-            }
-        }else if(this.moveTime <= t || (Math.abs(this.xDest - this.xPos) < 3 && Math.abs(this.yDest - this.yPos) < 3)){
-            this.hungerTime -= 2;
-            this.moveTime = 0.1 * (5 + (45 - 5) * r.nextDouble());
-            if(this.xPos - this.xDest > 0){
-                this.direction = true;
-            }else {
-                this.direction = false;
-            }
-        }else {
-            this.moveTime -= t;
-        }
-        double a = Math.atan2(this.xDest-this.xPos,this.yDest-this.yPos);
-        if(huntFood){
-            mult = 1.3;
-        }else {
-            mult = 1;
-        }
-        this.xPos += mult * this.speed*Math.sin(a)*t;
-        this.yPos += mult * this.speed*Math.cos(a)*t;
-    }
+    // public void move(double x, double y, double t, boolean huntFood){
+    //     double mult;
+    //     if(huntFood){
+    //         this.moveTime = 0.1 * (5 + (45 - 5) * r.nextDouble());
+    //         this.xDest = x;
+    //         this.yDest = y;
+    //         if(this.xPos - this.xDest > 0){
+    //             this.direction = true;
+    //         }else {
+    //             this.direction = false;
+    //         }
+    //     }else if(this.moveTime <= t || (Math.abs(this.xDest - this.xPos) < 3 && Math.abs(this.yDest - this.yPos) < 3)){
+    //         this.hungerTime -= 2;
+    //         this.moveTime = 0.1 * (5 + (45 - 5) * r.nextDouble());
+    //         if(this.xPos - this.xDest > 0){
+    //             this.direction = true;
+    //         }else {
+    //             this.direction = false;
+    //         }
+    //     }else {
+    //         this.moveTime -= t;
+    //     }
+    //     double a = Math.atan2(this.xDest-this.xPos,this.yDest-this.yPos);
+    //     if(huntFood){
+    //         mult = 1.3;
+    //     }else {
+    //         mult = 1;
+    //     }
+    //     this.xPos += mult * this.speed*Math.sin(a)*t;
+    //     this.yPos += mult * this.speed*Math.cos(a)*t;
+    // }
 
     public abstract void eatFood();
-
+    // public abstract void findNearestFood();
 }

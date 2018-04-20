@@ -1,14 +1,13 @@
-public class FishFood extends Position {
-    //constructor
-    public FishFood(){
-        super();
-    }
+public class FishFood extends DroppableItem {
+    private final int price = 10;
 
-    public FishFood(double x, double y){
-        super(x,y);
+    //Constructor
+    public FishFood(Position initPosition){
+        super(initPosition);
     }
-
-    public void move(double t){
-        this.yPos += 20*t;
+    
+    //Getter
+    public int getPrice() {
+        return this.price;
     }
 }

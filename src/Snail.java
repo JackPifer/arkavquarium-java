@@ -1,48 +1,66 @@
+// File: Snail.java
+// Concrete class for Pet in this Aquarium
+
 import java.util.*;
-public class Snail extends Position{
-    private double xDest;
-    double moveTime;
-    boolean direction;
+
+public class Snail implements Pet {
+    private Position currentPosition;
+    private Position destination;
+    private double moveTime;
+    private boolean faceDirection;
 
     static Random r = new Random();
-    //constructor
-    public Snail(){
-        super(0.0, 450.0);
-        this.xDest = 0.0;
-        moveTime = 0;
-        direction = true;
-    }
-
-    public Snail(double xPos){
-        super(xPos, 450.0);
-        this.xDest = 0.0;
+    
+    //Constructor
+    public Snail() {
+        this.currentPosition = new Position(0.0, 450.0);
+        this.destination = new Position(0.0, 450.0);
         this.moveTime = 0;
-        this.direction = true;
+        this.faceDirection = true;
     }
 
-    //getter
-
-    public boolean getDirection() {
-        return direction;
+    public Snail(Position initialPosition) {
+        this.currentPosition = initialPosition;
+        this.destination = new Position(0.0, 450.0);
+        this.moveTime = 0;
+        this.faceDirection = true;
     }
 
-    public void move(double x, double t, boolean huntCoin){
-        if(huntCoin){
-            this.moveTime = 0.1 * (5 + (45 - 5) * r.nextDouble());
-            this.xDest = x;
-            if(Math.abs(this.xDest - this.xPos) < 10){
-
-            }
-            else if(this.xPos - this.xDest > 0){
-                this.direction = true;
-            }else {
-                this.direction = false;
-            }
-        }
-
-        if((!(Math.abs(this.xDest - this.xPos) < 5)) && huntCoin){
-            double a = Math.atan2(this.xDest - this.xPos, 0.0);
-            this.xPos += 20*Math.sin(a)*t;
-        }
+    //Getter
+    public Position getCurrentPosition() {
+        return this.currentPosition;
     }
+    
+    public Position getDestination() {
+        return this.destination;
+    }
+
+    public boolean getFaceDirection() {
+        return this.faceDirection;
+    }
+    
+    public double getMoveTime() {
+        return this.moveTime;
+    }
+
+    
+    // public void move(double x, double t, boolean huntCoin) {
+    //     if(huntCoin){
+    //         this.moveTime = 0.1 * (5 + (45 - 5) * r.nextDouble());
+    //         this.xDest = x;
+    //         if(Math.abs(this.xDest - this.xPos) < 10){
+
+    //         }
+    //         else if(this.xPos - this.xDest > 0){
+    //             this.direction = true;
+    //         }else {
+    //             this.direction = false;
+    //         }
+    //     }
+
+    //     if((!(Math.abs(this.xDest - this.xPos) < 5)) && huntCoin){
+    //         double a = Math.atan2(this.xDest - this.xPos, 0.0);
+    //         this.xPos += 20*Math.sin(a)*t;
+    //     }
+    // }
 }
