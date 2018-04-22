@@ -127,9 +127,74 @@ public abstract class Fish implements MovingObject {
     //     this.yPos += mult * this.speed*Math.cos(a)*t;
     // }
 
-    public void move(Position destination,double time, MovingStatus movingStatus){
-
+    public <T> void move(Position destination,double time, MovingStatus movingStatus, LinkedList<T> food) {
+        if (movingStatus == MovingStatus.HUNTING) {
+            moveHunt(findNearestFood(food), time);
+        }
+        else {
+            moveRandom(destination, time);
+        }
     }
+
+    public void moveHunt(Position destination, double t) {
+        this.moveTime = 0.1 * (5 + (45 - 5) * r.nextDouble());
+        this.destination = destination;
+        if(this.currentPosition.getX() - this.destination.getX() > 0){
+         this.faceDirection = true;
+        }else {
+         this.faceDirection = false;
+        }
+        double a = Math.atan2(this.destination.getX() - this.currentPosition.getX(), this.destination.getY() - this.currentPosition.getY());
+        this.currentPosition.setX(1.3 * this.movingSpeed * Math.sin(a) * t + this.currentPosition.getX());
+        this.currentPosition.setY(1.3 * this.movingSpeed * Math.cos(a) * t + this.currentPosition.getY());
+    }
+
+    public void moveRandom(Position destination, double t) {
+        if(this.moveTime <= t || (Math.abs(this.destination.getX() - this.currentPosition.getX()) < 3 && Math.abs(this.destination.getY() - this.currentPosition.getY()) < 3)) {
+            this.hungerLevel -= 2;
+            this.moveTime = 0.1 * (5 + (45 - 5) * r.nextDouble());
+            this.destination = destination;
+            if (this.currentPosition.calculateDistance(this.destination) > 0) {
+                this.faceDirection = true;
+            } else {
+                this.faceDirection = false;
+            }
+        } else {
+            this.moveTime -= t;
+        }
+        double a = Math.atan2(this.destination.getX() - this.currentPosition.getX(), this.destination.getY() - this.currentPosition.getY());
+        this.currentPosition.setX(this.movingSpeed * Math.sin(a) * t + this.currentPosition.getX());
+        this.currentPosition.setY(this.movingSpeed * Math.cos(a) * t + this.currentPosition.getY());
+    }
+
+    public <T> Position findNearestFood(LinkedList<T> foods) {
+        if (foods.get(0) instanceof FishFood) {
+            FishFood nearestFood = (FishFood) foods.get(0);
+            double minDistance = this.currentPosition.calculateDistance(nearestFood.getCurrentPosition());
+            for (int i = 1; i < foods.getSize(); i++) {
+                FishFood food = (FishFood) foods.get(i);
+                double tempDistance = this.currentPosition.calculateDistance(food.getCurrentPosition());
+                if (tempDistance < minDistance) {
+                    minDistance = tempDistance;
+                    nearestFood = (FishFood) foods.get(i);
+                }
+            }
+            return nearestFood.getCurrentPosition();
+        } else {
+            Guppy nearestFood = (Guppy) foods.get(0);
+            double minDistance = this.currentPosition.calculateDistance(nearestFood.getCurrentPosition());
+            for (int i = 1; i < foods.getSize(); i++) {
+                Guppy food = (Guppy) foods.get(i);
+                double tempDistance = this.currentPosition.calculateDistance(food.getCurrentPosition());
+                if (tempDistance < minDistance) {
+                    minDistance = tempDistance;
+                    nearestFood = (Guppy) foods.get(i);
+                }
+            }
+            return nearestFood.getCurrentPosition();
+        }
+    }
+
     public abstract void eatFood();
     public void changeMovingStatus(LinkedList<Objects> foods) {
         if (!foods.isEmpty() && this.isHungry()) {

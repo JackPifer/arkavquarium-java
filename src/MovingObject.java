@@ -2,5 +2,5 @@ public interface MovingObject {
     public enum MovingStatus {
         RANDOM, HUNTING, STATIC;
     }
-    public void move(Position destination, double time, MovingStatus movingStatus);
+    public <T> void move(Position destination, double time, MovingStatus movingStatus, LinkedList<T> food);
 }
