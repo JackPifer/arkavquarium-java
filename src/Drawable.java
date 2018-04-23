@@ -1,6 +1,6 @@
 // File: Drawable.java
 // Interface to draw object into visual representation
-
+import java.awt.*;
 public interface Drawable {
-    public void draw(String imageSource, Object o);
+    public void draw(Graphics g, Toolkit t,Controller con);
 }

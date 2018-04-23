@@ -9,8 +9,11 @@ public class Aquarium {
     private Snail snail;
 
     public Aquarium() {
-        Snail snail1 = new Snail();
-        this.snail = snail1;
+        snail = new Snail();
+        listOfPiranha = new LinkedList<>();
+        listOfGuppy = new LinkedList<>();
+        listOfCoin = new LinkedList<>();
+        listOfFishFood = new LinkedList<>();
     }
 
     public Snail getSnail() {

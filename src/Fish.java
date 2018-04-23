@@ -128,7 +128,7 @@ public abstract class Fish implements MovingObject {
     // }
 
     public <T> void move(Position destination,double time, MovingStatus movingStatus, LinkedList<T> food) {
-        if (movingStatus == MovingStatus.HUNTING) {
+        if (movingStatus == MovingStatus.HUNTING && !food.isEmpty()) {
             moveHunt(findNearestFood(food), time);
         }
         else {

@@ -1,9 +1,10 @@
 // File: Snail.java
 // Concrete class for Pet in this Aquarium
 
+import java.awt.*;
 import java.util.*;
 
-public class Snail implements MovingObject {
+public class Snail implements MovingObject,Drawable{
     protected Position currentPosition;
     private Position destination;
     private double moveTime;
@@ -91,7 +92,7 @@ public class Snail implements MovingObject {
     //     }
     // }
 
-    public void move(Position destination, double time, MovingStatus movingStatus){
+    public <T> void move(Position destination, double time, MovingStatus movingStatus, LinkedList<T> food){
 
     }
 
@@ -106,5 +107,21 @@ public class Snail implements MovingObject {
             }
         }
         return nearestCoin;
+    }
+
+    public void draw(Graphics g, Toolkit t, Controller con){
+        if (movingStatus == MovingStatus.STATIC) {
+            if (getFaceDirection()) {
+                g.drawImage(t.getImage("src/images/Snail_shel_right.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+            } else {
+                g.drawImage(t.getImage("src/images/Snail_shel.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+            }
+        }else{
+            if (getFaceDirection()) {
+                g.drawImage(t.getImage("src/images/Snail_right_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+            } else {
+                g.drawImage(t.getImage("src/images/Snail_left_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+            }
+        }
     }
 }
