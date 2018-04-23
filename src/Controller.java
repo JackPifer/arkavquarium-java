@@ -63,9 +63,31 @@ public class Controller extends JPanel {
         for(int gupCount = 0;gupCount<tank.getListOfGuppy().getSize(); gupCount++){
             Guppy curr = tank.getListOfGuppy().get(gupCount);
             curr.changeMovingStatus(tank.getListOfFishFood());
-            curr.move(time,);
+            curr.move(time,tank.getListOfFishFood());
+            curr.eatFood();
+            if (curr.getCoinTime()<0){
+                tank.addCoin(curr.extractCoin());
+            }
         }
 
+        for(int pirCount = 0;pirCount<tank.getListOfPiranha().getSize(); pirCount++){
+            Piranha curr = tank.getListOfPiranha().get(pirCount);
+            curr.changeMovingStatus(tank.getListOfGuppy());
+            curr.move(time,tank.getListOfGuppy());
+            for(int gupCount = 0;gupCount<tank.getListOfGuppy().getSize(); gupCount++){
+                tank.getListOfFishFood().get(food).moveDown(time);
+            }
+        }
+
+        for(int foodCount = 0;foodCount<tank.getListOfFishFood().getSize(); foodCount++){
+            tank.getListOfFishFood().get(foodCount).moveDown(time);
+        }
+
+        for(int coinCount = 0;coinCount<tank.getListOfCoin().getSize(); coinCount++){
+            tank.getListOfCoin().get(coinCount).moveDown(time);
+        }
+
+        tank.getSnail().move(time,tank.getListOfCoin());
 
         f.setSize(Aquarium.DEFAULT_WIDTH,Aquarium.DEFAULT_HEIGHT);
         f.setVisible(true);
