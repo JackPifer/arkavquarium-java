@@ -1,6 +1,7 @@
 import java.util.*;
 
 public abstract class Fish implements MovingObject {
+    protected boolean isAlive;
     protected Position currentPosition;
     protected Position destination;
     protected MovingStatus movingStatus;
@@ -26,6 +27,7 @@ public abstract class Fish implements MovingObject {
         this.moveTime = 0;
         this.movingStatus = MovingStatus.RANDOM;
         this.faceDirection = true;
+        this.isAlive = true;
         this.hungerLevel = DEFAULT_HUNGER_LEVEL;
     }
 
@@ -52,6 +54,10 @@ public abstract class Fish implements MovingObject {
 
     public int getMovingSpeed() {
         return this.movingSpeed;
+    }
+
+    public boolean getIsAlive() {
+        return this.isAlive;
     }
 
     public int getHungryLevelLimit() {
@@ -81,6 +87,14 @@ public abstract class Fish implements MovingObject {
 
     public void setMovingStatus(MovingStatus movingStatus) {
         this.movingStatus = movingStatus;
+    }
+
+    public void changeIsAlive() {
+        if(this.isAlive = true) {
+            this.isAlive = false;
+        } else {
+            this.isAlive = true;
+        }
     }
 
     public void changeFaceDirection() {
