@@ -127,7 +127,8 @@ public abstract class Fish implements MovingObject {
     //     this.yPos += mult * this.speed*Math.cos(a)*t;
     // }
 
-    public <T> void move(Position destination,double time, MovingStatus movingStatus, LinkedList<T> food) {
+    public <T> void move(double time, LinkedList<T> food) {
+        Position destination = new Position(1 + (Aquarium.DEFAULT_WIDTH - 1) * r.nextDouble(),1 + (Aquarium.DEFAULT_HEIGHT - 1) * r.nextDouble());
         if (movingStatus == MovingStatus.HUNTING && !food.isEmpty()) {
             moveHunt(findNearestFood(food), time);
         }
@@ -196,7 +197,7 @@ public abstract class Fish implements MovingObject {
     }
 
     public abstract void eatFood();
-    public void changeMovingStatus(LinkedList<Objects> foods) {
+    public <T> void changeMovingStatus(LinkedList<T> foods) {
         if (!foods.isEmpty() && this.isHungry()) {
             this.movingStatus = MovingStatus.HUNTING;
         } else {

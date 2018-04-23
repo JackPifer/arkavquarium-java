@@ -60,6 +60,13 @@ public class Controller extends JPanel {
                 }
             }
         });
+        for(int gupCount = 0;gupCount<tank.getListOfGuppy().getSize(); gupCount++){
+            Guppy curr = tank.getListOfGuppy().get(gupCount);
+            curr.changeMovingStatus(tank.getListOfFishFood());
+            curr.move(time,);
+        }
+
+
         f.setSize(Aquarium.DEFAULT_WIDTH,Aquarium.DEFAULT_HEIGHT);
         f.setVisible(true);
 
@@ -68,7 +75,22 @@ public class Controller extends JPanel {
     @Override
     public void paint(Graphics g) {
         Toolkit t = Toolkit.getDefaultToolkit();
-        g.drawImage(t.getImage("src/images/Aquarium4.jpg"),0,0,this);
+        tank.draw(g,t,this);
 
+        for(int gupCount = 0;gupCount<tank.getListOfGuppy().getSize(); gupCount++){
+            tank.getListOfGuppy().get(gupCount).draw(g,t,this);
+        }
+
+        for(int pirCount = 0;pirCount<tank.getListOfPiranha().getSize(); pirCount++){
+            tank.getListOfPiranha().get(pirCount).draw(g,t,this);
+        }
+
+        for(int foodCount = 0;foodCount<tank.getListOfFishFood().getSize(); foodCount++){
+            tank.getListOfFishFood().get(foodCount).draw(g,t,this);
+        }
+
+        for(int coinCount = 0;coinCount<tank.getListOfCoin().getSize(); coinCount++){
+            tank.getListOfCoin().get(coinCount).draw(g,t,this);
+        }
     }
 }

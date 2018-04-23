@@ -1,4 +1,6 @@
-public class Aquarium {
+import java.awt.*;
+
+public class Aquarium implements Drawable{
     public static final int DEFAULT_WIDTH = 640;
     public static final int DEFAULT_HEIGHT = 480;
 
@@ -67,4 +69,11 @@ public class Aquarium {
     public void removeFishFood(FishFood food) {
         this.listOfFishFood.remove(food);
     }
+
+    public void draw(Graphics g, Toolkit t, Controller con) {
+        g.drawImage(t.getImage("src/images/Aquarium4.png"), 0, 0, con);
+
+    }
+
+
 }

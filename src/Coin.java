@@ -1,7 +1,9 @@
 // File: Coin.java
 // Responsibility : Act as Coin for player to get to increase money
 
-public class Coin extends DroppableItem {
+import java.awt.*;
+
+public class Coin extends DroppableItem implements Drawable{
     private double value;
 
     // User-defined Constructor
@@ -18,5 +20,10 @@ public class Coin extends DroppableItem {
     //Setter
     public void setValue(double value) {
         this.value = value;
+    }
+
+    public void draw(Graphics g, Toolkit t, Controller con) {
+        g.drawImage(t.getImage("src/images/Coin.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+
     }
 }
