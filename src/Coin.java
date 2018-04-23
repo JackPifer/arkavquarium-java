@@ -23,7 +23,7 @@ public class Coin extends DroppableItem implements Drawable{
     }
 
     public void draw(Graphics g, Toolkit t, Controller con) {
-        g.drawImage(t.getImage("src/images/Coin.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+        g.drawImage(t.getImage("images/Coin.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
 
     }
 }

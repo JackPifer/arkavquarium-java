@@ -71,7 +71,7 @@ public class Aquarium implements Drawable{
     }
 
     public void draw(Graphics g, Toolkit t, Controller con) {
-        g.drawImage(t.getImage("src/images/Aquarium4.png"), 0, 0, con);
+        g.drawImage(t.getImage("images/Aquarium4.jpg"), 0, 0, con);
 
     }
 

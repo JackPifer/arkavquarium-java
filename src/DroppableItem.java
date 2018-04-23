@@ -20,7 +20,7 @@ public class DroppableItem {
 
     // Method for vertical move
     public void moveDown(double t){
-        this.currentPosition.setY(20*t);
+        this.currentPosition.setY(getCurrentPosition().getY()+20*t);
     }
 
 }

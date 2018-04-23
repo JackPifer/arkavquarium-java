@@ -147,6 +147,8 @@ public abstract class Fish implements MovingObject {
             moveHunt(findNearestFood(food), time);
         }
         else {
+            System.out.println(destination.getX());
+            System.out.println(destination.getY());
             moveRandom(destination, time);
         }
     }

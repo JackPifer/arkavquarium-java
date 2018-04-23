@@ -10,7 +10,7 @@ public class FishFood extends DroppableItem implements Drawable{
 
     @Override
     public void draw(Graphics g, Toolkit t, Controller con) {
-        g.drawImage(t.getImage("src/images/Food.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+        g.drawImage(t.getImage("images/Ikan.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
 
     }
 }

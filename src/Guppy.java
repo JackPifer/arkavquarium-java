@@ -76,29 +76,29 @@ public class Guppy extends Fish implements Drawable{
         if (getSize() == 1) {
             if (!isHungry()) {
                 if (getFaceDirection()) {
-                    g.drawImage(t.getImage("src/images/Small_Guppsy_right_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+                    g.drawImage(t.getImage("images/ikan.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
                 } else {
-                    g.drawImage(t.getImage("src/images/Small_Guppsy_left_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+                    g.drawImage(t.getImage("images/ikan.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
                 }
             } else {
                 if (getFaceDirection()) {
-                    g.drawImage(t.getImage("src/images/Small_Hungry_Guppsy_right_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+                    g.drawImage(t.getImage("images/Small_Hungry_Guppsy_right_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
                 } else {
-                    g.drawImage(t.getImage("src/images/Small_Hungry_Guppsy_left_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+                    g.drawImage(t.getImage("images/Small_Hungry_Guppsy_left_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
                 }
             }
         }else if (getSize() == 2){
             if (!isHungry()) {
                 if (getFaceDirection()) {
-                    g.drawImage(t.getImage("src/images/Medium_Guppsy_right_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+                    g.drawImage(t.getImage("images/Medium_Guppsy_right_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
                 } else {
-                    g.drawImage(t.getImage("src/images/Medium_Guppsy_left_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+                    g.drawImage(t.getImage("images/Medium_Guppsy_left_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
                 }
             } else {
                 if (getFaceDirection()) {
-                    g.drawImage(t.getImage("src/images/Medium_Hungry_Guppsy_right_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+                    g.drawImage(t.getImage("images/Medium_Hungry_Guppsy_right_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
                 } else {
-                    g.drawImage(t.getImage("src/images/Medium_Hungry_Guppsy_left_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+                    g.drawImage(t.getImage("images/Medium_Hungry_Guppsy_left_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
                 }
             }
         }else{
