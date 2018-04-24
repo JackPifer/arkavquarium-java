@@ -30,7 +30,7 @@ public class LinkedList<T> {
 
     // Mengembalikan nilai True jika linked list kosong dan false jika sebaliknya
     public boolean isEmpty() {
-        return this.first == null;
+        return this.getSize() == 0;
     }
 
     public int getSize() {
