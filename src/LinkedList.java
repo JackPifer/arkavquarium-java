@@ -99,7 +99,7 @@ public class LinkedList<T> {
     }
 // Method ini mengembalikan elemen dengan tipe T pada indeks ke-i.
     public T get(int index){
-        if(this.getSize() >= index) {
+        if(this.getSize() <= index) {
             return null;
         }else if(index == 0) {
 			// Get the first element
