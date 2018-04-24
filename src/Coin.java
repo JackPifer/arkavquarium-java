@@ -46,7 +46,8 @@ public class Coin extends DroppableItem implements Drawable{
      * @param t Object to grab image
      * @param con Game controller
      */
-    public void draw(Graphics g, Toolkit t, Controller con) {
+    
+     public void draw(Graphics g, Toolkit t, Controller con) {
         if(this.getValue()==25) {
             if( this.coinStatus < 1 || this.isBottom()) {
                 g.drawImage(t.getImage("images/Silver_coin.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
@@ -71,9 +72,8 @@ public class Coin extends DroppableItem implements Drawable{
                 g.drawImage(t.getImage("images/Gold_coin_3.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
             }
             this.coinStatus += 0.125;
-        }else{
+        } else {
             g.drawImage(t.getImage("images/Diamond_Coin.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
-
         }
     }
 }
