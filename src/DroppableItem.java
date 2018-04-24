@@ -39,11 +39,10 @@ public class DroppableItem {
     // Method for vertical move
     /** 
      * move object downwards.
-     * @param t move distance.
      */
-    public void moveDown(double t) {
+    public void moveDown() {
         if (this.getCurrentPosition().getY() <= 420) {
-            this.currentPosition.setY(this.getCurrentPosition().getY() + t);
+            this.currentPosition.setY(this.getCurrentPosition().getY() + 1);
         }
     }
 

@@ -16,14 +16,6 @@ public class Controller extends JPanel {
      */
     public static JFrame f = new JFrame("Arkavquarium");
     /** 
-     * prev time.
-     */
-    public static long prev = System.nanoTime();
-    /** 
-     * time.
-     */
-    public static long time = 1;
-    /** 
      * constructor.
      */
     public Controller() {
@@ -122,8 +114,6 @@ public class Controller extends JPanel {
             }
         });
         t.start();
-
-
     }
 
     /**
@@ -134,7 +124,7 @@ public class Controller extends JPanel {
             Guppy curr = tank.getListOfGuppy().get(gupCount);
             if (curr.getIsAlive()) {
                 curr.changeMovingStatus(tank.getListOfFishFood());
-                curr.move(time, tank.getListOfFishFood());
+                curr.move(tank.getListOfFishFood());
                 curr.setCoinTime(curr.getCoinTime()-0.02);
                 for (int foodCount = 0; foodCount < tank.getListOfFishFood().getSize(); foodCount++) {
                     if (curr.isHungry() && curr.getCurrentPosition().calculateDistance(tank.getListOfFishFood().get(foodCount).getCurrentPosition()) < 15) {
@@ -161,7 +151,7 @@ public class Controller extends JPanel {
             Piranha curr = tank.getListOfPiranha().get(pirCount);
             if (curr.getIsAlive()) {
                 curr.changeMovingStatus(tank.getListOfGuppy());
-                curr.move(time, tank.getListOfGuppy());
+                curr.move(tank.getListOfGuppy());
                 for (int gupCount = 0; gupCount < tank.getListOfGuppy().getSize(); gupCount++) {
                     if (curr.isHungry() && curr.getCurrentPosition().calculateDistance(tank.getListOfGuppy().get(gupCount).getCurrentPosition()) < 15) {
                         tank.addCoin( curr.extractCoin(tank.getListOfGuppy().get(gupCount).getSize()) );
@@ -182,7 +172,7 @@ public class Controller extends JPanel {
      */
     public void animateFishFood() {
         for (int foodCount = 0; foodCount < tank.getListOfFishFood().getSize(); foodCount++) {
-            tank.getListOfFishFood().get(foodCount).moveDown(time);
+            tank.getListOfFishFood().get(foodCount).moveDown();
             if (tank.getListOfFishFood().get(foodCount).isBottom()){
                 tank.removeFishFood(tank.getListOfFishFood().get(foodCount));
             }
@@ -194,7 +184,7 @@ public class Controller extends JPanel {
      */
     public void animateCoin() {
         for (int coinCount = 0; coinCount < tank.getListOfCoin().getSize(); coinCount++) {
-            tank.getListOfCoin().get(coinCount).moveDown(time);
+            tank.getListOfCoin().get(coinCount).moveDown();
         }
     }
 
@@ -203,7 +193,7 @@ public class Controller extends JPanel {
      */
     public void animateSnail(){
         tank.getSnail().changeMovingStatus(tank.getListOfCoin());
-        tank.getSnail().move(time,tank.getListOfCoin());
+        tank.getSnail().move(tank.getListOfCoin());
         for(int coinCount=0;coinCount<tank.getListOfCoin().getSize();coinCount++){
             if(tank.getListOfCoin().get(coinCount).getCurrentPosition().calculateDistance(tank.getSnail().getCurrentPosition()) < 15){
                 player.increaseMoney(tank.getListOfCoin().get(coinCount).getValue());
@@ -215,7 +205,7 @@ public class Controller extends JPanel {
     /**
      * animate egg.
      * @param g graphic.
-     * @param t time.
+     * @param t toolkit.
      */
     public void animateEgg(Graphics g, Toolkit t){
         if(player.getEgg()==0){
@@ -239,11 +229,14 @@ public class Controller extends JPanel {
         if(!player.isWin()) {
             tank.draw(g, t, null);
             Font font = new Font("Gill Sans Ultra Bold", Font.BOLD, 20);
-            g.setColor(Color.YELLOW);
+            g.setColor(new Color(255,215,0));
             g.setFont(font);
             g.drawImage(t.getImage("images/Money.png"),40,20,null);
-            g.drawString(Double.toString(player.getMoney()), 70, 48);
-
+            g.drawString(Double.toString(player.getMoney()), 70, 45);
+            g.setColor(Color.white);
+            g.setFont(new Font("Gill Sans",Font.BOLD, 12));
+            g.drawString("F : Buy Guppy ($50)",40,70);
+            g.drawString("P : Buy Piranha ($100)",40,85);
             for (int gupCount = 0; gupCount < tank.getListOfGuppy().getSize(); gupCount++) {
                 tank.getListOfGuppy().get(gupCount).draw(g, t, this);
             }
@@ -260,6 +253,7 @@ public class Controller extends JPanel {
                 tank.getListOfCoin().get(coinCount).draw(g, t, this);
             }
             tank.getSnail().draw(g, t, this);
+            g.drawImage(t.getImage("images/ArkavQuarium.png"),210,20,null);
             animateGuppy();
             animateCoin();
             animatePiranha();

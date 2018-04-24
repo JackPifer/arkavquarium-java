@@ -12,8 +12,7 @@ public interface MovingObject {
 
     /** 
      * move.
-     * @param time time.
      * @param food LinkedList of food.
      */
-    public <T> void move(double time, LinkedList<T> food);
+    public <T> void move(LinkedList<T> food);
 }

@@ -23,7 +23,7 @@ public class Snail implements MovingObject,Drawable{
      * constructor.
      */
     public Snail() {
-        this.currentPosition = new Position( r.nextDouble() * (1+(600-1)), 410.0);
+        this.currentPosition = new Position( r.nextDouble() * (1+(600-1)), 420.0);
         this.destination = new Position(0.0, 420.0);
         this.moveTime = 0;
         this.faceDirection = true;
@@ -120,10 +120,9 @@ public class Snail implements MovingObject,Drawable{
 
     /** 
      * move the snail.
-     * @param time time.
      * @param food food.
      */
-    public <T> void move(double time, LinkedList<T> food) {
+    public <T> void move(LinkedList<T> food) {
         if (movingStatus == MovingStatus.HUNTING ) {
             this.destination = findNearestCoin(food);
             if(this.currentPosition.getX() - this.destination.getX() > 0){
@@ -133,7 +132,7 @@ public class Snail implements MovingObject,Drawable{
             }
             if(Math.abs(this.currentPosition.getX() - this.destination.getX()) >= 1) {
                 double a = Math.atan2(this.destination.getX() - this.currentPosition.getX(), 0);
-                this.currentPosition.setX(1.3 * this.movingSpeed * Math.sin(a) * time + this.currentPosition.getX());
+                this.currentPosition.setX(1.3 * this.movingSpeed * Math.sin(a) + this.currentPosition.getX());
             }
         }
     }
@@ -165,15 +164,15 @@ public class Snail implements MovingObject,Drawable{
     public void draw(Graphics g, Toolkit t, Controller con){
         if (movingStatus == MovingStatus.STATIC) {
             if (getFaceDirection()) {
-                g.drawImage(t.getImage("images/Snail_shel.png"), (int) getCurrentPosition().getX() + 2, (int) getCurrentPosition().getY() + 7, con);
+                g.drawImage(t.getImage("images/Snail_shel.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY() + 7, con);
             } else {
-                g.drawImage(t.getImage("images/Snail_shel_right.png"), (int) getCurrentPosition().getX() + 2, (int) getCurrentPosition().getY() + 7, con);
+                g.drawImage(t.getImage("images/Snail_shel_right.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY() + 7, con);
             }
         } else {
             if (getFaceDirection()) {
-                g.drawImage(t.getImage("images/Snail_left_side.png"), (int) getCurrentPosition().getX() + 2, (int) getCurrentPosition().getY(), con);
+                g.drawImage(t.getImage("images/Snail_left_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
             } else {
-                g.drawImage(t.getImage("images/Snail_right_side.png"), (int) getCurrentPosition().getX() + 2, (int) getCurrentPosition().getY(), con);
+                g.drawImage(t.getImage("images/Snail_right_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
             }
         }
     }
