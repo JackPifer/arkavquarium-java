@@ -18,7 +18,7 @@ public class Player {
    * constructor.
    */
   public Player() {
-    this.money = 500;
+    this.money = 150;
     this.egg = 0;
     this.playerStatus = PlayerStatus.ON_GAME;
   }

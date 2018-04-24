@@ -15,7 +15,7 @@ public class Controller extends JPanel {
   /** 
    * JFrame.
    */
-  public static JFrame f = new JFrame("Arkavquarium");
+  public static JFrame f = new JFrame("ArkavQuarium");
   
   /** 
    * constructor.
@@ -24,8 +24,6 @@ public class Controller extends JPanel {
   public Controller() {
     this.tank = new Aquarium();
     this.player = new Player();
-    this.tank.addGuppy(new Guppy());
-    this.tank.addGuppy(new Guppy());
   }
 
   /** 
@@ -313,16 +311,15 @@ public class Controller extends JPanel {
   public void paintComponent(Graphics g) {
     Toolkit t = Toolkit.getDefaultToolkit();
     tank.draw(g,t);
-    if (!player.isWin()) {
+    if (!player.isWin() && !player.isLose(tank)) {
       this.drawAndAnimateObject(g,t);
       this.graphicAccesories(g,t);
-      if (player.isLose(tank)) {
-        g.drawImage(t.getImage("images/Lose.png"), 
-            Aquarium.DEFAULT_WIDTH / 2 - 170, Aquarium.DEFAULT_HEIGHT / 2 - 50, null);
-      }
-    } else {
+    } else if (player.isWin()) {
       g.drawImage(t.getImage("images/Win.png"), 
           Aquarium.DEFAULT_WIDTH / 2 - 270,Aquarium.DEFAULT_HEIGHT / 2 - 75 ,null);
+    } else if (player.isLose(tank)) {
+      g.drawImage(t.getImage("images/Lose.png"), 
+          Aquarium.DEFAULT_WIDTH / 2 - 170, Aquarium.DEFAULT_HEIGHT / 2 - 50, null);
     }
   }
 }
