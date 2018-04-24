@@ -76,7 +76,6 @@ public class Snail implements MovingObject,Drawable{
     public <T> void move(double time, LinkedList<T> food) {
         if (movingStatus == MovingStatus.HUNTING ) {
             this.destination = findNearestCoin(food);
-            System.out.println(destination.getX());
             if(this.currentPosition.getX() - this.destination.getX() > 0){
                 this.faceDirection = true;
             }else {
@@ -106,15 +105,15 @@ public class Snail implements MovingObject,Drawable{
     public void draw(Graphics g, Toolkit t, Controller con){
         if (movingStatus == MovingStatus.STATIC) {
             if (getFaceDirection()) {
-                g.drawImage(t.getImage("images/Snail_shel.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+                g.drawImage(t.getImage("images/Snail_shel.png"), (int) getCurrentPosition().getX() + 2, (int) getCurrentPosition().getY() + 7, con);
             } else {
-                g.drawImage(t.getImage("images/Snail_shel_right.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+                g.drawImage(t.getImage("images/Snail_shel_right.png"), (int) getCurrentPosition().getX() + 2, (int) getCurrentPosition().getY() + 7, con);
             }
-        }else{
+        } else {
             if (getFaceDirection()) {
-                g.drawImage(t.getImage("images/Snail_left_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+                g.drawImage(t.getImage("images/Snail_left_side.png"), (int) getCurrentPosition().getX() + 2, (int) getCurrentPosition().getY(), con);
             } else {
-                g.drawImage(t.getImage("images/Snail_right_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+                g.drawImage(t.getImage("images/Snail_right_side.png"), (int) getCurrentPosition().getX() + 2, (int) getCurrentPosition().getY(), con);
             }
         }
     }
