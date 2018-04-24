@@ -14,7 +14,7 @@ public class Controller extends JPanel {
     /** 
      * JFrame.
      */
-    public static JFrame f = new JFrame();
+    public static JFrame f = new JFrame("Arkavquarium");
     /** 
      * prev time.
      */
@@ -83,12 +83,8 @@ public class Controller extends JPanel {
                     if(Math.abs(e.getX()-584) < 15 && Math.abs(e.getY()-72) < 15){
                         buyEgg();
                         buyegg = true;
-                        System.out.println("EGG");
                     }else{
                         for(int coinCount=0;coinCount<tank.getListOfCoin().getSize();coinCount++){
-//                            System.out.println(e.getY()-33-tank.getListOfCoin().get(coinCount).getCurrentPosition().getY());
-//                            System.out.println(e.getX()-18-tank.getListOfCoin().get(coinCount).getCurrentPosition().getX());
-
                             if(tank.getListOfCoin().get(coinCount).getCurrentPosition().calculateDistance(new Position(e.getX()-18,e.getY()-33))<15){
                                 player.increaseMoney(tank.getListOfCoin().get(coinCount).getValue());
                                 tank.removeCoin(tank.getListOfCoin().get(coinCount));
@@ -187,7 +183,7 @@ public class Controller extends JPanel {
     public void animateFishFood() {
         for (int foodCount = 0; foodCount < tank.getListOfFishFood().getSize(); foodCount++) {
             tank.getListOfFishFood().get(foodCount).moveDown(time);
-            if (tank.getListOfFishFood().get(foodCount).getCurrentPosition().getY() >= 410){
+            if (tank.getListOfFishFood().get(foodCount).isBottom()){
                 tank.removeFishFood(tank.getListOfFishFood().get(foodCount));
             }
         }

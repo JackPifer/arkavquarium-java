@@ -8,6 +8,7 @@ import java.awt.*;
  */
 public class Coin extends DroppableItem implements Drawable{
     private double value;
+    private double coinStatus;
 
     // User-defined Constructor
     /** 
@@ -18,6 +19,7 @@ public class Coin extends DroppableItem implements Drawable{
     public Coin(double value, Position fishPosition){
         super(fishPosition);
         this.value = value;
+        this.coinStatus = 0.0;
     }
 
     //Getter
@@ -44,16 +46,34 @@ public class Coin extends DroppableItem implements Drawable{
      * @param t Object to grab image
      * @param con Game controller
      */
-    public void draw(Graphics g, Toolkit t, Controller con) {
+    
+     public void draw(Graphics g, Toolkit t, Controller con) {
         if(this.getValue()==25) {
-            g.drawImage(t.getImage("images/Silver_coin.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
-
-        }else if(this.getValue()==50){
-            g.drawImage(t.getImage("images/Gold_coin.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
-
-        }else{
+            if( this.coinStatus < 1 || this.isBottom()) {
+                g.drawImage(t.getImage("images/Silver_coin.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+            } else if(this.coinStatus < 2) {
+                g.drawImage(t.getImage("images/Silver_coin_1.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+            } else if (this.coinStatus < 3) {
+                g.drawImage(t.getImage("images/Silver_coin_2.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+            } else {
+                this.coinStatus = 0;
+                g.drawImage(t.getImage("images/Silver_coin_3.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+            }
+            this.coinStatus += 0.125;
+        } else if(this.getValue()==50){
+            if( this.coinStatus < 1 || this.isBottom()) {
+                g.drawImage(t.getImage("images/Gold_coin.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+            } else if(this.coinStatus < 2) {
+                g.drawImage(t.getImage("images/Gold_coin_1.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+            } else if (this.coinStatus < 3) {
+                g.drawImage(t.getImage("images/Gold_coin_2.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+            } else {
+                this.coinStatus = 0;
+                g.drawImage(t.getImage("images/Gold_coin_3.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+            }
+            this.coinStatus += 0.125;
+        } else {
             g.drawImage(t.getImage("images/Diamond_Coin.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
-
         }
     }
 }
