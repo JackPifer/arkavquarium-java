@@ -1,22 +1,46 @@
 import java.awt.*;
+/** 
+ * represents a Piranha.
+ * @version 1.0.
+ */
 public class Piranha extends Fish implements Drawable{
+    /** 
+     * price of a piranha.
+     */
     public static final int price = 100;
     
     //Constructor
+    /** 
+     * constructor.
+     */
     public Piranha(){
         super();
     }
 
+    /** 
+     * extract coin.
+     * @param val value of coin
+     * @return Coin
+     */
     public Coin extractCoin(int val){
         val = 100 * (val+1);
         return new Coin(val,new Position(this.getCurrentPosition().getX(),this.getCurrentPosition().getY()));
     }
 
+    /** 
+     * eat food.
+     */
     @Override
     public void eatFood(){
         this.setHungerLevel(60);
     }
 
+    /** 
+     * draw to aquarium.
+     * @param g Draw container.
+     * @param t Object to grab image.
+     * @param con Game controller.
+     */
     public void draw(Graphics g, Toolkit t, Controller con){
         if (!isHungry()) {
             if (getFaceDirection()) {

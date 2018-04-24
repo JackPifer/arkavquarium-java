@@ -3,39 +3,63 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+/** 
+ * represent controller.
+ * @version 1.0.
+ */
 public class Controller extends JPanel {
     private Aquarium tank;
     private Timer t;
     private Player player;
+    /** 
+     * JFrame.
+     */
     public static JFrame f = new JFrame();
+    /** 
+     * prev time.
+     */
     public static long prev = System.nanoTime();
+    /** 
+     * time.
+     */
     public static long time = 1;
+    /** 
+     * constructor.
+     */
     public Controller() {
        this.tank = new Aquarium();
        this.player = new Player();
        tank.addGuppy(new Guppy());
        tank.addGuppy(new Guppy());
     }
-    
+    /** 
+     * buy egg.
+     */
     public void buyEgg() {
         this.player.payEgg();
     }
-
+    /**
+     * buy guppy.
+     */
     public void buyGuppy() {
         if(this.player.payGuppy()) {
             Guppy guppy = new Guppy();
             this.tank.addGuppy(guppy);
         }
     }
-
+    /**
+     * buy piranha.
+     */
     public void buyPiranha() {
         if(this.player.payPiranha()) {
             Piranha piranha = new Piranha();
             this.tank.addPiranha(piranha);
         }
     }
-
+    /**
+     * buy food.
+     * @param initPosition object Position of the food.
+     */
     public void buyFood(Position initPosition) {
         if(this.player.payFood()) {
             FishFood food = new FishFood(initPosition);
@@ -43,6 +67,9 @@ public class Controller extends JPanel {
         }
     }
 
+    /**
+     * run.
+     */
     public void run(){
 
         f.add(this);
@@ -103,6 +130,9 @@ public class Controller extends JPanel {
 
     }
 
+    /**
+     * animate guppy.
+     */
     public void animateGuppy() {
         for (int gupCount = 0; gupCount < tank.getListOfGuppy().getSize(); gupCount++) {
             Guppy curr = tank.getListOfGuppy().get(gupCount);
@@ -127,6 +157,9 @@ public class Controller extends JPanel {
         }
     }
 
+    /**
+     * animate piranha.
+     */
     public void animatePiranha() {
         for (int pirCount = 0; pirCount < tank.getListOfPiranha().getSize(); pirCount++) {
             Piranha curr = tank.getListOfPiranha().get(pirCount);
@@ -148,6 +181,9 @@ public class Controller extends JPanel {
         }
     }
 
+    /**
+     * animate FishFood.
+     */
     public void animateFishFood() {
         for (int foodCount = 0; foodCount < tank.getListOfFishFood().getSize(); foodCount++) {
             tank.getListOfFishFood().get(foodCount).moveDown(time);
@@ -157,12 +193,18 @@ public class Controller extends JPanel {
         }
     }
 
+    /**
+     * animate Coin.
+     */
     public void animateCoin() {
         for (int coinCount = 0; coinCount < tank.getListOfCoin().getSize(); coinCount++) {
             tank.getListOfCoin().get(coinCount).moveDown(time);
         }
     }
 
+    /**
+     * animate Snail.
+     */
     public void animateSnail(){
         tank.getSnail().changeMovingStatus(tank.getListOfCoin());
         tank.getSnail().move(time,tank.getListOfCoin());
@@ -174,6 +216,11 @@ public class Controller extends JPanel {
         }
     }
 
+    /**
+     * animate egg.
+     * @param g graphic.
+     * @param t time.
+     */
     public void animateEgg(Graphics g, Toolkit t){
         if(player.getEgg()==0){
             g.drawImage(t.getImage("images/Egg_L1.png"),560,20,null);
@@ -185,6 +232,11 @@ public class Controller extends JPanel {
         }
     }
 
+
+    /**
+     * paint.
+     * @param g graphic.
+     */
     @Override
     public void paintComponent(Graphics g) {
         Toolkit t = Toolkit.getDefaultToolkit();

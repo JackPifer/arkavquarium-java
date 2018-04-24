@@ -1,38 +1,40 @@
+/** 
+ * Represents a linkedlist
+ * @version 1.0
+ */
 public class LinkedList<T> {
     private Node<T> first;
 
-    public static void main(String args[]) {
-        LinkedList<String> aa = new LinkedList<String>();
-        System.out.println(aa.getSize());
-        aa.add("Anjing");
-        aa.add("babi");
-        System.out.println(aa.getSize());
-        aa.printList();
-        System.out.println(aa.find("babi"));
-        System.out.println(aa.get(1));
-        aa.remove("babi");
-        System.out.println(aa.getSize());
-        aa.printList();
-        System.out.println(aa.find("Anjing"));
-        System.out.println(aa.isEmpty());
-        aa.remove("Anjing");
-        System.out.println(aa.isEmpty());
-    }
      // Constructor LinkedList
+     /** 
+     * constructor.
+     */
     public LinkedList() {
         this.first = null;
     }
 
     // Geter
+    /** 
+     * getter.
+     * @return Node.
+     */
     public Node<T> getFirst() {
         return this.first;
     }
 
     // Mengembalikan nilai True jika linked list kosong dan false jika sebaliknya
+    /** 
+     * getter.
+     * @return boolean.
+     */
     public boolean isEmpty() {
         return this.getSize() == 0;
     }
 
+    /** 
+     * getter.
+     * @return integer.
+     */
     public int getSize() {
         Node<T> curr = this.first;
         int count = 0;
@@ -44,6 +46,10 @@ public class LinkedList<T> {
     }
 
     // Method ini menambahkan elemen sebagai elemen paling belakang pada LinkedList
+    /** 
+     * Add to last element of linkedlist.
+     * @param element element to add.
+     */
     public void add(T element) {
         if (this.first == null) {
 			this.first = new Node<T>(element);
@@ -59,6 +65,11 @@ public class LinkedList<T> {
     }
 
     // Method ini mengembalikan indeks dimana elemen berada pada linked list dan -1 jika tidak ada
+    /** 
+     * return index of element, or -1 if not available.
+     * @param element element to find.
+     * @return integer index of the specified element.
+     */
     public int find(T element){
         Node<T> curr = this.first;
         int count = 0;
@@ -79,6 +90,10 @@ public class LinkedList<T> {
     }
 
     // Method ini membuang elemen dengan identitas demikian
+    /** 
+     * remove element from linkedlist.
+     * @param element element to remove.
+     */
     public void remove(T element){
         Node<T> prec = null;
         Node<T> curr = this.first;
@@ -98,6 +113,11 @@ public class LinkedList<T> {
         }
     }
 // Method ini mengembalikan elemen dengan tipe T pada indeks ke-i.
+    /**    
+     * get element on index, if not available return null.
+     * @param index of the element.
+     * @return type of the element.
+     */
     public T get(int index){
         if(this.getSize() <= index) {
             return null;
@@ -114,6 +134,9 @@ public class LinkedList<T> {
 		}
     }
     
+    /** 
+     * print element in linkedlist.
+     */
     public void printList() {
 		if (this.first == null) {
 			System.out.println("List is Empty !!");

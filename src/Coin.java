@@ -3,7 +3,7 @@
 
 import java.awt.*;
 /** 
- * Representas a coin
+ * Represents a coin
  * @version 1.0
  */
 public class Coin extends DroppableItem implements Drawable{

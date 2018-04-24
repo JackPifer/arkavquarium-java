@@ -4,6 +4,10 @@
 import java.awt.*;
 import java.util.*;
 
+/** 
+ * Represents a snail.
+ * @version 1.0.
+ */
 public class Snail implements MovingObject,Drawable{
     protected Position currentPosition;
     private Position destination;
@@ -15,6 +19,9 @@ public class Snail implements MovingObject,Drawable{
     static Random r = new Random();
     
     //Constructor
+    /** 
+     * constructor.
+     */
     public Snail() {
         this.currentPosition = new Position( r.nextDouble() * (1+(600-1)), 410.0);
         this.destination = new Position(0.0, 420.0);
@@ -23,6 +30,10 @@ public class Snail implements MovingObject,Drawable{
         this.movingStatus = MovingStatus.STATIC;
     }
 
+    /** 
+     * constructor.
+     * @param initialPosition initialPosition of snail.
+     */
     public Snail(Position initialPosition) {
         this.currentPosition = initialPosition;
         this.destination = new Position(0.0, 420.0);
@@ -32,39 +43,73 @@ public class Snail implements MovingObject,Drawable{
     }
 
     //Getter
+    /** 
+     * getter.
+     * @return currentPosition.
+     */
     public Position getCurrentPosition() {
         return this.currentPosition;
     }
-    
+    /** 
+     * getter.
+     * @return destination.
+     */
     public Position getDestination() {
         return this.destination;
     }
-
+    /** 
+     * getter.
+     * @return boolean of face direction.
+     */
     public boolean getFaceDirection() {
         return this.faceDirection;
     }
     
+    /** 
+     * getter.
+     * @return moveTime.
+     */
     public double getMoveTime() {
         return this.moveTime;
     }
 
+    /** 
+     * getter.
+     * @return movingStatus.
+     */
     public MovingStatus getMovingStatus() {
         return this.movingStatus;
     }
 
     // Setter
+    /** 
+     * setter.
+     * @param currentPosition to change currentPosition.
+     */
     public void setCurrentPosition(Position currentPosition) {
         this.currentPosition = currentPosition;
     }
 
+    /** 
+     * setter.
+     * @param destination to change destination.
+     */
     public void setDestination(Position destination) {
         this.destination = destination;
     }
 
+    /** 
+     * setter.
+     * @param moveTime to change moveTime.
+     */
     public void setMoveTime(double moveTime) {
         this.moveTime = moveTime;
     }
 
+    /** 
+     * change moving status(HUNTING if coin available).
+     * @param coins list of coin.
+     */
     public void changeMovingStatus(LinkedList<Coin> coins) {
         if (coins.getSize()!=0) {
             this.movingStatus = MovingStatus.HUNTING;
@@ -73,6 +118,11 @@ public class Snail implements MovingObject,Drawable{
         }
     }
 
+    /** 
+     * move the snail.
+     * @param time time.
+     * @param food food.
+     */
     public <T> void move(double time, LinkedList<T> food) {
         if (movingStatus == MovingStatus.HUNTING ) {
             this.destination = findNearestCoin(food);
@@ -89,6 +139,10 @@ public class Snail implements MovingObject,Drawable{
         }
     }
 
+    /** 
+     * find nearest coin.
+     * @param coins linkedlist of coin.
+     */
     public <T> Position findNearestCoin(LinkedList<T> coins){
         Coin nearestCoin = (Coin) coins.get(0);
         double minDistance = this.currentPosition.calculateDistance(nearestCoin.getCurrentPosition());
@@ -103,6 +157,12 @@ public class Snail implements MovingObject,Drawable{
         return nearestCoin.getCurrentPosition();
     }
 
+    /** 
+     * draw to aquarium.
+     * @param g Draw container.
+     * @param t Object to grab image.
+     * @param con Game controller.
+     */
     public void draw(Graphics g, Toolkit t, Controller con){
         if (movingStatus == MovingStatus.STATIC) {
             if (getFaceDirection()) {
