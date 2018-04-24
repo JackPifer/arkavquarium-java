@@ -9,7 +9,7 @@ public abstract class Fish implements MovingObject {
     protected boolean faceDirection;
     protected int hungerLevel; 
     protected final  int hungryLevelLimit = 40;
-    protected final int movingSpeed = 40;
+    protected final int movingSpeed = 1;
 
     protected final int DEFAULT_HUNGER_LEVEL = 60;
     protected final double DEFAULT_X_POS = 0.0;
@@ -109,40 +109,9 @@ public abstract class Fish implements MovingObject {
         return this.hungerLevel < this.hungryLevelLimit;
     }
 
-    // public void move(double x, double y, double t, boolean huntFood){
-    //     double mult;
-    //     if(huntFood){
-    //         this.moveTime = 0.1 * (5 + (45 - 5) * r.nextDouble());
-    //         this.xDest = x;
-    //         this.yDest = y;
-    //         if(this.xPos - this.xDest > 0){
-    //             this.direction = true;
-    //         }else {
-    //             this.direction = false;
-    //         }
-    //     }else if(this.moveTime <= t || (Math.abs(this.xDest - this.xPos) < 3 && Math.abs(this.yDest - this.yPos) < 3)){
-    //         this.hungerTime -= 2;
-    //         this.moveTime = 0.1 * (5 + (45 - 5) * r.nextDouble());
-    //         if(this.xPos - this.xDest > 0){
-    //             this.direction = true;
-    //         }else {
-    //             this.direction = false;
-    //         }
-    //     }else {
-    //         this.moveTime -= t;
-    //     }
-    //     double a = Math.atan2(this.xDest-this.xPos,this.yDest-this.yPos);
-    //     if(huntFood){
-    //         mult = 1.3;
-    //     }else {
-    //         mult = 1;
-    //     }
-    //     this.xPos += mult * this.speed*Math.sin(a)*t;
-    //     this.yPos += mult * this.speed*Math.cos(a)*t;
-    // }
 
     public <T> void move(double time, LinkedList<T> food) {
-        Position destination = new Position(1 + (Aquarium.DEFAULT_WIDTH - 1) * r.nextDouble(),1 + (Aquarium.DEFAULT_HEIGHT - 1) * r.nextDouble());
+        Position destination = new Position(1 + (600 - 1) * r.nextDouble(),1 + (410 - 1) * r.nextDouble());
         if (movingStatus == MovingStatus.HUNTING ) {
             moveHunt(findNearestFood(food), time);
         }
@@ -154,7 +123,7 @@ public abstract class Fish implements MovingObject {
     public void moveHunt(Position destination, double t) {
         this.moveTime = 0.1 * (5 + (45 - 5) * r.nextDouble());
         this.destination = destination;
-        if(this.currentPosition.getX() - this.destination.getX() > 0){
+        if(this.getCurrentPosition().getX() - this.getDestination().getX() > 0){
          this.faceDirection = true;
         }else {
          this.faceDirection = false;
@@ -166,16 +135,16 @@ public abstract class Fish implements MovingObject {
 
     public void moveRandom(Position destination, double t) {
         if(this.moveTime <= t || (Math.abs(this.destination.getX() - this.currentPosition.getX()) < 3 && Math.abs(this.destination.getY() - this.currentPosition.getY()) < 3)) {
-            this.hungerLevel -= 2;
-            this.moveTime = 0.1 * (5 + (45 - 5) * r.nextDouble());
+            this.hungerLevel -= 3;
+            this.moveTime = 0.1*(5 + (45 - 5) * r.nextDouble());
             this.destination = destination;
-            if (this.currentPosition.calculateDistance(this.destination) > 0) {
+            if (this.getCurrentPosition().getX() - this.getDestination().getX() > 0) {
                 this.faceDirection = true;
             } else {
                 this.faceDirection = false;
             }
         } else {
-            this.moveTime -= t;
+            this.moveTime -= 0.02*t;
         }
         double a = Math.atan2(this.destination.getX() - this.currentPosition.getX(), this.destination.getY() - this.currentPosition.getY());
         this.currentPosition.setX(this.movingSpeed * Math.sin(a) * t + this.currentPosition.getX());
@@ -212,7 +181,7 @@ public abstract class Fish implements MovingObject {
 
     public abstract void eatFood();
     public <T> void changeMovingStatus(LinkedList<T> foods) {
-        if (!foods.isEmpty() && this.isHungry()) {
+        if (foods.getSize()!=0 && this.isHungry()) {
             this.movingStatus = MovingStatus.HUNTING;
         } else {
             this.movingStatus = MovingStatus.RANDOM;

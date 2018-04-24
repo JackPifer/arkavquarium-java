@@ -2,7 +2,7 @@ public class Player {
     public enum PlayerStatus {
         LOSE, WIN, ON_GAME;
     }
-    private int money;
+    private double money;
     private int egg;
     private PlayerStatus playerStatus;
 
@@ -16,7 +16,7 @@ public class Player {
         return this.playerStatus;
     }
 
-    public int getMoney() {
+    public double getMoney() {
         return this.money;
     }
 
@@ -28,11 +28,11 @@ public class Player {
         this.playerStatus = playerStatus;
     }
 
-    public void increaseMoney(int added) {
+    public void increaseMoney(double added) {
         this.money = this.money + added;
     }
     
-    public void decreaseMoney(int cost) {
+    public void decreaseMoney(double cost) {
         this.money = this.money - cost;
     }
 
@@ -45,6 +45,15 @@ public class Player {
             this.playerStatus = PlayerStatus.WIN;
             return true;
         } else {
+            return false;
+        }
+    }
+
+    public boolean isLose(Aquarium tank){
+        if (tank.getListOfCoin().getSize()==0 && tank.getListOfPiranha().getSize()==0 && tank.getListOfGuppy().getSize()==0 && this.getMoney() < Guppy.price){
+            this.playerStatus = PlayerStatus.LOSE;
+            return true;
+        }else{
             return false;
         }
     }
@@ -62,7 +71,7 @@ public class Player {
     }
     
     public boolean payEgg() {
-        if(isMoneyEnough(this.getEggPrice())) {
+        if(isMoneyEnough(this.getEggPrice()) && this.egg<=3) {
             this.egg++;
             this.decreaseMoney(this.getEggPrice());
             return true;

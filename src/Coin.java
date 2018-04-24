@@ -9,7 +9,6 @@ public class Coin extends DroppableItem implements Drawable{
     // User-defined Constructor
     public Coin(double value, Position fishPosition){
         super(fishPosition);
-        System.out.println(fishPosition.getY());
         this.value = value;
     }
 
@@ -24,7 +23,15 @@ public class Coin extends DroppableItem implements Drawable{
     }
 
     public void draw(Graphics g, Toolkit t, Controller con) {
-        g.drawImage(t.getImage("images/Coin.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+        if(this.getValue()==25) {
+            g.drawImage(t.getImage("images/Silver_coin.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
 
+        }else if(this.getValue()==50){
+            g.drawImage(t.getImage("images/Gold_coin.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+
+        }else{
+            g.drawImage(t.getImage("images/Diamond_Coin.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+
+        }
     }
 }

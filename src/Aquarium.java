@@ -1,8 +1,8 @@
 import java.awt.*;
 
 public class Aquarium implements Drawable{
-    public static final int DEFAULT_WIDTH = 640;
-    public static final int DEFAULT_HEIGHT = 480;
+    public static final int DEFAULT_WIDTH = 650;
+    public static final int DEFAULT_HEIGHT = 508;
 
     private LinkedList<Piranha> listOfPiranha;
     private LinkedList<Guppy> listOfGuppy;

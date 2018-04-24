@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 
 public class Controller extends JPanel {
     private Aquarium tank;
+    private Timer t;
     private Player player;
     public static JFrame f = new JFrame();
     public static long prev = System.nanoTime();
@@ -49,8 +50,28 @@ public class Controller extends JPanel {
             @Override
             public void mouseReleased(MouseEvent e) {
                 super.mouseReleased(e);
+                boolean getCoin = false;
+                boolean buyegg = false;
                 if(e.getButton() == MouseEvent.BUTTON1){
-                    buyFood(new Position(e.getX(),e.getY()));
+                    if(Math.abs(e.getX()-584) < 15 && Math.abs(e.getY()-72) < 15){
+                        buyEgg();
+                        buyegg = true;
+                        System.out.println("EGG");
+                    }else{
+                        for(int coinCount=0;coinCount<tank.getListOfCoin().getSize();coinCount++){
+//                            System.out.println(e.getY()-33-tank.getListOfCoin().get(coinCount).getCurrentPosition().getY());
+//                            System.out.println(e.getX()-18-tank.getListOfCoin().get(coinCount).getCurrentPosition().getX());
+
+                            if(tank.getListOfCoin().get(coinCount).getCurrentPosition().calculateDistance(new Position(e.getX()-18,e.getY()-33))<15){
+                                player.increaseMoney(tank.getListOfCoin().get(coinCount).getValue());
+                                tank.removeCoin(tank.getListOfCoin().get(coinCount));
+                                getCoin = true;
+                            }
+                        }
+                    }
+                    if(!getCoin && !buyegg){
+                        buyFood(new Position(e.getX()-10, e.getY()-20));
+                    }
                 }
             }
         });
@@ -72,6 +93,13 @@ public class Controller extends JPanel {
         f.setLocationRelativeTo(null);
         f.setVisible(true);
         f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        t = new Timer(20, new ActionListener () {
+            public void actionPerformed(ActionEvent event) {
+                repaint();
+            }
+        });
+        t.start();
+
 
     }
 
@@ -81,6 +109,7 @@ public class Controller extends JPanel {
             if (curr.getIsAlive()) {
                 curr.changeMovingStatus(tank.getListOfFishFood());
                 curr.move(time, tank.getListOfFishFood());
+                curr.setCoinTime(curr.getCoinTime()-0.02);
                 for (int foodCount = 0; foodCount < tank.getListOfFishFood().getSize(); foodCount++) {
                     if (curr.isHungry() && curr.getCurrentPosition().calculateDistance(tank.getListOfFishFood().get(foodCount).getCurrentPosition()) < 15) {
                         tank.removeFishFood(tank.getListOfFishFood().get(foodCount));
@@ -88,7 +117,7 @@ public class Controller extends JPanel {
                         break;
                     }
                 }
-                if (curr.getCoinTime() < 0) {
+                if (curr.getCoinTime() < 0 && curr.getSize() > 1) {
                     tank.addCoin(curr.extractCoin());
                 }
                 curr.changeIsAlive();
@@ -122,7 +151,9 @@ public class Controller extends JPanel {
     public void animateFishFood() {
         for (int foodCount = 0; foodCount < tank.getListOfFishFood().getSize(); foodCount++) {
             tank.getListOfFishFood().get(foodCount).moveDown(time);
-
+            if (tank.getListOfFishFood().get(foodCount).getCurrentPosition().getY() >= 410){
+                tank.removeFishFood(tank.getListOfFishFood().get(foodCount));
+            }
         }
     }
 
@@ -133,47 +164,66 @@ public class Controller extends JPanel {
     }
 
     public void animateSnail(){
+        tank.getSnail().changeMovingStatus(tank.getListOfCoin());
         tank.getSnail().move(time,tank.getListOfCoin());
+        for(int coinCount=0;coinCount<tank.getListOfCoin().getSize();coinCount++){
+            if(tank.getListOfCoin().get(coinCount).getCurrentPosition().calculateDistance(tank.getSnail().getCurrentPosition()) < 15){
+                player.increaseMoney(tank.getListOfCoin().get(coinCount).getValue());
+                tank.removeCoin(tank.getListOfCoin().get(coinCount));
+            }
+        }
+    }
+
+    public void animateEgg(Graphics g, Toolkit t){
+        if(player.getEgg()==0){
+            g.drawImage(t.getImage("images/Egg_L1.png"),560,20,null);
+        }else if(player.getEgg()==1){
+            g.drawImage(t.getImage("images/Egg_L2.png"),560,20,null);
+        }else{
+            g.drawImage(t.getImage("images/Egg_L3.png"),560,20,null);
+
+        }
     }
 
     @Override
     public void paintComponent(Graphics g) {
-//        System.out.println("MASUK");
-//        long now = System.nanoTime();
-//        long time = now - prev;
-//        prev = now;
-//        System.out.println(time);
         Toolkit t = Toolkit.getDefaultToolkit();
-        tank.draw(g,t,null);
-//        System.out.println("MASUK SINI");
-        for(int gupCount = 0;gupCount<tank.getListOfGuppy().getSize(); gupCount++){
-            tank.getListOfGuppy().get(gupCount).draw(g,t,this);
-        }
+        if(!player.isWin()) {
+            tank.draw(g, t, null);
+            Font font = new Font("Gill Sans Ultra Bold", Font.BOLD, 20);
+            g.setColor(Color.YELLOW);
+            g.setFont(font);
+            g.drawImage(t.getImage("images/Money.png"),40,20,null);
+            g.drawString(Double.toString(player.getMoney()), 70, 48);
 
-        for(int pirCount = 0;pirCount<tank.getListOfPiranha().getSize(); pirCount++){
-            tank.getListOfPiranha().get(pirCount).draw(g,t,this);
-        }
+            for (int gupCount = 0; gupCount < tank.getListOfGuppy().getSize(); gupCount++) {
+                tank.getListOfGuppy().get(gupCount).draw(g, t, this);
+            }
 
-        for(int foodCount = 0;foodCount<tank.getListOfFishFood().getSize(); foodCount++){
-            tank.getListOfFishFood().get(foodCount).draw(g,t,this);
-        }
+            for (int pirCount = 0; pirCount < tank.getListOfPiranha().getSize(); pirCount++) {
+                tank.getListOfPiranha().get(pirCount).draw(g, t, this);
+            }
 
-        for(int coinCount = 0;coinCount<tank.getListOfCoin().getSize(); coinCount++){
-            tank.getListOfCoin().get(coinCount).draw(g,t,this);
-        }
-        tank.getSnail().draw(g,t,this);
-        animateGuppy();
-        animateCoin();
-        animatePiranha();
-        animateFishFood();
-        animateSnail();
-        try{
-            Thread.sleep(100);
-        }catch(Exception exc){
+            for (int foodCount = 0; foodCount < tank.getListOfFishFood().getSize(); foodCount++) {
+                tank.getListOfFishFood().get(foodCount).draw(g, t, this);
+            }
 
+            for (int coinCount = 0; coinCount < tank.getListOfCoin().getSize(); coinCount++) {
+                tank.getListOfCoin().get(coinCount).draw(g, t, this);
+            }
+            tank.getSnail().draw(g, t, this);
+            animateGuppy();
+            animateCoin();
+            animatePiranha();
+            animateFishFood();
+            animateSnail();
+            animateEgg(g,t);
+            if(player.isLose(tank)){
+                g.drawImage(t.getImage("images/Lose.png"),Aquarium.DEFAULT_WIDTH/2 - 170,Aquarium.DEFAULT_HEIGHT/2 - 50,null);
+            }
+        }else if(player.isWin()){
+            g.drawImage(t.getImage("images/Win.png"),Aquarium.DEFAULT_WIDTH/2 - 270,Aquarium.DEFAULT_HEIGHT/2 - 75,null);
         }
-        f.repaint();
-
 
     }
 }
