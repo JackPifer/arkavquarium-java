@@ -90,7 +90,7 @@ public abstract class Fish implements MovingObject {
     }
 
     public void changeIsAlive() {
-        if(this.isAlive = true) {
+        if(this.getHungerLevel()<0) {
             this.isAlive = false;
         } else {
             this.isAlive = true;
@@ -143,12 +143,10 @@ public abstract class Fish implements MovingObject {
 
     public <T> void move(double time, LinkedList<T> food) {
         Position destination = new Position(1 + (Aquarium.DEFAULT_WIDTH - 1) * r.nextDouble(),1 + (Aquarium.DEFAULT_HEIGHT - 1) * r.nextDouble());
-        if (movingStatus == MovingStatus.HUNTING && !food.isEmpty()) {
+        if (movingStatus == MovingStatus.HUNTING ) {
             moveHunt(findNearestFood(food), time);
         }
         else {
-            System.out.println(destination.getX());
-            System.out.println(destination.getY());
             moveRandom(destination, time);
         }
     }

@@ -9,6 +9,7 @@ public class Coin extends DroppableItem implements Drawable{
     // User-defined Constructor
     public Coin(double value, Position fishPosition){
         super(fishPosition);
+        System.out.println(fishPosition.getY());
         this.value = value;
     }
 

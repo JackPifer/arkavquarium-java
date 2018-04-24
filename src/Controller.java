@@ -45,14 +45,12 @@ public class Controller extends JPanel {
     public void run(){
 
         f.add(this);
-        f.pack();
         f.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
                 super.mouseReleased(e);
                 if(e.getButton() == MouseEvent.BUTTON1){
                     buyFood(new Position(e.getX(),e.getY()));
-                    System.out.println(e.getX() + "," + e.getY());
                 }
             }
         });
@@ -68,21 +66,22 @@ public class Controller extends JPanel {
                 }
             }
         });
+
         f.setPreferredSize(new Dimension(Aquarium.DEFAULT_WIDTH, Aquarium.DEFAULT_HEIGHT));
         f.pack();
         f.setLocationRelativeTo(null);
         f.setVisible(true);
     }
 
-    public void animate(){
-        for(int gupCount = 0;gupCount<tank.getListOfGuppy().getSize(); gupCount++){
+    public void animateGuppy() {
+        for (int gupCount = 0; gupCount < tank.getListOfGuppy().getSize(); gupCount++) {
             Guppy curr = tank.getListOfGuppy().get(gupCount);
-            if(curr.getIsAlive()) {
+            if (curr.getIsAlive()) {
                 curr.changeMovingStatus(tank.getListOfFishFood());
                 curr.move(time, tank.getListOfFishFood());
                 for (int foodCount = 0; foodCount < tank.getListOfFishFood().getSize(); foodCount++) {
                     if (curr.isHungry() && curr.getCurrentPosition().calculateDistance(tank.getListOfFishFood().get(foodCount).getCurrentPosition()) < 15) {
-                        tank.getListOfFishFood().remove(tank.getListOfFishFood().get(foodCount));
+                        tank.removeFishFood(tank.getListOfFishFood().get(foodCount));
                         curr.eatFood();
                         break;
                     }
@@ -91,41 +90,48 @@ public class Controller extends JPanel {
                     tank.addCoin(curr.extractCoin());
                 }
                 curr.changeIsAlive();
-            }else{
-                tank.getListOfGuppy().remove(curr);
+            } else {
+                tank.removeGuppy(curr);
             }
         }
+    }
 
-        for(int pirCount = 0;pirCount<tank.getListOfPiranha().getSize(); pirCount++){
+    public void animatePiranha() {
+        for (int pirCount = 0; pirCount < tank.getListOfPiranha().getSize(); pirCount++) {
             Piranha curr = tank.getListOfPiranha().get(pirCount);
-            if(curr.getIsAlive()) {
+            if (curr.getIsAlive()) {
                 curr.changeMovingStatus(tank.getListOfGuppy());
                 curr.move(time, tank.getListOfGuppy());
                 for (int gupCount = 0; gupCount < tank.getListOfGuppy().getSize(); gupCount++) {
                     if (curr.isHungry() && curr.getCurrentPosition().calculateDistance(tank.getListOfGuppy().get(gupCount).getCurrentPosition()) < 15) {
-                        tank.getListOfCoin().add(curr.extractCoin(tank.getListOfGuppy().get(gupCount).getSize()));
-                        tank.getListOfGuppy().remove(tank.getListOfGuppy().get(gupCount));
+                        tank.addCoin( curr.extractCoin(tank.getListOfGuppy().get(gupCount).getSize()) );
+                        tank.removeGuppy(tank.getListOfGuppy().get(gupCount));
                         curr.eatFood();
                         break;
                     }
                 }
                 curr.changeIsAlive();
-            }else{
-                tank.getListOfPiranha().remove(curr);
+            } else {
+                tank.removePiranha(curr);
             }
         }
-        for(int foodCount = 0;foodCount<tank.getListOfFishFood().getSize(); foodCount++){
-            System.out.println(tank.getListOfFishFood().get(foodCount).getCurrentPosition().getY());
+    }
+
+    public void animateFishFood() {
+        for (int foodCount = 0; foodCount < tank.getListOfFishFood().getSize(); foodCount++) {
             tank.getListOfFishFood().get(foodCount).moveDown(time);
 
         }
+    }
 
-        for(int coinCount = 0;coinCount<tank.getListOfCoin().getSize(); coinCount++){
+    public void animateCoin() {
+        for (int coinCount = 0; coinCount < tank.getListOfCoin().getSize(); coinCount++) {
             tank.getListOfCoin().get(coinCount).moveDown(time);
         }
+    }
 
+    public void animateSnail(){
         tank.getSnail().move(time,tank.getListOfCoin());
-
     }
 
     @Override
@@ -154,12 +160,18 @@ public class Controller extends JPanel {
             tank.getListOfCoin().get(coinCount).draw(g,t,this);
         }
         tank.getSnail().draw(g,t,this);
-        f.repaint();
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        animateGuppy();
+        animateCoin();
+        animatePiranha();
+        animateFishFood();
+        animateSnail();
+        try{
+            Thread.sleep(100);
+        }catch(Exception exc){
+
         }
-        animate();
+        f.repaint();
+
+
     }
 }

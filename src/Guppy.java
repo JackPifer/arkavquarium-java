@@ -82,9 +82,9 @@ public class Guppy extends Fish implements Drawable{
                 }
             } else {
                 if (getFaceDirection()) {
-                    g.drawImage(t.getImage("images/Small_Hungry_Guppsy_right_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+                    g.drawImage(t.getImage("images/ikan.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
                 } else {
-                    g.drawImage(t.getImage("images/Small_Hungry_Guppsy_left_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+                    g.drawImage(t.getImage("images/ikan.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
                 }
             }
         }else if (getSize() == 2){
