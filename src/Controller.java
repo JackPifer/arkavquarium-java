@@ -74,14 +74,8 @@ public class Controller extends JPanel {
                     if(Math.abs(e.getX()-584) < 15 && Math.abs(e.getY()-72) < 15){
                         buyEgg();
                         buyegg = true;
-                    }else{
-                        for(int coinCount=0;coinCount<tank.getListOfCoin().getSize();coinCount++){
-                            if(tank.getListOfCoin().get(coinCount).getCurrentPosition().calculateDistance(new Position(e.getX()-18,e.getY()-33))<15){
-                                player.increaseMoney(tank.getListOfCoin().get(coinCount).getValue());
-                                tank.removeCoin(tank.getListOfCoin().get(coinCount));
-                                getCoin = true;
-                            }
-                        }
+                    } else {
+                        getCoin = getCoin(e);
                     }
                     if(!getCoin && !buyegg){
                         buyFood(new Position(e.getX()-10, e.getY()-20));
@@ -115,6 +109,23 @@ public class Controller extends JPanel {
         t.start();
     }
 
+     /**
+     * getCoin using mouse event.
+     * @param e Mouseevent.
+     * @return getCoin boolean.
+     */
+    
+    public boolean getCoin(MouseEvent e) {
+        boolean getCoin = false;
+        for(int coinCount=0;coinCount<tank.getListOfCoin().getSize();coinCount++){
+            if(tank.getListOfCoin().get(coinCount).getCurrentPosition().calculateDistance(new Position(e.getX()-18,e.getY()-33))<15){
+                player.increaseMoney(tank.getListOfCoin().get(coinCount).getValue());
+                tank.removeCoin(tank.getListOfCoin().get(coinCount));
+                getCoin = true;
+            }
+        }
+        return getCoin;
+    }
     /**
      * animate guppy.
      */
@@ -231,6 +242,20 @@ public class Controller extends JPanel {
         g.setFont(new Font("Gill Sans",Font.BOLD, 12));
         g.drawString("F : Buy Guppy ($50)",40,70);
         g.drawString("P : Buy Piranha ($100)",40,85);
+        g.drawImage(t.getImage("images/ArkavQuarium.png"),210,20,null);
+    }
+
+    /**
+     * Generic method to draw every member of list. 
+     * @param list LinkedList<T<.
+     * @param g graphic.
+     * @param t Toolkit.
+     */
+    
+    public <T extends Drawable> void drawAllInList(LinkedList<T> list,Graphics g, Toolkit t) {
+        for (int gupCount = 0; gupCount < list.getSize(); gupCount++) {
+            list.get(gupCount).draw(g, t, this);
+        }
     }
 
     /**
@@ -243,23 +268,11 @@ public class Controller extends JPanel {
         if(!player.isWin()) {
             tank.draw(g, t, null);
             this.graphicAccesories(g,t);
-            for (int gupCount = 0; gupCount < tank.getListOfGuppy().getSize(); gupCount++) {
-                tank.getListOfGuppy().get(gupCount).draw(g, t, this);
-            }
-
-            for (int pirCount = 0; pirCount < tank.getListOfPiranha().getSize(); pirCount++) {
-                tank.getListOfPiranha().get(pirCount).draw(g, t, this);
-            }
-
-            for (int foodCount = 0; foodCount < tank.getListOfFishFood().getSize(); foodCount++) {
-                tank.getListOfFishFood().get(foodCount).draw(g, t, this);
-            }
-
-            for (int coinCount = 0; coinCount < tank.getListOfCoin().getSize(); coinCount++) {
-                tank.getListOfCoin().get(coinCount).draw(g, t, this);
-            }
+            drawAllInList(tank.getListOfGuppy(),g,t);
+            drawAllInList(tank.getListOfPiranha(),g,t);
+            drawAllInList(tank.getListOfFishFood(),g,t);
+            drawAllInList(tank.getListOfCoin(),g,t);
             tank.getSnail().draw(g, t, this);
-            g.drawImage(t.getImage("images/ArkavQuarium.png"),210,20,null);
             animateGuppy();
             animateCoin();
             animatePiranha();
@@ -269,7 +282,7 @@ public class Controller extends JPanel {
             if(player.isLose(tank)){
                 g.drawImage(t.getImage("images/Lose.png"),Aquarium.DEFAULT_WIDTH/2 - 170,Aquarium.DEFAULT_HEIGHT/2 - 50,null);
             }
-        }else if(player.isWin()){
+        } else if(player.isWin()){
             g.drawImage(t.getImage("images/Win.png"),Aquarium.DEFAULT_WIDTH/2 - 270,Aquarium.DEFAULT_HEIGHT/2 - 75,null);
         }
 
