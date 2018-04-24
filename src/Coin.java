@@ -2,12 +2,20 @@
 // Responsibility : Act as Coin for player to get to increase money
 
 import java.awt.*;
-
+/** 
+ * Representas a coin
+ * @version 1.0
+ */
 public class Coin extends DroppableItem implements Drawable{
     private double value;
     private double coinStatus;
 
     // User-defined Constructor
+    /** 
+     * constructor
+     * @param value value of coin
+     * @param fishPosition Position of fish
+     */
     public Coin(double value, Position fishPosition){
         super(fishPosition);
         this.value = value;
@@ -15,15 +23,29 @@ public class Coin extends DroppableItem implements Drawable{
     }
 
     //Getter
+    /** 
+     * value getter
+     * @return value
+     */
     public double getValue() {
         return this.value;
     }
 
     //Setter
+    /** 
+     * value setter
+     * @param value value to be set
+     */
     public void setValue(double value) {
         this.value = value;
     }
 
+    /** 
+     * draw to aquarium
+     * @param g Draw container
+     * @param t Object to grab image
+     * @param con Game controller
+     */
     public void draw(Graphics g, Toolkit t, Controller con) {
         if(this.getValue()==25) {
             if( this.coinStatus < 1 || this.isBottom()) {
