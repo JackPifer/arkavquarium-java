@@ -63,7 +63,6 @@ public class Controller extends JPanel {
      * run.
      */
     public void run(){
-
         f.add(this);
         f.addMouseListener(new MouseAdapter() {
             @Override
@@ -194,7 +193,7 @@ public class Controller extends JPanel {
     public void animateSnail(){
         tank.getSnail().changeMovingStatus(tank.getListOfCoin());
         tank.getSnail().move(tank.getListOfCoin());
-        for(int coinCount=0;coinCount<tank.getListOfCoin().getSize();coinCount++){
+        for(int coinCount = 0;coinCount < tank.getListOfCoin().getSize();coinCount++){
             if(tank.getListOfCoin().get(coinCount).getCurrentPosition().calculateDistance(tank.getSnail().getCurrentPosition()) < 15){
                 player.increaseMoney(tank.getListOfCoin().get(coinCount).getValue());
                 tank.removeCoin(tank.getListOfCoin().get(coinCount));
@@ -218,6 +217,21 @@ public class Controller extends JPanel {
         }
     }
 
+    /**
+     * draw text and sprite needed for the game.
+     * @param g graphic.
+     * @param t toolkit.
+     */
+    public void graphicAccesories(Graphics g, Toolkit t) {
+        g.setColor(new Color(255,215,0));
+        g.setFont(new Font("Gill Sans Ultra Bold", Font.BOLD, 20));
+        g.drawImage(t.getImage("images/Money.png"),40,20,null);
+        g.drawString(Double.toString(player.getMoney()), 70, 40);
+        g.setColor(Color.white);
+        g.setFont(new Font("Gill Sans",Font.BOLD, 12));
+        g.drawString("F : Buy Guppy ($50)",40,70);
+        g.drawString("P : Buy Piranha ($100)",40,85);
+    }
 
     /**
      * paint.
@@ -228,15 +242,7 @@ public class Controller extends JPanel {
         Toolkit t = Toolkit.getDefaultToolkit();
         if(!player.isWin()) {
             tank.draw(g, t, null);
-            Font font = new Font("Gill Sans Ultra Bold", Font.BOLD, 20);
-            g.setColor(new Color(255,215,0));
-            g.setFont(font);
-            g.drawImage(t.getImage("images/Money.png"),40,20,null);
-            g.drawString(Double.toString(player.getMoney()), 70, 45);
-            g.setColor(Color.white);
-            g.setFont(new Font("Gill Sans",Font.BOLD, 12));
-            g.drawString("F : Buy Guppy ($50)",40,70);
-            g.drawString("P : Buy Piranha ($100)",40,85);
+            this.graphicAccesories(g,t);
             for (int gupCount = 0; gupCount < tank.getListOfGuppy().getSize(); gupCount++) {
                 tank.getListOfGuppy().get(gupCount).draw(g, t, this);
             }
