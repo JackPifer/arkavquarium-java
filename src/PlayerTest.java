@@ -1,31 +1,32 @@
 import static org.junit.Assert.*;
-import org.junit.Test;
+
 import org.junit.Before;
+import org.junit.Test;
 
 public class PlayerTest {
-    Player p;
+  Player player;
 
-    @Test
-    public void increaseMoneyTest() {
-        p = new Player();
-        p.increaseMoney(50);
-        assertEquals(550, p.getMoney());
-    }
+  @Test
+  public void increaseMoneyTest() {
+    player = new Player();
+    player.increaseMoney(50);
+    assertEquals(550, player.getMoney());
+  }
 
-    @Test
-    public void decreaseMoneyTest() {
-        p = new Player();
-        p.decreaseMoney(50);
-        assertEquals(450, p.getMoney());
-    }
+  @Test
+  public void decreaseMoneyTest() {
+    player = new Player();
+    player.decreaseMoney(50);
+    assertEquals(450, player.getMoney());
+  }
 
-    @Test
-    public void isWinTest() {
-        p = new Player();
-        p.setEgg(3);
-        assertTrue(p.isWin());
+  @Test
+  public void isWinTest() {
+    player = new Player();
+    player.setEgg(3);
+    assertTrue(player.isWin());
 
-        p.setEgg(1);
-        assertFalse(p.isWin());
-    }
+    player.setEgg(1);
+    assertFalse(player.isWin());
+  }
 }

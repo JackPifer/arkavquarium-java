@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Random;
 
 /** 
  * Represent a fish.
@@ -76,11 +76,11 @@ public abstract class Fish implements MovingObject {
   }
 
   /** 
-   * hungerLevel getter.
-   * @return integer.
-   */
+  * hungerLevel getter.
+  * @return integer.
+  */
   
-   public int getHungerLevel() {
+  public int getHungerLevel() {
     return this.hungerLevel;
   }
 
@@ -89,7 +89,7 @@ public abstract class Fish implements MovingObject {
    * @return integer.
    */
   
-   public int getMovingSpeed() {
+  public int getMovingSpeed() {
     return this.movingSpeed;
   }
 
@@ -140,8 +140,8 @@ public abstract class Fish implements MovingObject {
   }
 
   /** 
-   * hungerLevel setter
-   * @param hungerLevel integer
+   * hungerLevel setter.
+   * @param hungerLevel integer.
    */
 
   public void setHungerLevel(int hungerLevel) {
@@ -202,9 +202,9 @@ public abstract class Fish implements MovingObject {
    */
 
   public <T> void move(LinkedList<T> food) {
-    double xInit = 1 + (600 - 1) * r.nextDouble();
-    double yInit = 1 + (410 - 1) * r.nextDouble()
-    Position destination = new Position(xInit,yInit);
+    double x = 1 + (600 - 1) * r.nextDouble();
+    double y = 1 + (410 - 1) * r.nextDouble();
+    Position destination = new Position(x,y);
     if (movingStatus == MovingStatus.HUNTING) {
       moveHunt(findNearestFood(food));
     } else {

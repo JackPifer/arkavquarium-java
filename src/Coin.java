@@ -1,7 +1,8 @@
 // File: Coin.java
 // Responsibility : Act as Coin for this game
 
-import java.awt.*;
+import java.awt.Graphics;
+import java.awt.Toolkit;
 
 /** 
  * Represents a coin

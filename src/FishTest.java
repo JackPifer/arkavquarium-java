@@ -1,94 +1,95 @@
 import static org.junit.Assert.*;
+
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.Before; 
 
 class ConcreteFish extends Fish {
-    ConcreteFish() {
-        super();
-    }
+  ConcreteFish() {
+    super();
+  }
 
-    public void eatFood() {
+  public void eatFood() {
 
-    }
+  }
 }
 
 public class FishTest {
-    // Fish object
-    ConcreteFish f;
-    Position p;
-    LinkedList<FishFood> listOfFishFood;
-    LinkedList<Guppy> listOfGuppy;
+  // Fish object
+  ConcreteFish fish;
+  Position pos;
+  LinkedList<FishFood> listOfFishFood;
+  LinkedList<Guppy> listOfGuppy;
 
-    @Before
-    public void initialize() {
-        //Fish Object
-        f = new ConcreteFish();
+  @Before
+  public void initialize() {
+    //Fish Object
+    fish = new ConcreteFish();
 
-        p = new Position(5.0, 5.0);
-        //list of fish food
-        listOfFishFood = new LinkedList<>();
-        FishFood ff = new FishFood(p);
-        listOfFishFood.add(ff);
+    pos = new Position(5.0, 5.0);
+    //list of fish food
+    listOfFishFood = new LinkedList<>();
+    FishFood ff = new FishFood(pos);
+    listOfFishFood.add(ff);
 
-        //list of fuppy
-        listOfGuppy = new LinkedList<>();
-        Guppy g = new Guppy();
-        g.setCurrentPosition(p);
-        listOfGuppy.add(g);
-    }
+    //list of fuppy
+    listOfGuppy = new LinkedList<>();
+    Guppy g = new Guppy();
+    g.setCurrentPosition(pos);
+    listOfGuppy.add(g);
+  }
 
-    @Test
-    public void changeFaceDirectionTest() {
-        boolean before = f.getFaceDirection();
-        f.changeFaceDirection();
+  @Test
+  public void changeFaceDirectionTest() {
+    boolean before = fish.getFaceDirection();
+    fish.changeFaceDirection();
 
-        assertEquals(!before, f.getFaceDirection());
-    }
+    assertEquals(!before, fish.getFaceDirection());
+  }
 
-    @Test
-    public void isHungryTest() {
-        //not hungry condition
-        assertEquals(false, f.isHungry());
+  @Test
+  public void isHungryTest() {
+    //not hungry condition
+    assertEquals(false, fish.isHungry());
 
-        //make fish hungry
-        f.setHungerLevel(39);
-        assertEquals(true, f.isHungry());
-    }
+    //make fish hungry
+    f.setHungerLevel(39);
+    assertEquals(true, fish.isHungry());
+  }
 
-    @Test
-    public void findNearestFoodTest() {
-        //Test if food is a fishfood object
-        Position fishFoodNearest = f.findNearestFood(listOfFishFood);
-        assertEquals(fishFoodNearest, p);
+  @Test
+  public void findNearestFoodTest() {
+    //Test if food is a fishfood object
+    Position fishFoodNearest = fish.findNearestFood(listOfFishFood);
+    assertEquals(fishFoodNearest, p);
 
-        //Test if food is a guppy object
-        Position guppyNearest = f.findNearestFood(listOfGuppy);
-        assertEquals(guppyNearest, p);
-    }
+    //Test if food is a guppy object
+    Position guppyNearest = fish.findNearestFood(listOfGuppy);
+    assertEquals(guppyNearest, pos);
+  }
 
-    @Test
-    public void changeMovingStatusTest() {
-        //Fish is hungry
-        f.setHungerLevel(39);
+  @Test
+  public void changeMovingStatusTest() {
+    //Fish is hungry
+    fish.setHungerLevel(39);
 
-        //change to hunting test
-        f.changeMovingStatus(listOfFishFood);
-        assertEquals(f.getMovingStatus(), MovingObject.MovingStatus.HUNTING);
-        
-        //Fish is not hungry
-        f.setHungerLevel(60);
-        
-        //change to random test
-        f.changeMovingStatus(listOfFishFood);
-        assertEquals(f.getMovingStatus(), MovingObject.MovingStatus.RANDOM);
-    }
+    //change to hunting test
+    fish.changeMovingStatus(listOfFishFood);
+    assertEquals(fish.getMovingStatus(), MovingObject.MovingStatus.HUNTING);
 
-    @Test
-    public void moveHuntTest() {
-        f.moveHunt(p, 10.0);
-        assertEquals(f.getDestination(), p);
-    }
+    //Fish is not hungry
+    fish.setHungerLevel(60);
 
-    // move random test?
-    // move test?
+    //change to random test
+    fish.changeMovingStatus(listOfFishFood);
+    assertEquals(fish.getMovingStatus(), MovingObject.MovingStatus.RANDOM);
+  }
+
+  @Test
+  public void moveHuntTest() {
+    fish.moveHunt(pos);
+    assertEquals(fish.getDestination(), pos);
+  }
+
+  // move random test?
+  // move test?
 }

@@ -1,18 +1,19 @@
 import static org.junit.Assert.*;
-import org.junit.Test;
+
 import org.junit.Before;
+import org.junit.Test;
 
 public class PiranhaTest {
-    public Piranha p;
-    
-    @Before
-    public void initialization() {
-        p = new Piranha();
-    }
+  public Piranha piranha;
 
-    @Test
-    public void eatFoodTest() {
-        p.eatFood();
-        assertEquals(60, p.getHungerLevel());
-    }
+  @Before
+  public void initialization() {
+    piranha = new Piranha();
+  }
+
+  @Test
+  public void eatFoodTest() {
+    piranha.eatFood();
+    assertEquals(60, piranha.getHungerLevel());
+  }
 }

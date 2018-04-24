@@ -1,36 +1,38 @@
 import static org.junit.Assert.*;
-import org.junit.Test;
+
 import org.junit.Before;
+import org.junit.Test;
+
 
 public class GuppyTest {
-    public Guppy g;
-    
-    @Before
-    public void initialization() {
-        g = new Guppy();
-    }
+  public Guppy guppy;
 
-    @Test
-    public void eatFoodTest() {
-        int numberOfFoodEatenBefore = g.getNumberOfFoodEaten();
+  @Before
+  public void initialization() {
+    guppy = new Guppy();
+  }
 
-        g.eatFood();
-        assertEquals(numberOfFoodEatenBefore + 1, g.getNumberOfFoodEaten());
-    }
+  @Test
+  public void eatFoodTest() {
+    int numberOfFoodEatenBefore = guppy.getNumberOfFoodEaten();
 
-    @Test
-    public void growTest() {
-        int sizeBefore = g.getSize();
+    guppy.eatFood();
+    assertEquals(numberOfFoodEatenBefore + 1, guppy.getNumberOfFoodEaten());
+  }
 
-        g.grow();
-        assertEquals(sizeBefore + 1, g.getSize());
-    }
+  @Test
+  public void growTest() {
+    int sizeBefore = guppy.getSize();
 
-    @Test
-    public void extractCoinTest() {
-        g.setCoinTime(0);
+    guppy.grow();
+    assertEquals(sizeBefore + 1, guppy.getSize());
+  }
 
-        g.extractCoin();
-        assertEquals(15.0, g.getCoinTime(), 0);
-    }
+  @Test
+  public void extractCoinTest() {
+    guppy.setCoinTime(0);
+
+    guppy.extractCoin();
+    assertEquals(15.0, guppy.getCoinTime(), 0);
+  }
 }

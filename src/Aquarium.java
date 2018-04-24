@@ -1,7 +1,8 @@
 // File: Aquarium.java
 // Responsibility : Container for all objects created
 
-import java.awt.*;
+import java.awt.Graphics;
+import java.awt.Toolkit;
 
 /** Represents an aquarium.
  * @version 1.0.

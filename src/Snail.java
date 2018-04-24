@@ -2,8 +2,9 @@
 // File: Snail.java
 // Concrete class for Pet in this Aquarium
 
-import java.awt.*;
-import java.util.*;
+import java.awt.Graphics;
+import java.awt.Toolkit;
+import java.util.Random;
 
 /** 
  * Represents a snail.
