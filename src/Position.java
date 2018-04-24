@@ -3,68 +3,68 @@
  * @version 1.0.
  */
 public class Position {
-    protected double x;
-    protected double y;
+  protected double absis;
+  protected double ordinat;
 
-    //Constructor
-    /** 
-     * constructor.
-     */
-    public Position(){
-        this.x = 0.0;
-        this.y = 0.0;
-    }
+  //Constructor
+  /** 
+   * constructor.
+   */
+  public Position() {
+    this.absis = 0.0;
+    this.ordinat = 0.0;
+  }
 
-    /** 
-     * parameter overload cosntructor.
-     * @param x double x position.
-     * @param y dobule y position.
-     */
-    public Position(double x, double y){
-        this.x = x;
-        this.y = y;
-    }
+  /** 
+   * parameter overload cosntructor.
+   * @param x double x position.
+   * @param y dobule y position.
+   */
+  public Position(double x, double y) {
+    this.absis = x;
+    this.ordinat = y;
+  }
 
-    //Getter for each attribute
-    /** 
-     * getter.
-     * @return double position of x.
-     */
-    public double getX() {
-        return this.x;
-    }
+  //Getter for each attribute
+  /** 
+   * getter.
+   * @return double position of x.
+   */
+  public double getX() {
+    return this.absis;
+  }
 
-    /** 
-     * getter.
-     * @return double position of y.
-     */
-    public double getY() {
-        return this.y;
-    }
+  /** 
+   * getter.
+   * @return double position of y.
+   */
+  public double getY() {
+    return this.ordinat;
+  }
 
-    //Setter for each attribute
-    /** 
-     * setter.
-     * @param x value of x.
-     */
-    public void setX(double x) {
-        this.x = x;
-    }
+  //Setter for each attribute
+  /** 
+   * setter.
+   * @param x value of x.
+   */
+  public void setX(double x) {
+    this.absis = x;
+  }
 
-    /** 
-     * setter.
-     * @param y value of y.
-     */
-    public void setY(double y) {
-        this.y = y;
-    }
+  /** 
+   * setter.
+   * @param y value of y.
+   */
+  public void setY(double y) {
+    this.ordinat = y;
+  }
 
-    /** 
-     * calculate distance of this and another position.
-     * @param P1 another Position.
-     * @return return distance between this position and P1.
-     */
-    public double calculateDistance(Position P1) {
-        return Math.sqrt(Math.pow(P1.getX() - this.x, 2) + Math.pow(P1.getY() - this.y, 2));
-    }
+  /** 
+   * calculate distance of this and another position.
+   * @param pos another Position.
+   * @return return distance between this position and Pos.
+   */
+  public double calculateDistance(Position pos) {
+    return Math.sqrt(Math.pow(pos.getX() - this.absis, 2) + Math.pow(pos.getY() - this.ordinat, 2));
+  }
 }
