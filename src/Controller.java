@@ -71,6 +71,8 @@ public class Controller extends JPanel {
         f.pack();
         f.setLocationRelativeTo(null);
         f.setVisible(true);
+        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
     }
 
     public void animateGuppy() {
