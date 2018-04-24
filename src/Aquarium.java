@@ -138,10 +138,9 @@ public class Aquarium implements Drawable{
      * draw to aquarium.
      * @param g Draw container.
      * @param t Object to grab image.
-     * @param con Game controller.
      */
-    public void draw(Graphics g, Toolkit t, Controller con) {
-        g.drawImage(t.getImage("images/Aquarium4.jpg"), 0, 0, con);
+    public void draw(Graphics g, Toolkit t) {
+        g.drawImage(t.getImage("images/Aquarium4.jpg"), 0, 0, null);
 
     }
 

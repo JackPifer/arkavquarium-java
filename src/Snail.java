@@ -159,20 +159,19 @@ public class Snail implements MovingObject,Drawable{
      * draw to aquarium.
      * @param g Draw container.
      * @param t Object to grab image.
-     * @param con Game controller.
      */
-    public void draw(Graphics g, Toolkit t, Controller con){
+    public void draw(Graphics g, Toolkit t){
         if (movingStatus == MovingStatus.STATIC) {
             if (getFaceDirection()) {
-                g.drawImage(t.getImage("images/Snail_shel.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY() + 7, con);
+                g.drawImage(t.getImage("images/Snail_shel.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY() + 7, null);
             } else {
-                g.drawImage(t.getImage("images/Snail_shel_right.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY() + 7, con);
+                g.drawImage(t.getImage("images/Snail_shel_right.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY() + 7, null);
             }
         } else {
             if (getFaceDirection()) {
-                g.drawImage(t.getImage("images/Snail_left_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+                g.drawImage(t.getImage("images/Snail_left_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), null);
             } else {
-                g.drawImage(t.getImage("images/Snail_right_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+                g.drawImage(t.getImage("images/Snail_right_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), null);
             }
         }
     }

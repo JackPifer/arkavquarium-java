@@ -39,20 +39,19 @@ public class Piranha extends Fish implements Drawable{
      * draw to aquarium.
      * @param g Draw container.
      * @param t Object to grab image.
-     * @param con Game controller.
      */
-    public void draw(Graphics g, Toolkit t, Controller con){
+    public void draw(Graphics g, Toolkit t){
         if (!isHungry()) {
             if (getFaceDirection()) {
-                g.drawImage(t.getImage("images/Piranha_left_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+                g.drawImage(t.getImage("images/Piranha_left_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), null);
             } else {
-                g.drawImage(t.getImage("images/Piranha_right_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+                g.drawImage(t.getImage("images/Piranha_right_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), null);
             }
         }else{
             if (getFaceDirection()) {
-                g.drawImage(t.getImage("images/Piranha_Hungry_left_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+                g.drawImage(t.getImage("images/Piranha_Hungry_left_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), null);
             } else {
-                g.drawImage(t.getImage("images/Piranha_Hungry_right_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+                g.drawImage(t.getImage("images/Piranha_Hungry_right_side.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), null);
             }
         }
     }

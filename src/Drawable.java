@@ -10,7 +10,6 @@ public interface Drawable {
      * draw to aquarium.
      * @param g Draw container.
      * @param t Object to grab image.
-     * @param con Game controller.
      */
-    public void draw(Graphics g, Toolkit t,Controller con);
+    public void draw(Graphics g, Toolkit t);
 }

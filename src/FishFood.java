@@ -23,10 +23,9 @@ public class FishFood extends DroppableItem implements Drawable{
      * draw to aquarium.
      * @param g Draw container.
      * @param t Object to grab image.
-     * @param con Game controller.
      */
-    public void draw(Graphics g, Toolkit t, Controller con) {
-        g.drawImage(t.getImage("images/Food.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), con);
+    public void draw(Graphics g, Toolkit t) {
+        g.drawImage(t.getImage("images/Food.png"), (int) getCurrentPosition().getX(), (int) getCurrentPosition().getY(), null);
 
     }
 

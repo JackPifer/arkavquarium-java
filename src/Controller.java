@@ -218,12 +218,12 @@ public class Controller extends JPanel {
      * @param t toolkit.
      */
     public void animateEgg(Graphics g, Toolkit t){
-        if(player.getEgg()==0){
-            g.drawImage(t.getImage("images/Egg_L1.png"),560,20,null);
+        if(player.getEgg() == 0){
+            g.drawImage(t.getImage("images/Egg_L1.png"),550,20,null);
         }else if(player.getEgg()==1){
-            g.drawImage(t.getImage("images/Egg_L2.png"),560,20,null);
+            g.drawImage(t.getImage("images/Egg_L2.png"),550,20,null);
         }else{
-            g.drawImage(t.getImage("images/Egg_L3.png"),560,20,null);
+            g.drawImage(t.getImage("images/Egg_L3.png"),550,20,null);
 
         }
     }
@@ -237,25 +237,46 @@ public class Controller extends JPanel {
         g.setColor(new Color(255,215,0));
         g.setFont(new Font("Gill Sans Ultra Bold", Font.BOLD, 20));
         g.drawImage(t.getImage("images/Money.png"),40,20,null);
-        g.drawString(Double.toString(player.getMoney()), 70, 40);
+        g.drawString(Double.toString(player.getMoney()), 70, 45);
         g.setColor(Color.white);
         g.setFont(new Font("Gill Sans",Font.BOLD, 12));
         g.drawString("F : Buy Guppy ($50)",40,70);
         g.drawString("P : Buy Piranha ($100)",40,85);
+        g.drawString("1: $200 2: $350 3: $500",500,75);
         g.drawImage(t.getImage("images/ArkavQuarium.png"),210,20,null);
+        animateEgg(g,t);
     }
 
     /**
      * Generic method to draw every member of list. 
-     * @param list LinkedList<T<.
+     * @param list LinkedList<T>.
      * @param g graphic.
      * @param t Toolkit.
      */
     
     public <T extends Drawable> void drawAllInList(LinkedList<T> list,Graphics g, Toolkit t) {
         for (int gupCount = 0; gupCount < list.getSize(); gupCount++) {
-            list.get(gupCount).draw(g, t, this);
+            list.get(gupCount).draw(g, t);
         }
+    }
+
+     /**
+     * Generic method to draw and animate every object in aquarium. 
+     * @param g graphic.
+     * @param t Toolkit.
+     */
+
+    public void drawAndAnimateObject(Graphics g, Toolkit t) {
+        drawAllInList(this.tank.getListOfGuppy(),g,t);
+        drawAllInList(this.tank.getListOfPiranha(),g,t);
+        drawAllInList(this.tank.getListOfFishFood(),g,t);
+        drawAllInList(this.tank.getListOfCoin(),g,t);
+        this.tank.getSnail().draw(g, t);
+        animateGuppy();
+        animateCoin();
+        animatePiranha();
+        animateFishFood();
+        animateSnail();
     }
 
     /**
@@ -265,26 +286,15 @@ public class Controller extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         Toolkit t = Toolkit.getDefaultToolkit();
+        tank.draw(g, t);
         if(!player.isWin()) {
-            tank.draw(g, t, null);
+            this.drawAndAnimateObject(g,t);
             this.graphicAccesories(g,t);
-            drawAllInList(tank.getListOfGuppy(),g,t);
-            drawAllInList(tank.getListOfPiranha(),g,t);
-            drawAllInList(tank.getListOfFishFood(),g,t);
-            drawAllInList(tank.getListOfCoin(),g,t);
-            tank.getSnail().draw(g, t, this);
-            animateGuppy();
-            animateCoin();
-            animatePiranha();
-            animateFishFood();
-            animateSnail();
-            animateEgg(g,t);
-            if(player.isLose(tank)){
-                g.drawImage(t.getImage("images/Lose.png"),Aquarium.DEFAULT_WIDTH/2 - 170,Aquarium.DEFAULT_HEIGHT/2 - 50,null);
+            if(player.isLose(tank)) {
+                g.drawImage(t.getImage("images/Lose.png"),Aquarium.DEFAULT_WIDTH/2 - 170,Aquarium.DEFAULT_HEIGHT/2 - 50, null);
             }
-        } else if(player.isWin()){
-            g.drawImage(t.getImage("images/Win.png"),Aquarium.DEFAULT_WIDTH/2 - 270,Aquarium.DEFAULT_HEIGHT/2 - 75,null);
+        } else {
+            g.drawImage(t.getImage("images/Win.png"),Aquarium.DEFAULT_WIDTH/2 - 270,Aquarium.DEFAULT_HEIGHT/2 - 75 ,null);
         }
-
     }
 }
