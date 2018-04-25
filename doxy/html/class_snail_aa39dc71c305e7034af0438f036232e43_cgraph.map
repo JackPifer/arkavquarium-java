@@ -1,0 +1,6 @@
+<map id="Snail.draw" name="Snail.draw">
+<area shape="rect" id="node2" href="$class_snail.html#aea3bd82a39b5054e8b1c096a163d22ac" title="Snail.getFaceDirection" alt="" coords="142,5,297,31"/>
+<area shape="rect" id="node3" href="$class_snail.html#a0617eb72efb8c5f88cbad6dd5d68dafd" title="Snail.getCurrentPosition" alt="" coords="137,55,302,80"/>
+<area shape="rect" id="node4" href="$class_position.html#a14c74938fcd12f380e0f3d19cfc8fb70" title="Position.getX" alt="" coords="170,104,269,129"/>
+<area shape="rect" id="node5" href="$class_position.html#acc59fee4dda06e7be2455916abe6a2a6" title="Position.getY" alt="" coords="170,153,269,179"/>
+</map>

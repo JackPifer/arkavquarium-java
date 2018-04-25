@@ -1,0 +1,4 @@
+<map id="DroppableItemTest" name="DroppableItemTest">
+<area shape="rect" id="node2" href="$class_droppable_item.html" title="{DroppableItem\n||+ DroppableItem()\l+ getCurrentPosition()\l+ setCurrentPosition()\l+ isBottom()\l+ moveDown()\l}" alt="" coords="114,233,267,360"/>
+<area shape="rect" id="node3" href="$class_position.html" title="{Position\n|# absis\l# ordinat\l|+ Position()\l+ Position()\l+ getX()\l+ getY()\l+ setX()\l+ setY()\l+ calculateDistance()\l}" alt="" coords="5,5,152,172"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Controller.animateCoin" name="Controller.animateCoin">
+<area shape="rect" id="node2" href="$class_aquarium.html#a9b0dec4c194324e6095b81262b042460" title="Aquarium.getListOfCoin" alt="" coords="210,5,373,31"/>
+<area shape="rect" id="node3" href="$class_linked_list.html#a7ea3fa6fa5601039076c2a6c8fe88219" title="LinkedList.getSize" alt="" coords="227,55,357,80"/>
+<area shape="rect" id="node4" href="$class_linked_list.html#a032ef46fc54f12525746d9f7c3a80663" title="LinkedList.get" alt="" coords="240,104,344,129"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="Controller.animateSnail" name="Controller.animateSnail">
+<area shape="rect" id="node2" href="$class_aquarium.html#ac00cb1b361c2b368370f3fd1225ff296" title="Aquarium.getSnail" alt="" coords="237,5,367,31"/>
+<area shape="rect" id="node3" href="$class_snail.html#a1ac3de4bd120dcfeae9ccc66918057e5" title="Snail.changeMovingStatus" alt="" coords="213,55,392,80"/>
+<area shape="rect" id="node4" href="$class_linked_list.html#a7ea3fa6fa5601039076c2a6c8fe88219" title="LinkedList.getSize" alt="" coords="440,80,569,105"/>
+<area shape="rect" id="node5" href="$class_aquarium.html#a9b0dec4c194324e6095b81262b042460" title="Aquarium.getListOfCoin" alt="" coords="221,156,384,181"/>
+<area shape="rect" id="node6" href="$class_linked_list.html#a032ef46fc54f12525746d9f7c3a80663" title="LinkedList.get" alt="" coords="250,205,354,231"/>
+<area shape="rect" id="node7" href="$class_snail.html#a0617eb72efb8c5f88cbad6dd5d68dafd" title="Snail.getCurrentPosition" alt="" coords="220,255,385,280"/>
+<area shape="rect" id="node8" href="$class_player.html#a09d885315c59a404c418155e04fed379" title="Player.increaseMoney" alt="" coords="226,304,378,329"/>
+<area shape="rect" id="node9" href="$class_aquarium.html#af6f2d1079224c08a0ff7d376ea04c732" title="Aquarium.removeCoin" alt="" coords="225,353,379,379"/>
+<area shape="rect" id="node10" href="$class_linked_list.html#a85388ca2d7e4c8bc06fbea2c6fcfea33" title="LinkedList.remove" alt="" coords="440,353,569,379"/>
+</map>

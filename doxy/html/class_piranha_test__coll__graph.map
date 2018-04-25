@@ -1,0 +1,7 @@
+<map id="PiranhaTest" name="PiranhaTest">
+<area shape="rect" id="node2" href="$class_piranha.html" title="{Piranha\n|+ price\l|+ Piranha()\l+ extractCoin()\l+ eatFood()\l+ draw()\l}" alt="" coords="222,663,331,776"/>
+<area shape="rect" id="node3" href="$class_fish.html" title="{Fish\n|# isAlive\l# movingStatus\l# moveTime\l# faceDirection\l# hungerLevel\l# hungryLevelLimit\l# movingSpeed\l# defaultHungerLevel\l# defaultXPos\l# defaultYPos\l|+ Fish()\l+ getCurrentPosition()\l+ getDestination()\l+ getFaceDirection()\l+ getMoveTime()\l+ getHungerLevel()\l+ getMovingSpeed()\l+ getIsAlive()\l+ getHungryLevelLimit()\l+ getMovingStatus()\land 11 more...\l~ move()\l~ findNearestFood()\l~ changeMovingStatus()\l}" alt="" coords="122,247,288,613"/>
+<area shape="rect" id="node4" href="$interface_moving_object.html" title="{MovingObject\n||+ move()\l}" alt="" coords="5,52,108,125"/>
+<area shape="rect" id="node5" href="$class_position.html" title="{Position\n|# absis\l# ordinat\l|+ Position()\l+ Position()\l+ getX()\l+ getY()\l+ setX()\l+ setY()\l+ calculateDistance()\l}" alt="" coords="132,5,278,172"/>
+<area shape="rect" id="node7" href="$interface_drawable.html" title="{Drawable\n||+ draw()\l}" alt="" coords="311,393,389,467"/>
+</map>

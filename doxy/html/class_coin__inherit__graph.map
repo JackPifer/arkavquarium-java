@@ -1,0 +1,4 @@
+<map id="Coin" name="Coin">
+<area shape="rect" id="node2" href="$class_droppable_item.html" title="{DroppableItem\n|# currentPosition\l|+ DroppableItem()\l+ getCurrentPosition()\l+ setCurrentPosition()\l+ isBottom()\l+ moveDown()\l}" alt="" coords="5,5,157,132"/>
+<area shape="rect" id="node3" href="$interface_drawable.html" title="{Drawable\n||+ draw()\l}" alt="" coords="181,32,259,105"/>
+</map>

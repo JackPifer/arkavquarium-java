@@ -1,0 +1,8 @@
+<map id="Fish.moveRandom" name="Fish.moveRandom">
+<area shape="rect" id="node2" href="$class_position.html#a14c74938fcd12f380e0f3d19cfc8fb70" title="Position.getX" alt="" coords="217,5,317,31"/>
+<area shape="rect" id="node3" href="$class_position.html#acc59fee4dda06e7be2455916abe6a2a6" title="Position.getY" alt="" coords="217,55,317,80"/>
+<area shape="rect" id="node4" href="$class_fish.html#afc0c0824c91f3bbb61fc3762b08d9137" title="Fish.getCurrentPosition" alt="" coords="187,104,347,129"/>
+<area shape="rect" id="node5" href="$class_fish.html#a39feef3e603de6ea5931ada8b3e1e27d" title="Fish.getDestination" alt="" coords="199,153,335,179"/>
+<area shape="rect" id="node6" href="$class_position.html#a30f78db92c43f742e7108972be6de018" title="Position.setX" alt="" coords="217,203,316,228"/>
+<area shape="rect" id="node7" href="$class_position.html#aaf877e0285431a70b8a254ae14bf022e" title="Position.setY" alt="" coords="217,252,316,277"/>
+</map>

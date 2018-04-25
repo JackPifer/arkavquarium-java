@@ -1,0 +1,5 @@
+<map id="PiranhaTest.eatFoodTest" name="PiranhaTest.eatFoodTest">
+<area shape="rect" id="node2" href="$class_piranha.html#a9310ca27aa9c8fdec55f03ef4fa994e0" title="Piranha.eatFood" alt="" coords="234,5,354,31"/>
+<area shape="rect" id="node4" href="$class_fish.html#a6b0fb4a552039ab06338470584bd838b" title="Fish.getHungerLevel" alt="" coords="222,55,367,80"/>
+<area shape="rect" id="node3" href="$class_fish.html#a95e9975f718a7a24254bcbb58dfe1ba1" title="Fish.setHungerLevel" alt="" coords="415,5,558,31"/>
+</map>

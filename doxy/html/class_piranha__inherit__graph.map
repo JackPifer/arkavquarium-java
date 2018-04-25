@@ -1,0 +1,5 @@
+<map id="Piranha" name="Piranha">
+<area shape="rect" id="node2" href="$class_fish.html" title="{Fish\n|~ r\l# isAlive\l# currentPosition\l# destination\l# movingStatus\l# moveTime\l# faceDirection\l# hungerLevel\l# hungryLevelLimit\l# movingSpeed\l# defaultHungerLevel\l# defaultXPos\l# defaultYPos\l|+ Fish()\l+ getCurrentPosition()\l+ getDestination()\l+ getFaceDirection()\l+ getMoveTime()\l+ getHungerLevel()\l+ getMovingSpeed()\l+ getIsAlive()\l+ getHungryLevelLimit()\l+ getMovingStatus()\land 11 more...\l~ move()\l~ findNearestFood()\l~ changeMovingStatus()\l}" alt="" coords="5,127,172,533"/>
+<area shape="rect" id="node3" href="$interface_moving_object.html" title="{MovingObject\n||+ move()\l}" alt="" coords="37,5,140,79"/>
+<area shape="rect" id="node4" href="$interface_drawable.html" title="{Drawable\n||+ draw()\l}" alt="" coords="195,293,273,367"/>
+</map>

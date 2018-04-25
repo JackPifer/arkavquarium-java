@@ -1,0 +1,401 @@
+\hypertarget{class_fish}{}\section{Fish Class Reference}
+\label{class_fish}\index{Fish@{Fish}}
+
+
+Inheritance diagram for Fish\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_fish__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Fish\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_fish__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_fish_ae9ad0ceab4b720f2c37a4fd4693bdd2f}{Fish}} ()
+\item 
+\mbox{\hyperlink{class_position}{Position}} \mbox{\hyperlink{class_fish_afc0c0824c91f3bbb61fc3762b08d9137}{get\+Current\+Position}} ()
+\item 
+\mbox{\hyperlink{class_position}{Position}} \mbox{\hyperlink{class_fish_a39feef3e603de6ea5931ada8b3e1e27d}{get\+Destination}} ()
+\item 
+boolean \mbox{\hyperlink{class_fish_a5ed789451c5b7fc9808de4837f06eb02}{get\+Face\+Direction}} ()
+\item 
+double \mbox{\hyperlink{class_fish_a9e32f70d5f02b4d0fb7e5f0e92e9bf4e}{get\+Move\+Time}} ()
+\item 
+int \mbox{\hyperlink{class_fish_a6b0fb4a552039ab06338470584bd838b}{get\+Hunger\+Level}} ()
+\item 
+int \mbox{\hyperlink{class_fish_a256fe3bcc998d4d668e8917e8a453e7a}{get\+Moving\+Speed}} ()
+\item 
+boolean \mbox{\hyperlink{class_fish_a8c7a1a1666af0c425a9ef0e83d33779c}{get\+Is\+Alive}} ()
+\item 
+int \mbox{\hyperlink{class_fish_aa121fc4335ac49aa48e4ef9e137c0e8b}{get\+Hungry\+Level\+Limit}} ()
+\item 
+\mbox{\hyperlink{enum_moving_object_1_1_moving_status}{Moving\+Status}} \mbox{\hyperlink{class_fish_a5abbd7e198b7770b666a85c5b02f6501}{get\+Moving\+Status}} ()
+\item 
+void \mbox{\hyperlink{class_fish_ab86ec00d2b503f310f1c29bc9a94fbd7}{set\+Current\+Position}} (\mbox{\hyperlink{class_position}{Position}} \mbox{\hyperlink{class_fish_a1f025627baa1802f78dab5fef88b7838}{current\+Position}})
+\item 
+void \mbox{\hyperlink{class_fish_a9b74ce69e55149c7df9f70e83ce5b66b}{set\+Destination}} (\mbox{\hyperlink{class_position}{Position}} \mbox{\hyperlink{class_fish_a93523126df751dd0301a1fcf2ed42735}{destination}})
+\item 
+void \mbox{\hyperlink{class_fish_a95e9975f718a7a24254bcbb58dfe1ba1}{set\+Hunger\+Level}} (int \mbox{\hyperlink{class_fish_a9e0224f04ab5b9da07414075698bbbf1}{hunger\+Level}})
+\item 
+void \mbox{\hyperlink{class_fish_ad6d23a97f4d4f6916243cf0033470e87}{set\+Move\+Time}} (int \mbox{\hyperlink{class_fish_a630f9859f38f851ccdf223daebebd27f}{move\+Time}})
+\item 
+void \mbox{\hyperlink{class_fish_afcc56cacfeded2fb41f3de811aff9d45}{set\+Moving\+Status}} (\mbox{\hyperlink{enum_moving_object_1_1_moving_status}{Moving\+Status}} \mbox{\hyperlink{class_fish_adb3e06c4c9cfd4e55a7d819c50702521}{moving\+Status}})
+\item 
+void \mbox{\hyperlink{class_fish_a88fa149bd62388b1aee597c9ec540369}{change\+Is\+Alive}} ()
+\item 
+void \mbox{\hyperlink{class_fish_a9fb18733f43c29b1a4c4b16a6322aec6}{change\+Face\+Direction}} ()
+\item 
+boolean \mbox{\hyperlink{class_fish_aa4d669d1ffe1655a62c8b9ea5c477d72}{is\+Hungry}} ()
+\item 
+void \mbox{\hyperlink{class_fish_a8ac2c9963873520d435ee1609dae0174}{move\+Hunt}} (\mbox{\hyperlink{class_position}{Position}} \mbox{\hyperlink{class_fish_a93523126df751dd0301a1fcf2ed42735}{destination}})
+\item 
+void \mbox{\hyperlink{class_fish_aa3683716f71b574717c30f0f7be3ec33}{move\+Random}} (\mbox{\hyperlink{class_position}{Position}} \mbox{\hyperlink{class_fish_a93523126df751dd0301a1fcf2ed42735}{destination}})
+\item 
+abstract void \mbox{\hyperlink{class_fish_af226ad690f56674f1b08d9d9562dde83}{eat\+Food}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{class_fish_ad380340280b30f5700d206739b793d8f}{is\+Alive}}
+\item 
+\mbox{\hyperlink{class_position}{Position}} \mbox{\hyperlink{class_fish_a1f025627baa1802f78dab5fef88b7838}{current\+Position}}
+\item 
+\mbox{\hyperlink{class_position}{Position}} \mbox{\hyperlink{class_fish_a93523126df751dd0301a1fcf2ed42735}{destination}}
+\item 
+\mbox{\hyperlink{enum_moving_object_1_1_moving_status}{Moving\+Status}} \mbox{\hyperlink{class_fish_adb3e06c4c9cfd4e55a7d819c50702521}{moving\+Status}}
+\item 
+double \mbox{\hyperlink{class_fish_a630f9859f38f851ccdf223daebebd27f}{move\+Time}}
+\item 
+boolean \mbox{\hyperlink{class_fish_af86c6cd526847bf6be39c9cc170e5305}{face\+Direction}}
+\item 
+int \mbox{\hyperlink{class_fish_a9e0224f04ab5b9da07414075698bbbf1}{hunger\+Level}}
+\item 
+final int \mbox{\hyperlink{class_fish_a9d334546607726c92bc7e9a6ffd03f75}{hungry\+Level\+Limit}} = 40
+\item 
+final int \mbox{\hyperlink{class_fish_a9f5b20fab06597fda40be4c4d42473d0}{moving\+Speed}} = 1
+\item 
+final int \mbox{\hyperlink{class_fish_abb83de49d7a7fc239d603e11215e90f9}{default\+Hunger\+Level}} = 60
+\item 
+final double \mbox{\hyperlink{class_fish_a8b71b4abb80a350eca229e1f4c6656c4}{default\+X\+Pos}} = 0.\+0
+\item 
+final double \mbox{\hyperlink{class_fish_a9ce14817daae461df29a23d247c87a80}{default\+Y\+Pos}} = 0.\+0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represent a fish. \begin{DoxyVersion}{Version}
+1.\+0. 
+\end{DoxyVersion}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_fish_ae9ad0ceab4b720f2c37a4fd4693bdd2f}\label{class_fish_ae9ad0ceab4b720f2c37a4fd4693bdd2f}} 
+\index{Fish@{Fish}!Fish@{Fish}}
+\index{Fish@{Fish}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{Fish()}{Fish()}}
+{\footnotesize\ttfamily Fish.\+Fish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_fish_a9fb18733f43c29b1a4c4b16a6322aec6}\label{class_fish_a9fb18733f43c29b1a4c4b16a6322aec6}} 
+\index{Fish@{Fish}!change\+Face\+Direction@{change\+Face\+Direction}}
+\index{change\+Face\+Direction@{change\+Face\+Direction}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{change\+Face\+Direction()}{changeFaceDirection()}}
+{\footnotesize\ttfamily void Fish.\+change\+Face\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+face\+Direction setter. Reverse the face\+Direction. \mbox{\Hypertarget{class_fish_a88fa149bd62388b1aee597c9ec540369}\label{class_fish_a88fa149bd62388b1aee597c9ec540369}} 
+\index{Fish@{Fish}!change\+Is\+Alive@{change\+Is\+Alive}}
+\index{change\+Is\+Alive@{change\+Is\+Alive}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{change\+Is\+Alive()}{changeIsAlive()}}
+{\footnotesize\ttfamily void Fish.\+change\+Is\+Alive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Change is\+Alive if fish hunger level below 0. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_fish_a88fa149bd62388b1aee597c9ec540369_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_fish_af226ad690f56674f1b08d9d9562dde83}\label{class_fish_af226ad690f56674f1b08d9d9562dde83}} 
+\index{Fish@{Fish}!eat\+Food@{eat\+Food}}
+\index{eat\+Food@{eat\+Food}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{eat\+Food()}{eatFood()}}
+{\footnotesize\ttfamily abstract void Fish.\+eat\+Food (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+eat food. \mbox{\Hypertarget{class_fish_afc0c0824c91f3bbb61fc3762b08d9137}\label{class_fish_afc0c0824c91f3bbb61fc3762b08d9137}} 
+\index{Fish@{Fish}!get\+Current\+Position@{get\+Current\+Position}}
+\index{get\+Current\+Position@{get\+Current\+Position}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{get\+Current\+Position()}{getCurrentPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_position}{Position}} Fish.\+get\+Current\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+current\+Position getter. \begin{DoxyReturn}{Returns}
+object of \mbox{\hyperlink{class_position}{Position}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_fish_a39feef3e603de6ea5931ada8b3e1e27d}\label{class_fish_a39feef3e603de6ea5931ada8b3e1e27d}} 
+\index{Fish@{Fish}!get\+Destination@{get\+Destination}}
+\index{get\+Destination@{get\+Destination}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{get\+Destination()}{getDestination()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_position}{Position}} Fish.\+get\+Destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+destination getter. \begin{DoxyReturn}{Returns}
+object of \mbox{\hyperlink{class_position}{Position}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_fish_a5ed789451c5b7fc9808de4837f06eb02}\label{class_fish_a5ed789451c5b7fc9808de4837f06eb02}} 
+\index{Fish@{Fish}!get\+Face\+Direction@{get\+Face\+Direction}}
+\index{get\+Face\+Direction@{get\+Face\+Direction}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{get\+Face\+Direction()}{getFaceDirection()}}
+{\footnotesize\ttfamily boolean Fish.\+get\+Face\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+fish face direction getter, if true then left. \begin{DoxyReturn}{Returns}
+boolean. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_fish_a6b0fb4a552039ab06338470584bd838b}\label{class_fish_a6b0fb4a552039ab06338470584bd838b}} 
+\index{Fish@{Fish}!get\+Hunger\+Level@{get\+Hunger\+Level}}
+\index{get\+Hunger\+Level@{get\+Hunger\+Level}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{get\+Hunger\+Level()}{getHungerLevel()}}
+{\footnotesize\ttfamily int Fish.\+get\+Hunger\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+hunger\+Level getter. \begin{DoxyReturn}{Returns}
+integer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_fish_aa121fc4335ac49aa48e4ef9e137c0e8b}\label{class_fish_aa121fc4335ac49aa48e4ef9e137c0e8b}} 
+\index{Fish@{Fish}!get\+Hungry\+Level\+Limit@{get\+Hungry\+Level\+Limit}}
+\index{get\+Hungry\+Level\+Limit@{get\+Hungry\+Level\+Limit}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{get\+Hungry\+Level\+Limit()}{getHungryLevelLimit()}}
+{\footnotesize\ttfamily int Fish.\+get\+Hungry\+Level\+Limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+hungry\+Level\+Limit getter. \begin{DoxyReturn}{Returns}
+integer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_fish_a8c7a1a1666af0c425a9ef0e83d33779c}\label{class_fish_a8c7a1a1666af0c425a9ef0e83d33779c}} 
+\index{Fish@{Fish}!get\+Is\+Alive@{get\+Is\+Alive}}
+\index{get\+Is\+Alive@{get\+Is\+Alive}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{get\+Is\+Alive()}{getIsAlive()}}
+{\footnotesize\ttfamily boolean Fish.\+get\+Is\+Alive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+is\+Alive getter. \begin{DoxyReturn}{Returns}
+boolean, if true then still alive. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_fish_a9e32f70d5f02b4d0fb7e5f0e92e9bf4e}\label{class_fish_a9e32f70d5f02b4d0fb7e5f0e92e9bf4e}} 
+\index{Fish@{Fish}!get\+Move\+Time@{get\+Move\+Time}}
+\index{get\+Move\+Time@{get\+Move\+Time}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{get\+Move\+Time()}{getMoveTime()}}
+{\footnotesize\ttfamily double Fish.\+get\+Move\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+move\+Time getter. \begin{DoxyReturn}{Returns}
+double. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_fish_a256fe3bcc998d4d668e8917e8a453e7a}\label{class_fish_a256fe3bcc998d4d668e8917e8a453e7a}} 
+\index{Fish@{Fish}!get\+Moving\+Speed@{get\+Moving\+Speed}}
+\index{get\+Moving\+Speed@{get\+Moving\+Speed}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{get\+Moving\+Speed()}{getMovingSpeed()}}
+{\footnotesize\ttfamily int Fish.\+get\+Moving\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+moving\+Speed getter. \begin{DoxyReturn}{Returns}
+integer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_fish_a5abbd7e198b7770b666a85c5b02f6501}\label{class_fish_a5abbd7e198b7770b666a85c5b02f6501}} 
+\index{Fish@{Fish}!get\+Moving\+Status@{get\+Moving\+Status}}
+\index{get\+Moving\+Status@{get\+Moving\+Status}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{get\+Moving\+Status()}{getMovingStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{enum_moving_object_1_1_moving_status}{Moving\+Status}} Fish.\+get\+Moving\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+moving\+Status getter. \begin{DoxyReturn}{Returns}
+Moving\+Status enum. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_fish_aa4d669d1ffe1655a62c8b9ea5c477d72}\label{class_fish_aa4d669d1ffe1655a62c8b9ea5c477d72}} 
+\index{Fish@{Fish}!is\+Hungry@{is\+Hungry}}
+\index{is\+Hungry@{is\+Hungry}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{is\+Hungry()}{isHungry()}}
+{\footnotesize\ttfamily boolean Fish.\+is\+Hungry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\hyperlink{class_fish}{Fish}} hungry checker. \begin{DoxyReturn}{Returns}
+true if fish hungry. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_fish_a8ac2c9963873520d435ee1609dae0174}\label{class_fish_a8ac2c9963873520d435ee1609dae0174}} 
+\index{Fish@{Fish}!move\+Hunt@{move\+Hunt}}
+\index{move\+Hunt@{move\+Hunt}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{move\+Hunt()}{moveHunt()}}
+{\footnotesize\ttfamily void Fish.\+move\+Hunt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_position}{Position}}}]{destination }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+move fish towards nearest food. 
+\begin{DoxyParams}{Parameters}
+{\em destination} & nearest food position. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_fish_a8ac2c9963873520d435ee1609dae0174_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_fish_aa3683716f71b574717c30f0f7be3ec33}\label{class_fish_aa3683716f71b574717c30f0f7be3ec33}} 
+\index{Fish@{Fish}!move\+Random@{move\+Random}}
+\index{move\+Random@{move\+Random}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{move\+Random()}{moveRandom()}}
+{\footnotesize\ttfamily void Fish.\+move\+Random (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_position}{Position}}}]{destination }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+move to random position. 
+\begin{DoxyParams}{Parameters}
+{\em destination} & random position. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_fish_aa3683716f71b574717c30f0f7be3ec33_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_fish_ab86ec00d2b503f310f1c29bc9a94fbd7}\label{class_fish_ab86ec00d2b503f310f1c29bc9a94fbd7}} 
+\index{Fish@{Fish}!set\+Current\+Position@{set\+Current\+Position}}
+\index{set\+Current\+Position@{set\+Current\+Position}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{set\+Current\+Position()}{setCurrentPosition()}}
+{\footnotesize\ttfamily void Fish.\+set\+Current\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_position}{Position}}}]{current\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+current\+Position setter. 
+\begin{DoxyParams}{Parameters}
+{\em current\+Position} & Object of \mbox{\hyperlink{class_position}{Position}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_fish_a9b74ce69e55149c7df9f70e83ce5b66b}\label{class_fish_a9b74ce69e55149c7df9f70e83ce5b66b}} 
+\index{Fish@{Fish}!set\+Destination@{set\+Destination}}
+\index{set\+Destination@{set\+Destination}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{set\+Destination()}{setDestination()}}
+{\footnotesize\ttfamily void Fish.\+set\+Destination (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_position}{Position}}}]{destination }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+destination setter. 
+\begin{DoxyParams}{Parameters}
+{\em destination} & Object of \mbox{\hyperlink{class_position}{Position}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_fish_a95e9975f718a7a24254bcbb58dfe1ba1}\label{class_fish_a95e9975f718a7a24254bcbb58dfe1ba1}} 
+\index{Fish@{Fish}!set\+Hunger\+Level@{set\+Hunger\+Level}}
+\index{set\+Hunger\+Level@{set\+Hunger\+Level}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{set\+Hunger\+Level()}{setHungerLevel()}}
+{\footnotesize\ttfamily void Fish.\+set\+Hunger\+Level (\begin{DoxyParamCaption}\item[{int}]{hunger\+Level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+hunger\+Level setter. 
+\begin{DoxyParams}{Parameters}
+{\em hunger\+Level} & integer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_fish_ad6d23a97f4d4f6916243cf0033470e87}\label{class_fish_ad6d23a97f4d4f6916243cf0033470e87}} 
+\index{Fish@{Fish}!set\+Move\+Time@{set\+Move\+Time}}
+\index{set\+Move\+Time@{set\+Move\+Time}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{set\+Move\+Time()}{setMoveTime()}}
+{\footnotesize\ttfamily void Fish.\+set\+Move\+Time (\begin{DoxyParamCaption}\item[{int}]{move\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+move\+Time setter. 
+\begin{DoxyParams}{Parameters}
+{\em move\+Time} & integer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_fish_afcc56cacfeded2fb41f3de811aff9d45}\label{class_fish_afcc56cacfeded2fb41f3de811aff9d45}} 
+\index{Fish@{Fish}!set\+Moving\+Status@{set\+Moving\+Status}}
+\index{set\+Moving\+Status@{set\+Moving\+Status}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{set\+Moving\+Status()}{setMovingStatus()}}
+{\footnotesize\ttfamily void Fish.\+set\+Moving\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enum_moving_object_1_1_moving_status}{Moving\+Status}}}]{moving\+Status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+moving\+Status setter. 
+\begin{DoxyParams}{Parameters}
+{\em moving\+Status} & Moving\+Status enum. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_fish_a1f025627baa1802f78dab5fef88b7838}\label{class_fish_a1f025627baa1802f78dab5fef88b7838}} 
+\index{Fish@{Fish}!current\+Position@{current\+Position}}
+\index{current\+Position@{current\+Position}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{current\+Position}{currentPosition}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_position}{Position}} Fish.\+current\+Position\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_fish_abb83de49d7a7fc239d603e11215e90f9}\label{class_fish_abb83de49d7a7fc239d603e11215e90f9}} 
+\index{Fish@{Fish}!default\+Hunger\+Level@{default\+Hunger\+Level}}
+\index{default\+Hunger\+Level@{default\+Hunger\+Level}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{default\+Hunger\+Level}{defaultHungerLevel}}
+{\footnotesize\ttfamily final int Fish.\+default\+Hunger\+Level = 60\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_fish_a8b71b4abb80a350eca229e1f4c6656c4}\label{class_fish_a8b71b4abb80a350eca229e1f4c6656c4}} 
+\index{Fish@{Fish}!default\+X\+Pos@{default\+X\+Pos}}
+\index{default\+X\+Pos@{default\+X\+Pos}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{default\+X\+Pos}{defaultXPos}}
+{\footnotesize\ttfamily final double Fish.\+default\+X\+Pos = 0.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_fish_a9ce14817daae461df29a23d247c87a80}\label{class_fish_a9ce14817daae461df29a23d247c87a80}} 
+\index{Fish@{Fish}!default\+Y\+Pos@{default\+Y\+Pos}}
+\index{default\+Y\+Pos@{default\+Y\+Pos}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{default\+Y\+Pos}{defaultYPos}}
+{\footnotesize\ttfamily final double Fish.\+default\+Y\+Pos = 0.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_fish_a93523126df751dd0301a1fcf2ed42735}\label{class_fish_a93523126df751dd0301a1fcf2ed42735}} 
+\index{Fish@{Fish}!destination@{destination}}
+\index{destination@{destination}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{destination}{destination}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_position}{Position}} Fish.\+destination\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_fish_af86c6cd526847bf6be39c9cc170e5305}\label{class_fish_af86c6cd526847bf6be39c9cc170e5305}} 
+\index{Fish@{Fish}!face\+Direction@{face\+Direction}}
+\index{face\+Direction@{face\+Direction}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{face\+Direction}{faceDirection}}
+{\footnotesize\ttfamily boolean Fish.\+face\+Direction\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_fish_a9e0224f04ab5b9da07414075698bbbf1}\label{class_fish_a9e0224f04ab5b9da07414075698bbbf1}} 
+\index{Fish@{Fish}!hunger\+Level@{hunger\+Level}}
+\index{hunger\+Level@{hunger\+Level}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{hunger\+Level}{hungerLevel}}
+{\footnotesize\ttfamily int Fish.\+hunger\+Level\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_fish_a9d334546607726c92bc7e9a6ffd03f75}\label{class_fish_a9d334546607726c92bc7e9a6ffd03f75}} 
+\index{Fish@{Fish}!hungry\+Level\+Limit@{hungry\+Level\+Limit}}
+\index{hungry\+Level\+Limit@{hungry\+Level\+Limit}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{hungry\+Level\+Limit}{hungryLevelLimit}}
+{\footnotesize\ttfamily final int Fish.\+hungry\+Level\+Limit = 40\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_fish_ad380340280b30f5700d206739b793d8f}\label{class_fish_ad380340280b30f5700d206739b793d8f}} 
+\index{Fish@{Fish}!is\+Alive@{is\+Alive}}
+\index{is\+Alive@{is\+Alive}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{is\+Alive}{isAlive}}
+{\footnotesize\ttfamily boolean Fish.\+is\+Alive\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_fish_a630f9859f38f851ccdf223daebebd27f}\label{class_fish_a630f9859f38f851ccdf223daebebd27f}} 
+\index{Fish@{Fish}!move\+Time@{move\+Time}}
+\index{move\+Time@{move\+Time}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{move\+Time}{moveTime}}
+{\footnotesize\ttfamily double Fish.\+move\+Time\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_fish_a9f5b20fab06597fda40be4c4d42473d0}\label{class_fish_a9f5b20fab06597fda40be4c4d42473d0}} 
+\index{Fish@{Fish}!moving\+Speed@{moving\+Speed}}
+\index{moving\+Speed@{moving\+Speed}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{moving\+Speed}{movingSpeed}}
+{\footnotesize\ttfamily final int Fish.\+moving\+Speed = 1\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_fish_adb3e06c4c9cfd4e55a7d819c50702521}\label{class_fish_adb3e06c4c9cfd4e55a7d819c50702521}} 
+\index{Fish@{Fish}!moving\+Status@{moving\+Status}}
+\index{moving\+Status@{moving\+Status}!Fish@{Fish}}
+\subsubsection{\texorpdfstring{moving\+Status}{movingStatus}}
+{\footnotesize\ttfamily \mbox{\hyperlink{enum_moving_object_1_1_moving_status}{Moving\+Status}} Fish.\+moving\+Status\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_fish_8java}{Fish.\+java}}\end{DoxyCompactItemize}

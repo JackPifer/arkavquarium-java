@@ -1,0 +1,25 @@
+<map id="Main.main" name="Main.main">
+<area shape="rect" id="node2" href="$class_controller.html#a2fcfd8c4d229d4deeec470de95567805" title="Controller.run" alt="" coords="136,301,238,327"/>
+<area shape="rect" id="node3" href="$class_controller.html#a42fbd01fdeefdf2f40f85230f40d8be8" title="Controller.getCoin" alt="" coords="296,129,424,155"/>
+<area shape="rect" id="node10" href="$class_controller.html#a278f0ba8f8978834619465f1eb357175" title="Controller.buyEgg" alt="" coords="297,252,424,277"/>
+<area shape="rect" id="node15" href="$class_controller.html#a40a60157abffab52f9170ffb6579151e" title="Controller.buyFood" alt="" coords="293,301,427,327"/>
+<area shape="rect" id="node19" href="$class_controller.html#adb93f92dca6e1d48d61d811411945aff" title="Controller.buyGuppy" alt="" coords="289,351,432,376"/>
+<area shape="rect" id="node22" href="$class_controller.html#aeea16d5cb5dc9ea882583b621c1205f9" title="Controller.buyPiranha" alt="" coords="286,400,435,425"/>
+<area shape="rect" id="node4" href="$class_aquarium.html#a9b0dec4c194324e6095b81262b042460" title="Aquarium.getListOfCoin" alt="" coords="483,55,646,80"/>
+<area shape="rect" id="node5" href="$class_linked_list.html#a7ea3fa6fa5601039076c2a6c8fe88219" title="LinkedList.getSize" alt="" coords="500,104,629,129"/>
+<area shape="rect" id="node6" href="$class_linked_list.html#a032ef46fc54f12525746d9f7c3a80663" title="LinkedList.get" alt="" coords="513,153,616,179"/>
+<area shape="rect" id="node7" href="$class_player.html#a09d885315c59a404c418155e04fed379" title="Player.increaseMoney" alt="" coords="488,203,641,228"/>
+<area shape="rect" id="node8" href="$class_aquarium.html#af6f2d1079224c08a0ff7d376ea04c732" title="Aquarium.removeCoin" alt="" coords="488,5,642,31"/>
+<area shape="rect" id="node9" href="$class_linked_list.html#a85388ca2d7e4c8bc06fbea2c6fcfea33" title="LinkedList.remove" alt="" coords="708,5,838,31"/>
+<area shape="rect" id="node11" href="$class_player.html#a8854a672f539bc72f7f09b57d20e8467" title="Player.payEgg" alt="" coords="511,252,618,277"/>
+<area shape="rect" id="node12" href="$class_player.html#a5836d6213f249c1928423d9036ec9e4e" title="Player.isMoneyEnough" alt="" coords="694,351,852,376"/>
+<area shape="rect" id="node13" href="$class_player.html#a49009dfbdc77841a389ab9f9d84ff2e2" title="Player.getEggPrice" alt="" coords="705,252,840,277"/>
+<area shape="rect" id="node14" href="$class_player.html#a32e700ea6b8d4792d24cd8a245c9706f" title="Player.decreaseMoney" alt="" coords="694,301,851,327"/>
+<area shape="rect" id="node16" href="$class_player.html#a61e99d628085fda9765af1d27b5d6d8d" title="Player.payFood" alt="" coords="508,301,622,327"/>
+<area shape="rect" id="node17" href="$class_aquarium.html#a36020897197a43587bcedc6aaf617a0f" title="Aquarium.addFishFood" alt="" coords="485,449,645,475"/>
+<area shape="rect" id="node18" href="$class_linked_list.html#af7ec408e2f1040643d77f614af535988" title="LinkedList.add" alt="" coords="719,499,827,524"/>
+<area shape="rect" id="node20" href="$class_player.html#ae1169535a36bb44c7e37af0c7cf75410" title="Player.payGuppy" alt="" coords="503,351,626,376"/>
+<area shape="rect" id="node21" href="$class_aquarium.html#a4deb3514c2e387b5d3e33424c18144c1" title="Aquarium.addGuppy" alt="" coords="493,499,636,524"/>
+<area shape="rect" id="node23" href="$class_player.html#aa46852c65ff869246dd5ae918e2b8683" title="Player.payPiranha" alt="" coords="500,400,629,425"/>
+<area shape="rect" id="node24" href="$class_aquarium.html#a30faca886e988aa80f512086cd817588" title="Aquarium.addPiranha" alt="" coords="489,548,640,573"/>
+</map>

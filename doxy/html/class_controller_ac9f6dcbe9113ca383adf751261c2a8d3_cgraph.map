@@ -1,0 +1,7 @@
+<map id="Controller.animateFishFood" name="Controller.animateFishFood">
+<area shape="rect" id="node2" href="$class_aquarium.html#acfab5e8dd55512337ae91cf923e565e6" title="Aquarium.getListOfFishFood" alt="" coords="238,5,429,31"/>
+<area shape="rect" id="node3" href="$class_linked_list.html#a7ea3fa6fa5601039076c2a6c8fe88219" title="LinkedList.getSize" alt="" coords="269,55,399,80"/>
+<area shape="rect" id="node4" href="$class_linked_list.html#a032ef46fc54f12525746d9f7c3a80663" title="LinkedList.get" alt="" coords="282,104,386,129"/>
+<area shape="rect" id="node5" href="$class_aquarium.html#a6c1a0d6a0cc7cd4604dfce22706f57ca" title="Aquarium.removeFishFood" alt="" coords="243,153,425,179"/>
+<area shape="rect" id="node6" href="$class_linked_list.html#a85388ca2d7e4c8bc06fbea2c6fcfea33" title="LinkedList.remove" alt="" coords="477,153,607,179"/>
+</map>

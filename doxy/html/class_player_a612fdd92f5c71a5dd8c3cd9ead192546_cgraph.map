@@ -1,0 +1,7 @@
+<map id="Player.isLose" name="Player.isLose">
+<area shape="rect" id="node2" href="$class_aquarium.html#a9b0dec4c194324e6095b81262b042460" title="Aquarium.getListOfCoin" alt="" coords="163,5,326,31"/>
+<area shape="rect" id="node3" href="$class_linked_list.html#a7ea3fa6fa5601039076c2a6c8fe88219" title="LinkedList.getSize" alt="" coords="180,55,309,80"/>
+<area shape="rect" id="node4" href="$class_aquarium.html#a2427d901ce170774e36ca1a8ecbe8f4b" title="Aquarium.getListOfPiranha" alt="" coords="154,104,335,129"/>
+<area shape="rect" id="node5" href="$class_aquarium.html#a411ebb8e3ada997747567f59da24a020" title="Aquarium.getListOfGuppy" alt="" coords="157,153,332,179"/>
+<area shape="rect" id="node6" href="$class_player.html#a92a543d59ea6cb11b01f424f8957f58c" title="Player.getMoney" alt="" coords="184,203,305,228"/>
+</map>

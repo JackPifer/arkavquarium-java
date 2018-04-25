@@ -1,0 +1,288 @@
+\hypertarget{class_player}{}\section{Player Class Reference}
+\label{class_player}\index{Player@{Player}}
+
+
+Collaboration diagram for Player\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{class_player__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{enum_player_1_1_player_status}{Player\+Status}}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_player_a712a726b07cf901c040116d6d0c5cc66}{Player}} ()
+\item 
+\mbox{\hyperlink{enum_player_1_1_player_status}{Player\+Status}} \mbox{\hyperlink{class_player_a0c7b0dad54f27eeccf3bb8e1bd4779c9}{get\+Player\+Status}} ()
+\item 
+double \mbox{\hyperlink{class_player_a92a543d59ea6cb11b01f424f8957f58c}{get\+Money}} ()
+\item 
+int \mbox{\hyperlink{class_player_a3845f8524497669aefc7a89c5e5f7e7f}{get\+Egg}} ()
+\item 
+void \mbox{\hyperlink{class_player_ac740d3458e2caf24efcdb95198c2a388}{set\+Player\+Status}} (\mbox{\hyperlink{enum_player_1_1_player_status}{Player\+Status}} \mbox{\hyperlink{class_player_a022b57fd4b98752acacbbc5d1ec35e45}{player\+Status}})
+\item 
+void \mbox{\hyperlink{class_player_a09d885315c59a404c418155e04fed379}{increase\+Money}} (double added)
+\item 
+void \mbox{\hyperlink{class_player_a32e700ea6b8d4792d24cd8a245c9706f}{decrease\+Money}} (double cost)
+\item 
+void \mbox{\hyperlink{class_player_ae89921d6eb811215711a62d7e6520a69}{set\+Egg}} (int \mbox{\hyperlink{class_player_a9ed64c22212ad7526eca0903a05f9967}{egg}})
+\item 
+boolean \mbox{\hyperlink{class_player_ad54876d910aca3a92ae90ded139953ec}{is\+Win}} ()
+\item 
+boolean \mbox{\hyperlink{class_player_a612fdd92f5c71a5dd8c3cd9ead192546}{is\+Lose}} (\mbox{\hyperlink{class_aquarium}{Aquarium}} tank)
+\item 
+boolean \mbox{\hyperlink{class_player_a5836d6213f249c1928423d9036ec9e4e}{is\+Money\+Enough}} (int price)
+\item 
+int \mbox{\hyperlink{class_player_a49009dfbdc77841a389ab9f9d84ff2e2}{get\+Egg\+Price}} ()
+\item 
+boolean \mbox{\hyperlink{class_player_a8854a672f539bc72f7f09b57d20e8467}{pay\+Egg}} ()
+\item 
+boolean \mbox{\hyperlink{class_player_a61e99d628085fda9765af1d27b5d6d8d}{pay\+Food}} ()
+\item 
+boolean \mbox{\hyperlink{class_player_aa46852c65ff869246dd5ae918e2b8683}{pay\+Piranha}} ()
+\item 
+boolean \mbox{\hyperlink{class_player_ae1169535a36bb44c7e37af0c7cf75410}{pay\+Guppy}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_player_a80b07966d9359181ae196aa4179930a5}{money}}
+\item 
+int \mbox{\hyperlink{class_player_a9ed64c22212ad7526eca0903a05f9967}{egg}}
+\item 
+\mbox{\hyperlink{enum_player_1_1_player_status}{Player\+Status}} \mbox{\hyperlink{class_player_a022b57fd4b98752acacbbc5d1ec35e45}{player\+Status}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+represents a player. \begin{DoxyVersion}{Version}
+1.\+0. 
+\end{DoxyVersion}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_player_a712a726b07cf901c040116d6d0c5cc66}\label{class_player_a712a726b07cf901c040116d6d0c5cc66}} 
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\subsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily Player.\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+constructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_player_a32e700ea6b8d4792d24cd8a245c9706f}\label{class_player_a32e700ea6b8d4792d24cd8a245c9706f}} 
+\index{Player@{Player}!decrease\+Money@{decrease\+Money}}
+\index{decrease\+Money@{decrease\+Money}!Player@{Player}}
+\subsubsection{\texorpdfstring{decrease\+Money()}{decreaseMoney()}}
+{\footnotesize\ttfamily void Player.\+decrease\+Money (\begin{DoxyParamCaption}\item[{double}]{cost }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+decrease money by certain value. 
+\begin{DoxyParams}{Parameters}
+{\em cost} & value of the money to decrease. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_player_a3845f8524497669aefc7a89c5e5f7e7f}\label{class_player_a3845f8524497669aefc7a89c5e5f7e7f}} 
+\index{Player@{Player}!get\+Egg@{get\+Egg}}
+\index{get\+Egg@{get\+Egg}!Player@{Player}}
+\subsubsection{\texorpdfstring{get\+Egg()}{getEgg()}}
+{\footnotesize\ttfamily int Player.\+get\+Egg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+getter. \begin{DoxyReturn}{Returns}
+integer egg size. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_a49009dfbdc77841a389ab9f9d84ff2e2}\label{class_player_a49009dfbdc77841a389ab9f9d84ff2e2}} 
+\index{Player@{Player}!get\+Egg\+Price@{get\+Egg\+Price}}
+\index{get\+Egg\+Price@{get\+Egg\+Price}!Player@{Player}}
+\subsubsection{\texorpdfstring{get\+Egg\+Price()}{getEggPrice()}}
+{\footnotesize\ttfamily int Player.\+get\+Egg\+Price (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+return egg price correspondent to current size. \begin{DoxyReturn}{Returns}
+int egg price. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_a92a543d59ea6cb11b01f424f8957f58c}\label{class_player_a92a543d59ea6cb11b01f424f8957f58c}} 
+\index{Player@{Player}!get\+Money@{get\+Money}}
+\index{get\+Money@{get\+Money}!Player@{Player}}
+\subsubsection{\texorpdfstring{get\+Money()}{getMoney()}}
+{\footnotesize\ttfamily double Player.\+get\+Money (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+getter. \begin{DoxyReturn}{Returns}
+double money. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_a0c7b0dad54f27eeccf3bb8e1bd4779c9}\label{class_player_a0c7b0dad54f27eeccf3bb8e1bd4779c9}} 
+\index{Player@{Player}!get\+Player\+Status@{get\+Player\+Status}}
+\index{get\+Player\+Status@{get\+Player\+Status}!Player@{Player}}
+\subsubsection{\texorpdfstring{get\+Player\+Status()}{getPlayerStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{enum_player_1_1_player_status}{Player\+Status}} Player.\+get\+Player\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+getter. \begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{enum_player_1_1_player_status}{Player\+Status}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_a09d885315c59a404c418155e04fed379}\label{class_player_a09d885315c59a404c418155e04fed379}} 
+\index{Player@{Player}!increase\+Money@{increase\+Money}}
+\index{increase\+Money@{increase\+Money}!Player@{Player}}
+\subsubsection{\texorpdfstring{increase\+Money()}{increaseMoney()}}
+{\footnotesize\ttfamily void Player.\+increase\+Money (\begin{DoxyParamCaption}\item[{double}]{added }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+increase money by certain value. 
+\begin{DoxyParams}{Parameters}
+{\em added} & value of the money to decrease. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_player_a612fdd92f5c71a5dd8c3cd9ead192546}\label{class_player_a612fdd92f5c71a5dd8c3cd9ead192546}} 
+\index{Player@{Player}!is\+Lose@{is\+Lose}}
+\index{is\+Lose@{is\+Lose}!Player@{Player}}
+\subsubsection{\texorpdfstring{is\+Lose()}{isLose()}}
+{\footnotesize\ttfamily boolean Player.\+is\+Lose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aquarium}{Aquarium}}}]{tank }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+determine if player lose. \begin{DoxyReturn}{Returns}
+boolean true if player lose. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_player_a612fdd92f5c71a5dd8c3cd9ead192546_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_a5836d6213f249c1928423d9036ec9e4e}\label{class_player_a5836d6213f249c1928423d9036ec9e4e}} 
+\index{Player@{Player}!is\+Money\+Enough@{is\+Money\+Enough}}
+\index{is\+Money\+Enough@{is\+Money\+Enough}!Player@{Player}}
+\subsubsection{\texorpdfstring{is\+Money\+Enough()}{isMoneyEnough()}}
+{\footnotesize\ttfamily boolean Player.\+is\+Money\+Enough (\begin{DoxyParamCaption}\item[{int}]{price }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+is available money greater than price. \begin{DoxyReturn}{Returns}
+boolean is it greater. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_ad54876d910aca3a92ae90ded139953ec}\label{class_player_ad54876d910aca3a92ae90ded139953ec}} 
+\index{Player@{Player}!is\+Win@{is\+Win}}
+\index{is\+Win@{is\+Win}!Player@{Player}}
+\subsubsection{\texorpdfstring{is\+Win()}{isWin()}}
+{\footnotesize\ttfamily boolean Player.\+is\+Win (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+determine if player win (when egg size = 3) and set the playerstatus to finish. \begin{DoxyReturn}{Returns}
+boolean true if player win. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_a8854a672f539bc72f7f09b57d20e8467}\label{class_player_a8854a672f539bc72f7f09b57d20e8467}} 
+\index{Player@{Player}!pay\+Egg@{pay\+Egg}}
+\index{pay\+Egg@{pay\+Egg}!Player@{Player}}
+\subsubsection{\texorpdfstring{pay\+Egg()}{payEgg()}}
+{\footnotesize\ttfamily boolean Player.\+pay\+Egg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+buy egg. \begin{DoxyReturn}{Returns}
+boolean, is payment success. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{class_player_a8854a672f539bc72f7f09b57d20e8467_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_a61e99d628085fda9765af1d27b5d6d8d}\label{class_player_a61e99d628085fda9765af1d27b5d6d8d}} 
+\index{Player@{Player}!pay\+Food@{pay\+Food}}
+\index{pay\+Food@{pay\+Food}!Player@{Player}}
+\subsubsection{\texorpdfstring{pay\+Food()}{payFood()}}
+{\footnotesize\ttfamily boolean Player.\+pay\+Food (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+buy food. \begin{DoxyReturn}{Returns}
+boolean, is payment success. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_player_a61e99d628085fda9765af1d27b5d6d8d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_ae1169535a36bb44c7e37af0c7cf75410}\label{class_player_ae1169535a36bb44c7e37af0c7cf75410}} 
+\index{Player@{Player}!pay\+Guppy@{pay\+Guppy}}
+\index{pay\+Guppy@{pay\+Guppy}!Player@{Player}}
+\subsubsection{\texorpdfstring{pay\+Guppy()}{payGuppy()}}
+{\footnotesize\ttfamily boolean Player.\+pay\+Guppy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+buy guppy. \begin{DoxyReturn}{Returns}
+boolean, is payment success. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{class_player_ae1169535a36bb44c7e37af0c7cf75410_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_aa46852c65ff869246dd5ae918e2b8683}\label{class_player_aa46852c65ff869246dd5ae918e2b8683}} 
+\index{Player@{Player}!pay\+Piranha@{pay\+Piranha}}
+\index{pay\+Piranha@{pay\+Piranha}!Player@{Player}}
+\subsubsection{\texorpdfstring{pay\+Piranha()}{payPiranha()}}
+{\footnotesize\ttfamily boolean Player.\+pay\+Piranha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+buy piranha. \begin{DoxyReturn}{Returns}
+boolean, is payment success. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_player_aa46852c65ff869246dd5ae918e2b8683_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_ae89921d6eb811215711a62d7e6520a69}\label{class_player_ae89921d6eb811215711a62d7e6520a69}} 
+\index{Player@{Player}!set\+Egg@{set\+Egg}}
+\index{set\+Egg@{set\+Egg}!Player@{Player}}
+\subsubsection{\texorpdfstring{set\+Egg()}{setEgg()}}
+{\footnotesize\ttfamily void Player.\+set\+Egg (\begin{DoxyParamCaption}\item[{int}]{egg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setter. 
+\begin{DoxyParams}{Parameters}
+{\em egg} & change egg size. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_player_ac740d3458e2caf24efcdb95198c2a388}\label{class_player_ac740d3458e2caf24efcdb95198c2a388}} 
+\index{Player@{Player}!set\+Player\+Status@{set\+Player\+Status}}
+\index{set\+Player\+Status@{set\+Player\+Status}!Player@{Player}}
+\subsubsection{\texorpdfstring{set\+Player\+Status()}{setPlayerStatus()}}
+{\footnotesize\ttfamily void Player.\+set\+Player\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enum_player_1_1_player_status}{Player\+Status}}}]{player\+Status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setter. 
+\begin{DoxyParams}{Parameters}
+{\em player\+Status} & player\+Status. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_player_a9ed64c22212ad7526eca0903a05f9967}\label{class_player_a9ed64c22212ad7526eca0903a05f9967}} 
+\index{Player@{Player}!egg@{egg}}
+\index{egg@{egg}!Player@{Player}}
+\subsubsection{\texorpdfstring{egg}{egg}}
+{\footnotesize\ttfamily int Player.\+egg\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_player_a80b07966d9359181ae196aa4179930a5}\label{class_player_a80b07966d9359181ae196aa4179930a5}} 
+\index{Player@{Player}!money@{money}}
+\index{money@{money}!Player@{Player}}
+\subsubsection{\texorpdfstring{money}{money}}
+{\footnotesize\ttfamily double Player.\+money\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_player_a022b57fd4b98752acacbbc5d1ec35e45}\label{class_player_a022b57fd4b98752acacbbc5d1ec35e45}} 
+\index{Player@{Player}!player\+Status@{player\+Status}}
+\index{player\+Status@{player\+Status}!Player@{Player}}
+\subsubsection{\texorpdfstring{player\+Status}{playerStatus}}
+{\footnotesize\ttfamily \mbox{\hyperlink{enum_player_1_1_player_status}{Player\+Status}} Player.\+player\+Status\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_player_8java}{Player.\+java}}\end{DoxyCompactItemize}

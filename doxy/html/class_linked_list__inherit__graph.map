@@ -1,0 +1,7 @@
+<map id="LinkedList&lt; T &gt;" name="LinkedList&lt; T &gt;">
+<area shape="rect" id="node2" href="$class_linked_list.html" title="{LinkedList\&lt; Piranha \&gt;\n|&#45; first\l|+ LinkedList()\l+ getFirst()\l+ isEmpty()\l+ getSize()\l+ add()\l+ find()\l+ remove()\l+ get()\l+ printList()\l}" alt="" coords="5,247,156,427"/>
+<area shape="rect" id="node3" href="$class_linked_list.html" title="{LinkedList\&lt; Guppy \&gt;\n|&#45; first\l|+ LinkedList()\l+ getFirst()\l+ isEmpty()\l+ getSize()\l+ add()\l+ find()\l+ remove()\l+ get()\l+ printList()\l}" alt="" coords="179,247,323,427"/>
+<area shape="rect" id="node4" href="$class_linked_list.html" title="{LinkedList\&lt; Coin \&gt;\n|&#45; first\l|+ LinkedList()\l+ getFirst()\l+ isEmpty()\l+ getSize()\l+ add()\l+ find()\l+ remove()\l+ get()\l+ printList()\l}" alt="" coords="347,247,478,427"/>
+<area shape="rect" id="node5" href="$class_linked_list.html" title="{LinkedList\&lt; Integer \&gt;\n|&#45; first\l|+ LinkedList()\l+ getFirst()\l+ isEmpty()\l+ getSize()\l+ add()\l+ find()\l+ remove()\l+ get()\l+ printList()\l}" alt="" coords="502,247,648,427"/>
+<area shape="rect" id="node6" href="$class_linked_list.html" title="{LinkedList\&lt; FishFood \&gt;\n|&#45; first\l|+ LinkedList()\l+ getFirst()\l+ isEmpty()\l+ getSize()\l+ add()\l+ find()\l+ remove()\l+ get()\l+ printList()\l}" alt="" coords="673,247,832,427"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="Fish.moveHunt" name="Fish.moveHunt">
+<area shape="rect" id="node2" href="$class_fish.html#afc0c0824c91f3bbb61fc3762b08d9137" title="Fish.getCurrentPosition" alt="" coords="164,5,325,31"/>
+<area shape="rect" id="node3" href="$class_position.html#a14c74938fcd12f380e0f3d19cfc8fb70" title="Position.getX" alt="" coords="195,55,295,80"/>
+<area shape="rect" id="node4" href="$class_fish.html#a39feef3e603de6ea5931ada8b3e1e27d" title="Fish.getDestination" alt="" coords="177,104,312,129"/>
+<area shape="rect" id="node5" href="$class_position.html#acc59fee4dda06e7be2455916abe6a2a6" title="Position.getY" alt="" coords="195,153,295,179"/>
+<area shape="rect" id="node6" href="$class_position.html#a30f78db92c43f742e7108972be6de018" title="Position.setX" alt="" coords="195,203,294,228"/>
+<area shape="rect" id="node7" href="$class_position.html#aaf877e0285431a70b8a254ae14bf022e" title="Position.setY" alt="" coords="195,252,294,277"/>
+</map>

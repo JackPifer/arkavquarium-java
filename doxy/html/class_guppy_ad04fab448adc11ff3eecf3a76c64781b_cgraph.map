@@ -1,0 +1,8 @@
+<map id="Guppy.draw" name="Guppy.draw">
+<area shape="rect" id="node2" href="$class_guppy.html#a14ca9e79a2fe085224f240e496c9905e" title="Guppy.getSize" alt="" coords="172,5,280,31"/>
+<area shape="rect" id="node3" href="$class_fish.html#aa4d669d1ffe1655a62c8b9ea5c477d72" title="Fish.isHungry" alt="" coords="174,55,277,80"/>
+<area shape="rect" id="node4" href="$class_fish.html#a5ed789451c5b7fc9808de4837f06eb02" title="Fish.getFaceDirection" alt="" coords="150,104,301,129"/>
+<area shape="rect" id="node5" href="$class_fish.html#afc0c0824c91f3bbb61fc3762b08d9137" title="Fish.getCurrentPosition" alt="" coords="146,153,306,179"/>
+<area shape="rect" id="node6" href="$class_position.html#a14c74938fcd12f380e0f3d19cfc8fb70" title="Position.getX" alt="" coords="176,203,276,228"/>
+<area shape="rect" id="node7" href="$class_position.html#acc59fee4dda06e7be2455916abe6a2a6" title="Position.getY" alt="" coords="176,252,276,277"/>
+</map>
