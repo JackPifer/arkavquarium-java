@@ -11,7 +11,7 @@ public class DroppableItemTest {
   @Before
   public void initialization() {
     pos = new Position(5.0, 5.0);
-    di = new DroppableItem(p);
+    di = new DroppableItem(pos);
   }
 
   @Test

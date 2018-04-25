@@ -52,7 +52,7 @@ public class FishTest {
     assertEquals(false, fish.isHungry());
 
     //make fish hungry
-    f.setHungerLevel(39);
+    fish.setHungerLevel(39);
     assertEquals(true, fish.isHungry());
   }
 
@@ -60,7 +60,7 @@ public class FishTest {
   public void findNearestFoodTest() {
     //Test if food is a fishfood object
     Position fishFoodNearest = fish.findNearestFood(listOfFishFood);
-    assertEquals(fishFoodNearest, p);
+    assertEquals(fishFoodNearest, pos);
 
     //Test if food is a guppy object
     Position guppyNearest = fish.findNearestFood(listOfGuppy);
