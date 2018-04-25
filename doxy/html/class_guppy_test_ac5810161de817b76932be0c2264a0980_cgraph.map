@@ -1,0 +1,5 @@
+<map id="GuppyTest.eatFoodTest" name="GuppyTest.eatFoodTest">
+<area shape="rect" id="node2" href="$class_guppy.html#a1b4fd13a880aa51ad21dd2357e5aaa2b" title="Guppy.getNumberOfFoodEaten" alt="" coords="215,5,424,31"/>
+<area shape="rect" id="node3" href="$class_guppy.html#a2b234c201f80dbed1db3a58e4ee7840b" title="Guppy.eatFood" alt="" coords="264,55,376,80"/>
+<area shape="rect" id="node4" href="$class_guppy.html#aa36c77e990d4959dc81adbe457e989c3" title="Guppy.grow" alt="" coords="472,55,564,80"/>
+</map>

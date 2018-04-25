@@ -1,0 +1,4 @@
+<map id="DroppableItem.moveDown" name="DroppableItem.moveDown">
+<area shape="rect" id="node2" href="$class_droppable_item.html#a90d927cd4460d9cd5e0070b000606cd3" title="DroppableItem.getCurrent\lPosition" alt="" coords="233,5,408,44"/>
+<area shape="rect" id="node3" href="$class_position.html#aaf877e0285431a70b8a254ae14bf022e" title="Position.setY" alt="" coords="271,68,370,93"/>
+</map>

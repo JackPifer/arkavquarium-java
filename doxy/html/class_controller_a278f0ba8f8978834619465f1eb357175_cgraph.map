@@ -1,0 +1,6 @@
+<map id="Controller.buyEgg" name="Controller.buyEgg">
+<area shape="rect" id="node2" href="$class_player.html#a8854a672f539bc72f7f09b57d20e8467" title="Player.payEgg" alt="" coords="181,55,288,80"/>
+<area shape="rect" id="node3" href="$class_player.html#a5836d6213f249c1928423d9036ec9e4e" title="Player.isMoneyEnough" alt="" coords="336,5,494,31"/>
+<area shape="rect" id="node4" href="$class_player.html#a49009dfbdc77841a389ab9f9d84ff2e2" title="Player.getEggPrice" alt="" coords="347,55,482,80"/>
+<area shape="rect" id="node5" href="$class_player.html#a32e700ea6b8d4792d24cd8a245c9706f" title="Player.decreaseMoney" alt="" coords="336,104,493,129"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Controller.graphicAccesories" name="Controller.graphicAccesories">
+<area shape="rect" id="node2" href="$class_player.html#a92a543d59ea6cb11b01f424f8957f58c" title="Player.getMoney" alt="" coords="261,5,381,31"/>
+<area shape="rect" id="node3" href="$class_controller.html#a04e239635c1b5ca996b74498c373626b" title="Controller.animateEgg" alt="" coords="244,55,398,80"/>
+<area shape="rect" id="node4" href="$class_player.html#a3845f8524497669aefc7a89c5e5f7e7f" title="Player.getEgg" alt="" coords="446,55,550,80"/>
+</map>

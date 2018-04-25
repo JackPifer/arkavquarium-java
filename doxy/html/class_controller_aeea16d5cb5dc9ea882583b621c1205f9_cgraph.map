@@ -1,0 +1,7 @@
+<map id="Controller.buyPiranha" name="Controller.buyPiranha">
+<area shape="rect" id="node2" href="$class_player.html#aa46852c65ff869246dd5ae918e2b8683" title="Player.payPiranha" alt="" coords="213,55,343,80"/>
+<area shape="rect" id="node5" href="$class_aquarium.html#a30faca886e988aa80f512086cd817588" title="Aquarium.addPiranha" alt="" coords="203,104,353,129"/>
+<area shape="rect" id="node3" href="$class_player.html#a5836d6213f249c1928423d9036ec9e4e" title="Player.isMoneyEnough" alt="" coords="401,5,559,31"/>
+<area shape="rect" id="node4" href="$class_player.html#a32e700ea6b8d4792d24cd8a245c9706f" title="Player.decreaseMoney" alt="" coords="402,55,559,80"/>
+<area shape="rect" id="node6" href="$class_linked_list.html#af7ec408e2f1040643d77f614af535988" title="LinkedList.add" alt="" coords="426,104,534,129"/>
+</map>

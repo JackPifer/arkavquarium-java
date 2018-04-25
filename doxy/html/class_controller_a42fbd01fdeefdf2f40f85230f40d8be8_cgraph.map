@@ -1,0 +1,8 @@
+<map id="Controller.getCoin" name="Controller.getCoin">
+<area shape="rect" id="node2" href="$class_aquarium.html#a9b0dec4c194324e6095b81262b042460" title="Aquarium.getListOfCoin" alt="" coords="181,5,344,31"/>
+<area shape="rect" id="node3" href="$class_linked_list.html#a7ea3fa6fa5601039076c2a6c8fe88219" title="LinkedList.getSize" alt="" coords="198,55,328,80"/>
+<area shape="rect" id="node4" href="$class_linked_list.html#a032ef46fc54f12525746d9f7c3a80663" title="LinkedList.get" alt="" coords="211,104,315,129"/>
+<area shape="rect" id="node5" href="$class_player.html#a09d885315c59a404c418155e04fed379" title="Player.increaseMoney" alt="" coords="187,153,339,179"/>
+<area shape="rect" id="node6" href="$class_aquarium.html#af6f2d1079224c08a0ff7d376ea04c732" title="Aquarium.removeCoin" alt="" coords="186,203,340,228"/>
+<area shape="rect" id="node7" href="$class_linked_list.html#a85388ca2d7e4c8bc06fbea2c6fcfea33" title="LinkedList.remove" alt="" coords="392,203,522,228"/>
+</map>

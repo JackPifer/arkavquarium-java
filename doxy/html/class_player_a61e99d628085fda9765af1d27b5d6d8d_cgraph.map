@@ -1,0 +1,4 @@
+<map id="Player.payFood" name="Player.payFood">
+<area shape="rect" id="node2" href="$class_player.html#a5836d6213f249c1928423d9036ec9e4e" title="Player.isMoneyEnough" alt="" coords="167,5,325,31"/>
+<area shape="rect" id="node3" href="$class_player.html#a32e700ea6b8d4792d24cd8a245c9706f" title="Player.decreaseMoney" alt="" coords="168,55,325,80"/>
+</map>

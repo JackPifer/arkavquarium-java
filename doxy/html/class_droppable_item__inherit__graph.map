@@ -1,0 +1,4 @@
+<map id="DroppableItem" name="DroppableItem">
+<area shape="rect" id="node2" href="$class_coin.html" title="{Coin\n|&#45; value\l&#45; coinStatus\l|+ Coin()\l+ getValue()\l+ setValue()\l+ draw()\l}" alt="" coords="5,180,99,307"/>
+<area shape="rect" id="node3" href="$class_fish_food.html" title="{FishFood\n|+ price\l|+ FishFood()\l+ draw()\l}" alt="" coords="122,200,219,287"/>
+</map>

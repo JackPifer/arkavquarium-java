@@ -1,0 +1,262 @@
+\hypertarget{class_snail}{}\section{Snail Class Reference}
+\label{class_snail}\index{Snail@{Snail}}
+
+
+Inheritance diagram for Snail\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{class_snail__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Snail\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_snail__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_snail_ad38cb99dcf99a4da1651050c10cb26e1}{Snail}} ()
+\item 
+\mbox{\hyperlink{class_snail_a5750040bdce708c8f89d6048c8deddf5}{Snail}} (\mbox{\hyperlink{class_position}{Position}} initial\+Position)
+\item 
+\mbox{\hyperlink{class_position}{Position}} \mbox{\hyperlink{class_snail_a0617eb72efb8c5f88cbad6dd5d68dafd}{get\+Current\+Position}} ()
+\item 
+\mbox{\hyperlink{class_position}{Position}} \mbox{\hyperlink{class_snail_a20209772994cb11ba8b25e5b70f075b8}{get\+Destination}} ()
+\item 
+boolean \mbox{\hyperlink{class_snail_aea3bd82a39b5054e8b1c096a163d22ac}{get\+Face\+Direction}} ()
+\item 
+double \mbox{\hyperlink{class_snail_a178f903a2db7511a95ee194eeba7c00a}{get\+Move\+Time}} ()
+\item 
+\mbox{\hyperlink{enum_moving_object_1_1_moving_status}{Moving\+Status}} \mbox{\hyperlink{class_snail_a454a3cf01af0437da61e1a503ca2bb30}{get\+Moving\+Status}} ()
+\item 
+void \mbox{\hyperlink{class_snail_accd27e2c8c8fd9522eaaf07249e37401}{set\+Current\+Position}} (\mbox{\hyperlink{class_position}{Position}} \mbox{\hyperlink{class_snail_a546a453e906d3fc883d3ce5d2aa44915}{current\+Position}})
+\item 
+void \mbox{\hyperlink{class_snail_a238dee1b989badf9c6d915a5185a1a47}{set\+Destination}} (\mbox{\hyperlink{class_position}{Position}} \mbox{\hyperlink{class_snail_a93d9364d2800a8ad4ca04e0a4646e3d6}{destination}})
+\item 
+void \mbox{\hyperlink{class_snail_a0b09291bb1de38a10051f96d2415fd3e}{set\+Move\+Time}} (double \mbox{\hyperlink{class_snail_a4d00c96144349b1f5e42c32cdd47d254}{move\+Time}})
+\item 
+void \mbox{\hyperlink{class_snail_a1ac3de4bd120dcfeae9ccc66918057e5}{change\+Moving\+Status}} (\mbox{\hyperlink{class_linked_list}{Linked\+List}}$<$ \mbox{\hyperlink{class_coin}{Coin}} $>$ coins)
+\item 
+void \mbox{\hyperlink{class_snail_aa39dc71c305e7034af0438f036232e43}{draw}} (Graphics g, Toolkit t)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_position}{Position}} \mbox{\hyperlink{class_snail_a546a453e906d3fc883d3ce5d2aa44915}{current\+Position}}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_position}{Position}} \mbox{\hyperlink{class_snail_a93d9364d2800a8ad4ca04e0a4646e3d6}{destination}}
+\item 
+double \mbox{\hyperlink{class_snail_a4d00c96144349b1f5e42c32cdd47d254}{move\+Time}}
+\item 
+boolean \mbox{\hyperlink{class_snail_a76d36543b0b95a0e09f1f923d2835d7e}{face\+Direction}}
+\item 
+final double \mbox{\hyperlink{class_snail_a1d4e4fdcaa64b8ed111cdaf5536be80f}{moving\+Speed}} = 1
+\item 
+\mbox{\hyperlink{enum_moving_object_1_1_moving_status}{Moving\+Status}} \mbox{\hyperlink{class_snail_ac89d7ec73d68b4c98583d1eaca4038e9}{moving\+Status}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a snail. \begin{DoxyVersion}{Version}
+1.\+0. 
+\end{DoxyVersion}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_snail_ad38cb99dcf99a4da1651050c10cb26e1}\label{class_snail_ad38cb99dcf99a4da1651050c10cb26e1}} 
+\index{Snail@{Snail}!Snail@{Snail}}
+\index{Snail@{Snail}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{Snail()}{Snail()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Snail.\+Snail (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+constructor. \mbox{\Hypertarget{class_snail_a5750040bdce708c8f89d6048c8deddf5}\label{class_snail_a5750040bdce708c8f89d6048c8deddf5}} 
+\index{Snail@{Snail}!Snail@{Snail}}
+\index{Snail@{Snail}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{Snail()}{Snail()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Snail.\+Snail (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_position}{Position}}}]{initial\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+constructor. 
+\begin{DoxyParams}{Parameters}
+{\em initial\+Position} & initial\+Position of snail. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_snail_a1ac3de4bd120dcfeae9ccc66918057e5}\label{class_snail_a1ac3de4bd120dcfeae9ccc66918057e5}} 
+\index{Snail@{Snail}!change\+Moving\+Status@{change\+Moving\+Status}}
+\index{change\+Moving\+Status@{change\+Moving\+Status}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{change\+Moving\+Status()}{changeMovingStatus()}}
+{\footnotesize\ttfamily void Snail.\+change\+Moving\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_linked_list}{Linked\+List}}$<$ \mbox{\hyperlink{class_coin}{Coin}} $>$}]{coins }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+change moving status(\+H\+U\+N\+T\+I\+N\+G if coin available). 
+\begin{DoxyParams}{Parameters}
+{\em coins} & list of coin. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_snail_a1ac3de4bd120dcfeae9ccc66918057e5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_snail_aa39dc71c305e7034af0438f036232e43}\label{class_snail_aa39dc71c305e7034af0438f036232e43}} 
+\index{Snail@{Snail}!draw@{draw}}
+\index{draw@{draw}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Snail.\+draw (\begin{DoxyParamCaption}\item[{Graphics}]{g,  }\item[{Toolkit}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+draw to aquarium. 
+\begin{DoxyParams}{Parameters}
+{\em g} & Draw container. \\
+\hline
+{\em t} & Object to grab image. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_drawable_aaddafb212b3c8e60fcc742052570c893}{Drawable}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{class_snail_aa39dc71c305e7034af0438f036232e43_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_snail_a0617eb72efb8c5f88cbad6dd5d68dafd}\label{class_snail_a0617eb72efb8c5f88cbad6dd5d68dafd}} 
+\index{Snail@{Snail}!get\+Current\+Position@{get\+Current\+Position}}
+\index{get\+Current\+Position@{get\+Current\+Position}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{get\+Current\+Position()}{getCurrentPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_position}{Position}} Snail.\+get\+Current\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+getter. \begin{DoxyReturn}{Returns}
+current\+Position. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_snail_a20209772994cb11ba8b25e5b70f075b8}\label{class_snail_a20209772994cb11ba8b25e5b70f075b8}} 
+\index{Snail@{Snail}!get\+Destination@{get\+Destination}}
+\index{get\+Destination@{get\+Destination}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{get\+Destination()}{getDestination()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_position}{Position}} Snail.\+get\+Destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+getter. \begin{DoxyReturn}{Returns}
+destination. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_snail_aea3bd82a39b5054e8b1c096a163d22ac}\label{class_snail_aea3bd82a39b5054e8b1c096a163d22ac}} 
+\index{Snail@{Snail}!get\+Face\+Direction@{get\+Face\+Direction}}
+\index{get\+Face\+Direction@{get\+Face\+Direction}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{get\+Face\+Direction()}{getFaceDirection()}}
+{\footnotesize\ttfamily boolean Snail.\+get\+Face\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+getter. \begin{DoxyReturn}{Returns}
+boolean of face direction. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_snail_a178f903a2db7511a95ee194eeba7c00a}\label{class_snail_a178f903a2db7511a95ee194eeba7c00a}} 
+\index{Snail@{Snail}!get\+Move\+Time@{get\+Move\+Time}}
+\index{get\+Move\+Time@{get\+Move\+Time}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{get\+Move\+Time()}{getMoveTime()}}
+{\footnotesize\ttfamily double Snail.\+get\+Move\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+getter. \begin{DoxyReturn}{Returns}
+move\+Time. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_snail_a454a3cf01af0437da61e1a503ca2bb30}\label{class_snail_a454a3cf01af0437da61e1a503ca2bb30}} 
+\index{Snail@{Snail}!get\+Moving\+Status@{get\+Moving\+Status}}
+\index{get\+Moving\+Status@{get\+Moving\+Status}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{get\+Moving\+Status()}{getMovingStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{enum_moving_object_1_1_moving_status}{Moving\+Status}} Snail.\+get\+Moving\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+getter. \begin{DoxyReturn}{Returns}
+moving\+Status. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_snail_accd27e2c8c8fd9522eaaf07249e37401}\label{class_snail_accd27e2c8c8fd9522eaaf07249e37401}} 
+\index{Snail@{Snail}!set\+Current\+Position@{set\+Current\+Position}}
+\index{set\+Current\+Position@{set\+Current\+Position}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{set\+Current\+Position()}{setCurrentPosition()}}
+{\footnotesize\ttfamily void Snail.\+set\+Current\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_position}{Position}}}]{current\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setter. 
+\begin{DoxyParams}{Parameters}
+{\em current\+Position} & to change current\+Position. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_snail_a238dee1b989badf9c6d915a5185a1a47}\label{class_snail_a238dee1b989badf9c6d915a5185a1a47}} 
+\index{Snail@{Snail}!set\+Destination@{set\+Destination}}
+\index{set\+Destination@{set\+Destination}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{set\+Destination()}{setDestination()}}
+{\footnotesize\ttfamily void Snail.\+set\+Destination (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_position}{Position}}}]{destination }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setter. 
+\begin{DoxyParams}{Parameters}
+{\em destination} & to change destination. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_snail_a0b09291bb1de38a10051f96d2415fd3e}\label{class_snail_a0b09291bb1de38a10051f96d2415fd3e}} 
+\index{Snail@{Snail}!set\+Move\+Time@{set\+Move\+Time}}
+\index{set\+Move\+Time@{set\+Move\+Time}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{set\+Move\+Time()}{setMoveTime()}}
+{\footnotesize\ttfamily void Snail.\+set\+Move\+Time (\begin{DoxyParamCaption}\item[{double}]{move\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setter. 
+\begin{DoxyParams}{Parameters}
+{\em move\+Time} & to change move\+Time. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_snail_a546a453e906d3fc883d3ce5d2aa44915}\label{class_snail_a546a453e906d3fc883d3ce5d2aa44915}} 
+\index{Snail@{Snail}!current\+Position@{current\+Position}}
+\index{current\+Position@{current\+Position}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{current\+Position}{currentPosition}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_position}{Position}} Snail.\+current\+Position\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_snail_a93d9364d2800a8ad4ca04e0a4646e3d6}\label{class_snail_a93d9364d2800a8ad4ca04e0a4646e3d6}} 
+\index{Snail@{Snail}!destination@{destination}}
+\index{destination@{destination}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{destination}{destination}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_position}{Position}} Snail.\+destination\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_snail_a76d36543b0b95a0e09f1f923d2835d7e}\label{class_snail_a76d36543b0b95a0e09f1f923d2835d7e}} 
+\index{Snail@{Snail}!face\+Direction@{face\+Direction}}
+\index{face\+Direction@{face\+Direction}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{face\+Direction}{faceDirection}}
+{\footnotesize\ttfamily boolean Snail.\+face\+Direction\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_snail_a4d00c96144349b1f5e42c32cdd47d254}\label{class_snail_a4d00c96144349b1f5e42c32cdd47d254}} 
+\index{Snail@{Snail}!move\+Time@{move\+Time}}
+\index{move\+Time@{move\+Time}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{move\+Time}{moveTime}}
+{\footnotesize\ttfamily double Snail.\+move\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_snail_a1d4e4fdcaa64b8ed111cdaf5536be80f}\label{class_snail_a1d4e4fdcaa64b8ed111cdaf5536be80f}} 
+\index{Snail@{Snail}!moving\+Speed@{moving\+Speed}}
+\index{moving\+Speed@{moving\+Speed}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{moving\+Speed}{movingSpeed}}
+{\footnotesize\ttfamily final double Snail.\+moving\+Speed = 1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_snail_ac89d7ec73d68b4c98583d1eaca4038e9}\label{class_snail_ac89d7ec73d68b4c98583d1eaca4038e9}} 
+\index{Snail@{Snail}!moving\+Status@{moving\+Status}}
+\index{moving\+Status@{moving\+Status}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{moving\+Status}{movingStatus}}
+{\footnotesize\ttfamily \mbox{\hyperlink{enum_moving_object_1_1_moving_status}{Moving\+Status}} Snail.\+moving\+Status\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_snail_8java}{Snail.\+java}}\end{DoxyCompactItemize}

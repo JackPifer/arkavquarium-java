@@ -1,0 +1,7 @@
+<map id="Controller.buyGuppy" name="Controller.buyGuppy">
+<area shape="rect" id="node2" href="$class_player.html#ae1169535a36bb44c7e37af0c7cf75410" title="Player.payGuppy" alt="" coords="207,55,329,80"/>
+<area shape="rect" id="node5" href="$class_aquarium.html#a4deb3514c2e387b5d3e33424c18144c1" title="Aquarium.addGuppy" alt="" coords="196,104,340,129"/>
+<area shape="rect" id="node3" href="$class_player.html#a5836d6213f249c1928423d9036ec9e4e" title="Player.isMoneyEnough" alt="" coords="388,5,546,31"/>
+<area shape="rect" id="node4" href="$class_player.html#a32e700ea6b8d4792d24cd8a245c9706f" title="Player.decreaseMoney" alt="" coords="388,55,545,80"/>
+<area shape="rect" id="node6" href="$class_linked_list.html#af7ec408e2f1040643d77f614af535988" title="LinkedList.add" alt="" coords="413,104,520,129"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Snail" name="Snail">
+<area shape="rect" id="node2" href="$interface_moving_object.html" title="{MovingObject\n||+ move()\l}" alt="" coords="5,5,108,79"/>
+<area shape="rect" id="node3" href="$interface_drawable.html" title="{Drawable\n||+ draw()\l}" alt="" coords="133,5,210,79"/>
+</map>

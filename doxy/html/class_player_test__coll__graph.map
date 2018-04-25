@@ -1,0 +1,4 @@
+<map id="PlayerTest" name="PlayerTest">
+<area shape="rect" id="node2" href="$class_player.html" title="{Player\n|&#45; money\l&#45; egg\l|+ Player()\l+ getPlayerStatus()\l+ getMoney()\l+ getEgg()\l+ setPlayerStatus()\l+ increaseMoney()\l+ decreaseMoney()\l+ setEgg()\l+ isWin()\l+ isLose()\land 6 more...\l}" alt="" coords="18,153,154,373"/>
+<area shape="rect" id="node3" href="$enum_player_1_1_player_status.html" title="{Player.PlayerStatus\n|+ LOSE\l+ WIN\l|}" alt="" coords="17,5,155,92"/>
+</map>

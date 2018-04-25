@@ -1,0 +1,6 @@
+<map id="DroppableItemTest.moveDownTest" name="DroppableItemTest.moveDownTest">
+<area shape="rect" id="node2" href="$class_droppable_item.html#ac1870d36f1861a4574414355983d56c5" title="DroppableItem.moveDown" alt="" coords="281,63,461,88"/>
+<area shape="rect" id="node3" href="$class_droppable_item.html#a90d927cd4460d9cd5e0070b000606cd3" title="DroppableItem.getCurrent\lPosition" alt="" coords="509,5,684,44"/>
+<area shape="rect" id="node5" href="$class_position.html#acc59fee4dda06e7be2455916abe6a2a6" title="Position.getY" alt="" coords="321,112,421,137"/>
+<area shape="rect" id="node4" href="$class_position.html#aaf877e0285431a70b8a254ae14bf022e" title="Position.setY" alt="" coords="547,68,646,93"/>
+</map>

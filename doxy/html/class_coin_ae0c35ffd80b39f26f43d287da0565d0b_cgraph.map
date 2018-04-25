@@ -1,0 +1,7 @@
+<map id="Coin.draw" name="Coin.draw">
+<area shape="rect" id="node2" href="$class_coin.html#a420e22e4740d8836be0beb3678bc6fe0" title="Coin.getValue" alt="" coords="170,5,274,31"/>
+<area shape="rect" id="node3" href="$class_droppable_item.html#a5cbe880513fffe6c70678bd3b86ca934" title="DroppableItem.isBottom" alt="" coords="140,55,305,80"/>
+<area shape="rect" id="node4" href="$class_position.html#acc59fee4dda06e7be2455916abe6a2a6" title="Position.getY" alt="" coords="358,80,458,105"/>
+<area shape="rect" id="node5" href="$class_droppable_item.html#a90d927cd4460d9cd5e0070b000606cd3" title="DroppableItem.getCurrent\lPosition" alt="" coords="135,156,310,195"/>
+<area shape="rect" id="node6" href="$class_position.html#a14c74938fcd12f380e0f3d19cfc8fb70" title="Position.getX" alt="" coords="172,219,272,244"/>
+</map>
