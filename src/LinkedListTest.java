@@ -39,19 +39,17 @@ public class LinkedListTest {
 
   @Test
   public void removeTest() {
-    ll = new LinkedList<>();
+    LinkedList<String> xx = new LinkedList<>();
 
-    assertNull(ll.getFirst());
-    ll.add(123);
-    ll.add(456);
+    assertNull(xx.getFirst());
+    xx.add("aaa");
+    xx.add("bbb");
 
-    ll.remove(123);
-    assertEquals(456, (int) ll.getFirst().getValue());
-
-    ll.remove(456);
-    System.out.println("Babi");
-    System.out.println(ll.getFirst().getValue());
-    assertNull(ll.getFirst());
+    xx.remove("aaa");
+    assertEquals("bbb", (String) xx.getFirst().getValue());
+    
+    xx.remove("bbb");
+    assertNull(xx.getFirst());
   }
 
   @Test
