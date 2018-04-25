@@ -168,18 +168,18 @@ public class Snail implements MovingObject, Drawable {
   public void draw(Graphics g, Toolkit t) {
     if (movingStatus == MovingStatus.STATIC) {
       if (getFaceDirection()) {
-        g.drawImage(t.getImage("images/Snail_shel.png"), (int) getCurrentPosition().getX(),
+        g.drawImage(t.getImage("assets/images/Snail_shel.png"), (int) getCurrentPosition().getX(),
             (int) getCurrentPosition().getY() + 7, null);
       } else {
-        g.drawImage(t.getImage("images/Snail_shel_right.png"), (int) getCurrentPosition().getX(),
+        g.drawImage(t.getImage("assets/images/Snail_shel_right.png"), (int) getCurrentPosition().getX(),
             (int) getCurrentPosition().getY() + 7, null);
       }
     } else {
       if (getFaceDirection()) {
-        g.drawImage(t.getImage("images/Snail_left_side.png"), (int) getCurrentPosition().getX(),
+        g.drawImage(t.getImage("assets/images/Snail_left_side.png"), (int) getCurrentPosition().getX(),
             (int) getCurrentPosition().getY(), null);
       } else {
-        g.drawImage(t.getImage("images/Snail_right_side.png"), (int) getCurrentPosition().getX(),
+        g.drawImage(t.getImage("assets/images/Snail_right_side.png"), (int) getCurrentPosition().getX(),
             (int) getCurrentPosition().getY(), null);
       }
     }

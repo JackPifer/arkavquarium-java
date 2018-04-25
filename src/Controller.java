@@ -252,11 +252,11 @@ public class Controller extends JPanel {
 
   public void animateEgg(Graphics g, Toolkit t) {
     if (player.getEgg() == 0) {
-      g.drawImage(t.getImage("images/Egg_L1.png"),550,20,null);
+      g.drawImage(t.getImage("assets/images/Egg_L1.png"),550,20,null);
     } else if (player.getEgg() == 1) {
-      g.drawImage(t.getImage("images/Egg_L2.png"),550,20,null);
+      g.drawImage(t.getImage("assets/images/Egg_L2.png"),550,20,null);
     } else {
-      g.drawImage(t.getImage("images/Egg_L3.png"),550,20,null);
+      g.drawImage(t.getImage("assets/images/Egg_L3.png"),550,20,null);
     }
   }
 
@@ -269,14 +269,14 @@ public class Controller extends JPanel {
   public void graphicAccesories(Graphics g, Toolkit t) {
     g.setColor(new Color(255,215,0));
     g.setFont(new Font("Gill Sans Ultra Bold", Font.BOLD, 20));
-    g.drawImage(t.getImage("images/Money.png"),40,20,null);
+    g.drawImage(t.getImage("assets/images/Money.png"),40,20,null);
     g.drawString(Double.toString(player.getMoney()), 70, 45);
     g.setColor(Color.white);
     g.setFont(new Font("Gill Sans",Font.BOLD, 12));
     g.drawString("F : Buy Guppy ($50)",40,70);
     g.drawString("P : Buy Piranha ($100)",40,85);
     g.drawString("1: $200 2: $350 3: $500",500,75);
-    g.drawImage(t.getImage("images/ArkavQuarium.png"),210,20,null);
+    g.drawImage(t.getImage("assets/images/ArkavQuarium.png"),210,20,null);
     animateEgg(g,t);
   }
 
@@ -325,10 +325,10 @@ public class Controller extends JPanel {
       this.drawAndAnimateObject(g,t);
       this.graphicAccesories(g,t);
     } else if (player.isWin()) {
-      g.drawImage(t.getImage("images/Win.png"), 
+      g.drawImage(t.getImage("assets/images/Win.png"), 
           Aquarium.DEFAULT_WIDTH / 2 - 270,Aquarium.DEFAULT_HEIGHT / 2 - 75 ,null);
     } else if (player.isLose(tank)) {
-      g.drawImage(t.getImage("images/Lose.png"), 
+      g.drawImage(t.getImage("assets/images/Lose.png"), 
           Aquarium.DEFAULT_WIDTH / 2 - 170, Aquarium.DEFAULT_HEIGHT / 2 - 50, null);
     }
   }

@@ -47,19 +47,19 @@ public class Piranha extends Fish implements Drawable {
   public void draw(Graphics g, Toolkit t) {
     if (!isHungry()) {
       if (getFaceDirection()) {
-        g.drawImage(t.getImage("images/Piranha_left_side.png"), (int) getCurrentPosition().getX(),
+        g.drawImage(t.getImage("assets/images/Piranha_left_side.png"), (int) getCurrentPosition().getX(),
             (int) getCurrentPosition().getY(), null);
       } else {
-        g.drawImage(t.getImage("images/Piranha_right_side.png"), (int) getCurrentPosition().getX(),
+        g.drawImage(t.getImage("assets/images/Piranha_right_side.png"), (int) getCurrentPosition().getX(),
             (int) getCurrentPosition().getY(), null);
       }
     } else {
       if (getFaceDirection()) {
-        g.drawImage(t.getImage("images/Piranha_Hungry_left_side.png"), 
+        g.drawImage(t.getImage("assets/images/Piranha_Hungry_left_side.png"), 
             (int) getCurrentPosition().getX(),
                 (int) getCurrentPosition().getY(), null);
       } else {
-        g.drawImage(t.getImage("images/Piranha_Hungry_right_side.png"),
+        g.drawImage(t.getImage("assets/images/Piranha_Hungry_right_side.png"),
             (int) getCurrentPosition().getX(),
                 (int) getCurrentPosition().getY(), null);
       }

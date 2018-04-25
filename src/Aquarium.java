@@ -143,6 +143,6 @@ public class Aquarium implements Drawable {
    * @param t Object to grab image.
    */
   public void draw(Graphics g, Toolkit t) {
-    g.drawImage(t.getImage("images/Aquarium4.jpg"), 0, 0, null);
+    g.drawImage(t.getImage("assets/images/Aquarium4.jpg"), 0, 0, null);
   }
 }
