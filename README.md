@@ -44,6 +44,7 @@ To generate javadoc, run the following command:
 javadoc -d doc/javadoc src/*.java
 ```
 The html file will be available at doc/javadoc
+
 ---
 ## JDepend
 To show jdepend, run the following command:
